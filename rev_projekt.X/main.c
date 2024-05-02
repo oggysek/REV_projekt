@@ -13,9 +13,14 @@
 #pragma config WDTEN = OFF      // Watchdog Timer Enable bits (Watch dog timer is always disabled. SWDTEN has no effect.)
 
 #include <xc.h>
-#include <stdint.h>
 #include <stdio.h>
+#include <stdint.h>
+
+#include "bsp.h"
+#include "uart.h"
+#include "fsm.h"
 #include "lcd.h"
+#include "adc.h"
 
 #define _XTAL_FREQ 8E6
 #define DELAY 0x0000//0xFFFF - (60000-1)
@@ -72,19 +77,15 @@ void gpio0(void) {
         led_state = 0;
     }
 }
-void __interrupt() RC_ISR(void) {
-    if (TMR1IE && TMR1IF) {
-        
-        TMR1 = DELAY;
-        TMR1IF = 0; // RESET INTERRUPRT FLAG
-    }
-}
+
 
 void main(void) {
-    gpio_init();
+    
+    bsp_init();
     while(1) {
         if(BTN2) {
             gpio0();
+            while(BTN2);
             __delay_ms(500);
         }   
     }

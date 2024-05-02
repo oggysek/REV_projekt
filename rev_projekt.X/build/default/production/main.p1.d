@@ -1,3 +1,7 @@
 build/default/production/main.p1:  \
 main.c  \
-lcd.h 
+bsp.h  \
+uart.h  \
+fsm.h  \
+lcd.h  \
+adc.h 
