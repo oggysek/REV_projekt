@@ -11,6 +11,7 @@
 #define EV_BTN4_PRESSED     6U
 #define EV_TIMEOUT          7U
 #define EV_TICK             8U
+#define EV_RC_MSG           9U
 
 typedef struct fsm_t fsm_t;
 

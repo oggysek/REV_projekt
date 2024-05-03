@@ -4,13 +4,16 @@
 
 volatile static long bsp_timeout;
 volatile static btn_filter_t buttons = {0};
+static void(*RC_isr_cb)(void) = NULL;
 
 void bsp_init(void) {
+    // tlacitka
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;
     TRISAbits.RA3 = 1;
     TRISAbits.RA2 = 1;
     
+    // ledky
     TRISDbits.RD2 = 0;
     TRISDbits.RD3 = 0;
     TRISCbits.RC4 = 0;
@@ -18,17 +21,18 @@ void bsp_init(void) {
     TRISDbits.RD5 = 0;
     TRISDbits.RD6 = 0;
     
+    // asi DAC
     TRISBbits.TRISB5 = 0;
     
     ANSELA = 0;
-    
+    // vypnuti ledek
     LED1 = 1;
     LED2 = 1;
     LED3 = 1;
     LED4 = 1;
     LED5 = 1;
     LED6 = 1;   
-    
+    // PWM nebo DAC
     T2CONbits.T2CKPS = 0b11;        
     T2CONbits.T2OUTPS = 0b1001;     
     PR2 = 250;                      
@@ -60,7 +64,7 @@ void bsp_drive_led(char input) {
     LED1 = input & 32 ? 0 : 1;  
 }
 
-
+// timeout
 void bsp_set_timeout(long timeout_in){
     bsp_timeout = timeout_in;
     TMR6 = 0;
@@ -73,6 +77,12 @@ long bsp_get_timeout(void){
 
 void bsp_stop_timeout(void){
     TMR6ON = 0;
+}
+
+void bsp_reg_RC_cb(void (*cb)(void)){
+
+    RC_isr_cb = cb;
+
 }
 
 void __interrupt(high_priority) HIGH_ISR(void){
@@ -90,6 +100,12 @@ void __interrupt(high_priority) HIGH_ISR(void){
         }
         RB5 ^= 1;
         TMR6IF = 0;                    
+    }
+    
+    if(RC1IF && RC1IE){
+        if(RC_isr_cb != NULL){
+            RC_isr_cb();
+        }
     }
 }
 

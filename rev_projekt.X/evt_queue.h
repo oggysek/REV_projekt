@@ -8,9 +8,9 @@
 #define LEAVE_CRITICAL() GIE = (tmp & 0b1);
 
 typedef struct{
-    uint8_t fifo[256];
-    uint8_t head;
-    uint8_t tail;
+    uint8_t fifo[32];
+    uint8_t head :5;
+    uint8_t tail :5;
 }evt_queue_t;
 
 void write_evt(volatile evt_queue_t *queue, uint8_t in);

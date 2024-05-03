@@ -39,5 +39,7 @@ char bsp_btn_state(char btn);
 long bsp_get_timeout(void);
 void bsp_set_timeout(long timeout);
 void bsp_stop_timeout(void);
+void bsp_reg_RC_cb(void (*cb)(void));
+
 #endif	/* GPIO_H */
 

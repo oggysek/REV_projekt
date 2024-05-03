@@ -104,7 +104,8 @@ void LCD_Clear(void){
     LCD_Send(0x01); // Clear display
     
     SSP2CON2bits.PEN = 1;
-    while (SSP2CON2bits.PEN);      
+    while (SSP2CON2bits.PEN);
+    __delay_us(500);
 }
 
 void LCD_Reset(void){

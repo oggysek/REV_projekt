@@ -2,7 +2,7 @@
 
 void write_evt(volatile evt_queue_t *queue, uint8_t in){
 	ENTER_CRITICAL();
-    queue->fifo[queue->tail++] = in;
+    queue->fifo[queue->head++] = in;
     LEAVE_CRITICAL();
 }
 
@@ -12,7 +12,7 @@ uint8_t get_evt(volatile evt_queue_t *queue, uint8_t *out){
     }
 
 	ENTER_CRITICAL();
-    *out = queue->fifo[queue->head++];
+    *out = queue->fifo[queue->tail++];
 	LEAVE_CRITICAL();
 	return 1;
 }

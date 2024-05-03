@@ -4,59 +4,56 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 11 "main.c"
+
 #pragma config FOSC = HSMP
 #pragma config PLLCFG = ON
 #pragma config WDTEN = OFF
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __uint24 uint24_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
 long atol (const char *);
-
 long long atoll (const char *);
-
 double atof (const char *);
-
 
 float strtof (const char *restrict, char **restrict);
 double strtod (const char *restrict, char **restrict);
@@ -66,15 +63,9 @@ long double strtold (const char *restrict, char **restrict);
 
 long strtol (const char *restrict, char **restrict, int);
 unsigned long strtoul (const char *restrict, char **restrict, int);
-
 long long strtoll (const char *restrict, char **restrict, int);
 unsigned long long strtoull (const char *restrict, char **restrict, int);
 
-
-unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
-
-unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
 int rand (void);
 void srand (unsigned);
 
@@ -100,27 +91,21 @@ __attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const 
 
 int abs (int);
 long labs (long);
-
 long long llabs (long long);
-
 
 typedef struct { int quot, rem; } div_t;
 typedef struct { long quot, rem; } ldiv_t;
-
 typedef struct { long long quot, rem; } lldiv_t;
-
 
 div_t div (int, int);
 ldiv_t ldiv (long, long);
-
 lldiv_t lldiv (long long, long long);
-
 
 typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -130,27 +115,27 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\builtins.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
 
 
 typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int32_t;
 
 
@@ -158,7 +143,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -171,7 +156,7 @@ typedef unsigned char uint8_t;
 
 
 typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uint32_t;
 
 
@@ -179,9 +164,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
 
 typedef int8_t int_fast8_t;
 
@@ -213,27 +198,19 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 2 3
+# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\builtins.h" 2 3
 
 
 
 #pragma intrinsic(__nop)
 extern void __nop(void);
-
-#pragma intrinsic(__nopf000)
-extern void __nopf000(void);
-#pragma intrinsic(__nopffff)
-extern void __nopffff(void);
-#pragma intrinsic(__nop0000)
-extern void __nop0000(void);
-
 
 
 #pragma intrinsic(_delay)
@@ -243,19 +220,19 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 1 3
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\htc.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\htc.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\htc.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\htc.h" 2 3
 # 6 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 2 3
 
 
@@ -263,7 +240,7 @@ extern __attribute__((nonreentrant)) void _delay3(uint8_t);
 # 229 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18_chip_select.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k22.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k22.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\__at.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\__at.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k22.h" 2 3
 
 
@@ -9651,7 +9628,7 @@ __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer suppor
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\errata.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\errata.h" 1 3
 # 28 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 2 3
 # 156 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 3
 __attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
@@ -9660,27 +9637,31 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 # 192 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 3
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 15 "main.c" 2
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
+# 6 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
 typedef void * va_list[1];
 
 
 
 
 typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -9719,22 +9700,12 @@ size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
 int fgetc(FILE *);
 int getc(FILE *);
 int getchar(void);
-
-
-
-
-
 int ungetc(int, FILE *);
 int getch(void);
 
 int fputc(int, FILE *);
 int putc(int, FILE *);
 int putchar(int);
-
-
-
-
-
 void putch(char);
 
 char *fgets(char *restrict, int, FILE *restrict);
@@ -9815,7 +9786,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 16 "main.c" 2
+# 7 "main.c" 2
 
 
 
@@ -9842,7 +9813,8 @@ char bsp_btn_state(char btn);
 long bsp_get_timeout(void);
 void bsp_set_timeout(long timeout);
 void bsp_stop_timeout(void);
-# 19 "main.c" 2
+void bsp_reg_RC_cb(void (*cb)(void));
+# 10 "main.c" 2
 
 # 1 "./uart.h" 1
 
@@ -9850,10 +9822,10 @@ void bsp_stop_timeout(void);
 
 void uart_init(void);
 void putch(char data);
-# 20 "main.c" 2
+# 11 "main.c" 2
 
 # 1 "./fsm.h" 1
-# 15 "./fsm.h"
+# 16 "./fsm.h"
 typedef struct fsm_t fsm_t;
 
 typedef void(*state_fp)(fsm_t *fsm, uint8_t event);
@@ -9868,7 +9840,7 @@ void fsm_transition(fsm_t *fsm, state_fp new_state);
 
 void fsm_add_event(uint8_t in);
 uint8_t fsm_get_event(uint8_t *out);
-# 21 "main.c" 2
+# 12 "main.c" 2
 
 # 1 "./lcd.h" 1
 
@@ -9880,71 +9852,122 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 22 "main.c" 2
+# 13 "main.c" 2
 
 # 1 "./adc.h" 1
 # 10 "./adc.h"
 void adc_init(void);
 uint16_t adc_read(uint8_t channel);
-# 23 "main.c" 2
-# 35 "main.c"
-void gpio_init(void) {
-    TRISDbits.TRISD2 = 0;
-    TRISDbits.TRISD3 = 0;
-    TRISCbits.TRISC4 = 0;
-    TRISDbits.TRISD4 = 0;
-    TRISDbits.TRISD5 = 0;
-    TRISDbits.TRISD6 = 0;
-
-    TRISAbits.TRISA3 = 1;
-    ANSELAbits.ANSA3 = 0;
-    ANSELAbits.ANSA2 = 0;
-}
-
-void driveLED(char in){
-        LATD2 = in & 1;
-        LATD3 = in & 2 ? 1 : 0;
-        LATC4 = in & 4 ? 1 : 0;
-        LATD4 = in & 8 ? 1 : 0;
-        LATD5 = in & 16 ? 1 : 0;
-        LATD6 = in & 32 ? 1 : 0;
-}
-
-void knight_rider(void){
-    unsigned char led_state = 0;
-    for (int i = 0; i<6; i++){
-        led_state |= (1 << i);
-        driveLED(led_state);
-        for(long i=1; i<50000; i++);
-    }
-
-    for (int i = 5; i>=0; i--){
-        led_state &= ~(1 << i);
-        driveLED(led_state);
-        for(long i=1; i<50000; i++);
-    }
-}
-
-void gpio0(void) {
-    static unsigned char led_state = 0;
-    driveLED(~led_state);
-    led_state = (led_state << 1) + 1;
-    if (led_state > 0b111111) {
-        led_state = 0;
-    }
-}
+# 14 "main.c" 2
 
 
-void main(void) {
 
+
+
+void init(fsm_t *fsm, uint8_t event);
+void state1(fsm_t *fsm, uint8_t event);
+void state2(fsm_t *fsm, uint8_t event);
+
+int main(void) {
+    _delay((unsigned long)((100)*(32e6/4000.0)));
     bsp_init();
-    while(1) {
-        if(PORTAbits.RA4) {
-            gpio0();
-            while(PORTAbits.RA4);
-            _delay((unsigned long)((500)*(8E6/4000.0)));
+    uart_init();
+    adc_init();
+    LCD_Init();
+
+
+    GIEL = 1;
+    GIEH = 1;
+
+    TMR2ON = 1;
+    TMR1ON = 1;
+
+
+ fsm_t fsm;
+    uint8_t event = 0;
+
+    fsm_init(&fsm, &init);
+
+    while(1){
+        if (fsm_get_event(&event)){
+
+            fsm_dispatch(&fsm, event);
+
         }
     }
 
-    return;
+ return 0;
+}
+
+
+
+
+void init(fsm_t *fsm, uint8_t event){
+
+    switch(event){
+        case 1U:
+            LCD_ShowString(1, "Welcome         ");
+            bsp_set_timeout(5000);
+            break;
+        case 2U:
+            printf("Init state exit\n");
+            break;
+        case 7U:
+            fsm_transition(fsm, &state1);
+            break;
+    }
+}
+
+void state1(fsm_t *fsm, uint8_t event){
+
+ switch(event){
+        case 1U:
+            bsp_set_timeout(1000);
+            LCD_ShowString(1, "State1           ");
+            break;
+        case 2U:
+            bsp_stop_timeout();
+            LATDbits.LD6 = 1;
+            printf("Exit state 1\n");
+            break;
+        case 3U:
+            fsm_transition(fsm, &state2);
+            break;
+        case 7U:
+            LATDbits.LD6 ^= 1;
+            bsp_set_timeout(1000);
+            break;
+        case 6U:
+            LATDbits.LD2 ^= 1;
+            break;
+    }
+}
+
+void state2(fsm_t *fsm, uint8_t event){
+
+ switch(event){
+        case 1U:
+            LCD_ShowString(1, "State2           ");
+            break;
+        case 2U:
+            printf("Exit state 2\n");
+            LCD_Clear();
+            break;
+        case 3U:
+            fsm_transition(fsm, &state1);
+            break;
+        case 4U:
+            bsp_set_timeout(1000);
+            break;
+        case 7U:
+            fsm_transition(fsm, &state1);
+            break;
+        case 8U:
+        {
+            char str[17];
+            sprintf(str, "POT: %.1f mV          ", (float)adc_read(5)*3.22265625);
+            LCD_ShowString(2, str);
+            break;
+        }
+    }
 }

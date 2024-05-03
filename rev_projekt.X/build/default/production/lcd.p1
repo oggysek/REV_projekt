@@ -77,9 +77,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4198
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 4198: extern volatile unsigned char SSP2ADD __attribute__((address(0xF6E)));
 [v _SSP2ADD `Vuc ~T0 @X0 0 e@3950 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.41\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
 "3539 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 3539:     struct {
@@ -1264,25 +1264,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 888  ]
 [e :U 889 ]
 "108
-[; ;lcd.c: 108: }
+[; ;lcd.c: 108:     _delay((unsigned long)((500)*(32E6/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / .32e6 .4000000.0 `ul ]
+"109
+[; ;lcd.c: 109: }
 [e :UE 883 ]
 }
-"110
-[; ;lcd.c: 110: void LCD_Reset(void){
+"111
+[; ;lcd.c: 111: void LCD_Reset(void){
 [v _LCD_Reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_Reset ]
 [f ]
-"111
-[; ;lcd.c: 111:     LATAbits.LATA0 = 0;
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 "112
-[; ;lcd.c: 112:     _delay((unsigned long)((100)*(32E6/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / .32e6 .4000000.0 `ul ]
+[; ;lcd.c: 112:     LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 "113
-[; ;lcd.c: 113:     LATAbits.LATA0 = 1;
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+[; ;lcd.c: 113:     _delay((unsigned long)((100)*(32E6/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / .32e6 .4000000.0 `ul ]
 "114
-[; ;lcd.c: 114: }
+[; ;lcd.c: 114:     LATAbits.LATA0 = 1;
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+"115
+[; ;lcd.c: 115: }
 [e :UE 890 ]
 }

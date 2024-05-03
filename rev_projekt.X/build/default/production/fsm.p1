@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "10 ./evt_queue.h
 [; ;./evt_queue.h: 10: typedef struct{
-[s S857 `uc -> 256 `i `uc 1 `uc 1 ]
+[s S857 `uc -> 32 `i :5 `uc 1 :5 `uc 1 ]
 [n S857 . fifo head tail ]
 "16
 [; ;./evt_queue.h: 16: void write_evt(volatile evt_queue_t *queue, uint8_t in);
@@ -10,17 +10,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./evt_queue.h: 17: uint8_t get_evt(volatile evt_queue_t *queue, uint8_t *out);
 [v _get_evt `(uc ~T0 @X0 0 ef2`*VS857`*uc ]
 [v F40 `(v ~T0 @X0 0 tf2`*S2`uc ]
-"19 ./fsm.h
-[; ;./fsm.h: 19: struct fsm_t{
+"20 ./fsm.h
+[; ;./fsm.h: 20: struct fsm_t{
 [s S2 `*F40 1 ]
 [n S2 fsm_t state ]
-[v F6076 `(v ~T0 @X0 0 tf2`*S2`uc ]
-[v F6081 `(v ~T0 @X0 0 tf2`*S2`uc ]
-"24
-[; ;./fsm.h: 24: void fsm_dispatch(fsm_t *fsm, uint8_t event);
+[v F6063 `(v ~T0 @X0 0 tf2`*S2`uc ]
+[v F6068 `(v ~T0 @X0 0 tf2`*S2`uc ]
+"25
+[; ;./fsm.h: 25: void fsm_dispatch(fsm_t *fsm, uint8_t event);
 [v _fsm_dispatch `(v ~T0 @X0 0 ef2`*S2`uc ]
-[v F6097 `(v ~T0 @X0 0 tf2`*S2`uc ]
-[v F6102 `(v ~T0 @X0 0 tf2`*S2`uc ]
+[v F6084 `(v ~T0 @X0 0 tf2`*S2`uc ]
+[v F6089 `(v ~T0 @X0 0 tf2`*S2`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -819,230 +819,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
 ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -1080,11 +856,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "15
 [; ;fsm.c: 15: void fsm_init(fsm_t *fsm, state_fp init_state){
-[v _fsm_init `(v ~T0 @X0 1 ef2`*S2`*F6076 ]
+[v _fsm_init `(v ~T0 @X0 1 ef2`*S2`*F6063 ]
 {
 [e :U _fsm_init ]
 [v _fsm `*S2 ~T0 @X0 1 r1 ]
-[v _init_state `*F6081 ~T0 @X0 1 r2 ]
+[v _init_state `*F6068 ~T0 @X0 1 r2 ]
 [f ]
 "16
 [; ;fsm.c: 16:     fsm->state = init_state;
@@ -1113,11 +889,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "24
 [; ;fsm.c: 24: void fsm_transition(fsm_t *fsm, state_fp new_state){
-[v _fsm_transition `(v ~T0 @X0 1 ef2`*S2`*F6097 ]
+[v _fsm_transition `(v ~T0 @X0 1 ef2`*S2`*F6084 ]
 {
 [e :U _fsm_transition ]
 [v _fsm `*S2 ~T0 @X0 1 r1 ]
-[v _new_state `*F6102 ~T0 @X0 1 r2 ]
+[v _new_state `*F6089 ~T0 @X0 1 r2 ]
 [f ]
 "25
 [; ;fsm.c: 25:     fsm_dispatch(fsm, 2U);
