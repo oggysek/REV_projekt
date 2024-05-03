@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Fri May 03 16:37:22 2024
+                                                                                               Fri May 03 16:41:39 2024
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F46K22
@@ -1519,7 +1519,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1505 ;;
   1506 ;; *************** function _main *****************
   1507 ;; Defined at:
-  1508 ;;		line 52 in file "main_menu.c"
+  1508 ;;		line 52 in file "main.c"
   1509 ;; Parameters:    Size  Location     Type
   1510 ;;		None
   1511 ;; Auto vars:     Size  Location     Type
@@ -1574,7 +1574,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1551   00532E  52E6               	movf	postinc1,f,c
   1552   005330  52E6               	movf	postinc1,f,c
   1553   005332                     
-  1554                           ;main_menu.c: 53:     _delay((unsigned long)((100)*(32e6/4000.0)));
+  1554                           ;main.c: 53:     _delay((unsigned long)((100)*(32e6/4000.0)));
   1555   005332  0E05               	movlw	5
   1556   005334  6E02               	movwf	(wtemp0+1)^0,c
   1557   005336  0E0F               	movlw	15
@@ -1589,46 +1589,46 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1566   005346  D7FA               	bra	u5317
   1567   005348  F000               	nop	
   1568   00534A                     
-  1569                           ;main_menu.c: 54:     bsp_init();
+  1569                           ;main.c: 54:     bsp_init();
   1570   00534A  ECD8  F02B         	call	_bsp_init	;wreg free
   1571   00534E                     
   1572                           ; BSR set to: 15
-  1573                           ;main_menu.c: 55:     uart_init();
+  1573                           ;main.c: 55:     uart_init();
   1574   00534E  EC97  F02D         	call	_uart_init	;wreg free
   1575   005352                     
   1576                           ; BSR set to: 15
-  1577                           ;main_menu.c: 56:     adc_init();
+  1577                           ;main.c: 56:     adc_init();
   1578   005352  EC7A  F02D         	call	_adc_init	;wreg free
   1579   005356                     
   1580                           ; BSR set to: 15
-  1581                           ;main_menu.c: 57:     LCD_Init();
+  1581                           ;main.c: 57:     LCD_Init();
   1582   005356  EC77  F020         	call	_LCD_Init	;wreg free
   1583   00535A                     
-  1584                           ;main_menu.c: 60:     GIEL = 1;
+  1584                           ;main.c: 60:     GIEL = 1;
   1585   00535A  8CF2               	bsf	4082,6,c	;volatile
   1586   00535C                     
-  1587                           ;main_menu.c: 61:     GIEH = 1;
+  1587                           ;main.c: 61:     GIEH = 1;
   1588   00535C  8EF2               	bsf	4082,7,c	;volatile
   1589   00535E                     
-  1590                           ;main_menu.c: 63:     TMR2ON = 1;
+  1590                           ;main.c: 63:     TMR2ON = 1;
   1591   00535E  84BA               	bsf	4026,2,c	;volatile
   1592   005360                     
-  1593                           ;main_menu.c: 64:     TMR1ON = 1;
+  1593                           ;main.c: 64:     TMR1ON = 1;
   1594   005360  80CD               	bsf	4045,0,c	;volatile
   1595   005362                     
-  1596                           ;main_menu.c: 66:     bsp_reg_RC_cb(rc_isr_handle);
+  1596                           ;main.c: 66:     bsp_reg_RC_cb(rc_isr_handle);
   1597   005362  0E46               	movlw	low _rc_isr_handle
   1598   005364  6EE6               	movwf	postinc1,c
   1599   005366  0E57               	movlw	high _rc_isr_handle
   1600   005368  6EE6               	movwf	postinc1,c
   1601   00536A  ECBA  F02D         	call	_bsp_reg_RC_cb	;wreg free
   1602   00536E                     
-  1603                           ;main_menu.c: 68:  fsm_t fsm;;main_menu.c: 69:     uint8_t event = 0;
+  1603                           ;main.c: 68:  fsm_t fsm;;main.c: 69:     uint8_t event = 0;
   1604                           ;stkvar	_event @ sp[(-3)+2]
   1605   00536E  0EFF               	movlw	-1
   1606   005370  6AE3               	clrf	plusw1,c
   1607   005372                     
-  1608                           ;main_menu.c: 71:     fsm_init(&fsm, &init);
+  1608                           ;main.c: 71:     fsm_init(&fsm, &init);
   1609   005372  0E66               	movlw	low _init
   1610   005374  6EE6               	movwf	postinc1,c
   1611   005376  0E52               	movlw	high _init
@@ -1646,7 +1646,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1623   00538E  EC15  F02D         	call	_fsm_init	;wreg free
   1624   005392                     l5603:
   1625                           
-  1626                           ;main_menu.c: 74:         if (fsm_get_event(&event)){
+  1626                           ;main.c: 74:         if (fsm_get_event(&event)){
   1627                           ;stkvar	_event @ sp[(-3)+2]
   1628   005392  0EFF               	movlw	255
   1629   005394  24E1               	addwf	fsr1l,w,c
@@ -1665,7 +1665,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1642   0053B6  EFC9  F029         	goto	l5603
   1643   0053BA                     u5200:
   1644   0053BA                     
-  1645                           ;main_menu.c: 76:             fsm_dispatch(&fsm, event);
+  1645                           ;main.c: 76:             fsm_dispatch(&fsm, event);
   1646                           ;stkvar	_event @ sp[(-3)+2]
   1647   0053BA  0EFF               	movlw	-1
   1648   0053BC  50E3               	movf	plusw1,w,c
@@ -2870,7 +2870,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2777                           
   2778 ;; *************** function _hw_state6 *****************
   2779 ;; Defined at:
-  2780 ;;		line 423 in file "main_menu.c"
+  2780 ;;		line 423 in file "main.c"
   2781 ;; Parameters:    Size  Location     Type
   2782 ;;  fsm             2  [STACK] PTR struct fsm_t
   2783 ;;		 -> fsm(2), 
@@ -2919,11 +2919,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2818   004768                     _hw_state6:
   2819                           	callstack 0
   2820   004768                     
-  2821                           ;main_menu.c: 425:     static uint8_t leds = 0;;main_menu.c: 426:     switch(event){
+  2821                           ;main.c: 425:     static uint8_t leds = 0;;main.c: 426:     switch(event){
   2822   004768  EF03  F024         	goto	l5343
   2823   00476C                     l5315:
   2824                           
-  2825                           ;main_menu.c: 428:             printf("Enter state 6_HW\n");
+  2825                           ;main.c: 428:             printf("Enter state 6_HW\n");
   2826   00476C  0E94               	movlw	low STR_57
   2827   00476E  6EE6               	movwf	postinc1,c
   2828   004770  0EFE               	movlw	high STR_57
@@ -2932,7 +2932,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2831   004776  6EE6               	movwf	postinc1,c
   2832   004778  EC36  F02C         	call	_printf	;wreg free
   2833   00477C                     
-  2834                           ;main_menu.c: 429:             LCD_ShowString(1, "Rozsvecovani led");
+  2834                           ;main.c: 429:             LCD_ShowString(1, "Rozsvecovani led");
   2835   00477C  0EFB               	movlw	low STR_33
   2836   00477E  6EE6               	movwf	postinc1,c
   2837   004780  0EFE               	movlw	high STR_33
@@ -2941,7 +2941,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2840   004786  6EE6               	movwf	postinc1,c
   2841   004788  EC5A  F026         	call	_LCD_ShowString	;wreg free
   2842   00478C                     
-  2843                           ;main_menu.c: 430:             LCD_ShowString(2, "mackej BTN2     ");
+  2843                           ;main.c: 430:             LCD_ShowString(2, "mackej BTN2     ");
   2844   00478C  0ED9               	movlw	low STR_34
   2845   00478E  6EE6               	movwf	postinc1,c
   2846   004790  0EFE               	movlw	high STR_34
@@ -2950,15 +2950,15 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2849   004796  6EE6               	movwf	postinc1,c
   2850   004798  EC5A  F026         	call	_LCD_ShowString	;wreg free
   2851   00479C                     
-  2852                           ;main_menu.c: 431:             leds = 0b11000000;
+  2852                           ;main.c: 431:             leds = 0b11000000;
   2853   00479C  0EC0               	movlw	192
   2854   00479E  6E3B               	movwf	hw_state6@leds^0,c
   2855                           
-  2856                           ;main_menu.c: 432:             break;
+  2856                           ;main.c: 432:             break;
   2857   0047A0  EF21  F024         	goto	l499
   2858   0047A4                     l5323:
   2859                           
-  2860                           ;main_menu.c: 434:             printf("Exit state 6_HW\n");
+  2860                           ;main.c: 434:             printf("Exit state 6_HW\n");
   2861   0047A4  0EA6               	movlw	low STR_60
   2862   0047A6  6EE6               	movwf	postinc1,c
   2863   0047A8  0EFE               	movlw	high STR_60
@@ -2967,32 +2967,32 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2866   0047AE  6EE6               	movwf	postinc1,c
   2867   0047B0  EC36  F02C         	call	_printf	;wreg free
   2868   0047B4                     
-  2869                           ;main_menu.c: 435:             LCD_Clear();
+  2869                           ;main.c: 435:             LCD_Clear();
   2870   0047B4  EC89  F02C         	call	_LCD_Clear	;wreg free
   2871   0047B8                     
-  2872                           ;main_menu.c: 436:             bsp_drive_led(0);
+  2872                           ;main.c: 436:             bsp_drive_led(0);
   2873   0047B8  0E00               	movlw	0
   2874   0047BA  6EE6               	movwf	postinc1,c
   2875   0047BC  ECC9  F026         	call	_bsp_drive_led	;wreg free
   2876                           
-  2877                           ;main_menu.c: 437:             break;
+  2877                           ;main.c: 437:             break;
   2878   0047C0  EF21  F024         	goto	l499
   2879   0047C4                     l5329:
   2880                           
-  2881                           ;main_menu.c: 439:             leds = (leds >> 1);
+  2881                           ;main.c: 439:             leds = (leds >> 1);
   2882   0047C4  90D8               	bcf	status,0,c
   2883   0047C6  323B               	rrcf	hw_state6@leds^0,f,c
   2884   0047C8                     
-  2885                           ;main_menu.c: 440:             bsp_drive_led(leds);
+  2885                           ;main.c: 440:             bsp_drive_led(leds);
   2886   0047C8  503B               	movf	hw_state6@leds^0,w,c
   2887   0047CA  6EE6               	movwf	postinc1,c
   2888   0047CC  ECC9  F026         	call	_bsp_drive_led	;wreg free
   2889   0047D0                     
-  2890                           ;main_menu.c: 441:             leds += 0b10000000;
+  2890                           ;main.c: 441:             leds += 0b10000000;
   2891   0047D0  0E80               	movlw	128
   2892   0047D2  263B               	addwf	hw_state6@leds^0,f,c
   2893   0047D4                     
-  2894                           ;main_menu.c: 442:             if (leds == 0b11111111) leds = 0b10000000;
+  2894                           ;main.c: 442:             if (leds == 0b11111111) leds = 0b10000000;
   2895   0047D4  283B               	incf	hw_state6@leds^0,w,c
   2896   0047D6  A4D8               	btfss	status,2,c
   2897   0047D8  EFF0  F023         	goto	u4751
@@ -3005,7 +3005,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2904   0047E8  EF21  F024         	goto	l499
   2905   0047EC                     l5339:
   2906                           
-  2907                           ;main_menu.c: 445:             fsm_transition(fsm, &state6);
+  2907                           ;main.c: 445:             fsm_transition(fsm, &state6);
   2908   0047EC  0ED6               	movlw	low _state6
   2909   0047EE  6EE6               	movwf	postinc1,c
   2910   0047F0  0E50               	movlw	high _state6
@@ -3017,7 +3017,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2916   0047FA  CFE3 FFE6          	movff	plusw1,postinc1
   2917   0047FE  EC61  F02C         	call	_fsm_transition	;wreg free
   2918                           
-  2919                           ;main_menu.c: 446:             break;
+  2919                           ;main.c: 446:             break;
   2920   004802  EF21  F024         	goto	l499
   2921   004806                     l5343:
   2922                           
@@ -3075,7 +3075,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   2972                           
   2973 ;; *************** function _game_state5 *****************
   2974 ;; Defined at:
-  2975 ;;		line 396 in file "main_menu.c"
+  2975 ;;		line 396 in file "main.c"
   2976 ;; Parameters:    Size  Location     Type
   2977 ;;  fsm             2  [STACK] PTR struct fsm_t
   2978 ;;		 -> fsm(2), 
@@ -3124,11 +3124,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3013   00484A                     _game_state5:
   3014                           	callstack 0
   3015   00484A                     
-  3016                           ;main_menu.c: 398:     static uint8_t leds = 0;;main_menu.c: 399:     switch(event){
+  3016                           ;main.c: 398:     static uint8_t leds = 0;;main.c: 399:     switch(event){
   3017   00484A  EF74  F024         	goto	l5307
   3018   00484E                     l5279:
   3019                           
-  3020                           ;main_menu.c: 401:             printf("Enter state 5_GAME\n");
+  3020                           ;main.c: 401:             printf("Enter state 5_GAME\n");
   3021   00484E  0EB0               	movlw	low STR_53
   3022   004850  6EE6               	movwf	postinc1,c
   3023   004852  0EFD               	movlw	high STR_53
@@ -3137,7 +3137,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3026   004858  6EE6               	movwf	postinc1,c
   3027   00485A  EC36  F02C         	call	_printf	;wreg free
   3028   00485E                     
-  3029                           ;main_menu.c: 402:             LCD_ShowString(1, "Rozsvecovani led");
+  3029                           ;main.c: 402:             LCD_ShowString(1, "Rozsvecovani led");
   3030   00485E  0EFB               	movlw	low STR_33
   3031   004860  6EE6               	movwf	postinc1,c
   3032   004862  0EFE               	movlw	high STR_33
@@ -3146,7 +3146,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3035   004868  6EE6               	movwf	postinc1,c
   3036   00486A  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3037   00486E                     
-  3038                           ;main_menu.c: 403:             LCD_ShowString(2, "mackej BTN2     ");
+  3038                           ;main.c: 403:             LCD_ShowString(2, "mackej BTN2     ");
   3039   00486E  0ED9               	movlw	low STR_34
   3040   004870  6EE6               	movwf	postinc1,c
   3041   004872  0EFE               	movlw	high STR_34
@@ -3155,15 +3155,15 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3044   004878  6EE6               	movwf	postinc1,c
   3045   00487A  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3046   00487E                     
-  3047                           ;main_menu.c: 404:             leds = 0b11000000;
+  3047                           ;main.c: 404:             leds = 0b11000000;
   3048   00487E  0EC0               	movlw	192
   3049   004880  6E3C               	movwf	game_state5@leds^0,c
   3050                           
-  3051                           ;main_menu.c: 405:             break;
+  3051                           ;main.c: 405:             break;
   3052   004882  EF92  F024         	goto	l487
   3053   004886                     l5287:
   3054                           
-  3055                           ;main_menu.c: 407:             printf("Exit state 5_GAME\n");
+  3055                           ;main.c: 407:             printf("Exit state 5_GAME\n");
   3056   004886  0E12               	movlw	low STR_56
   3057   004888  6EE6               	movwf	postinc1,c
   3058   00488A  0EFE               	movlw	high STR_56
@@ -3172,32 +3172,32 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3061   004890  6EE6               	movwf	postinc1,c
   3062   004892  EC36  F02C         	call	_printf	;wreg free
   3063   004896                     
-  3064                           ;main_menu.c: 408:             LCD_Clear();
+  3064                           ;main.c: 408:             LCD_Clear();
   3065   004896  EC89  F02C         	call	_LCD_Clear	;wreg free
   3066   00489A                     
-  3067                           ;main_menu.c: 409:             bsp_drive_led(0);
+  3067                           ;main.c: 409:             bsp_drive_led(0);
   3068   00489A  0E00               	movlw	0
   3069   00489C  6EE6               	movwf	postinc1,c
   3070   00489E  ECC9  F026         	call	_bsp_drive_led	;wreg free
   3071                           
-  3072                           ;main_menu.c: 410:             break;
+  3072                           ;main.c: 410:             break;
   3073   0048A2  EF92  F024         	goto	l487
   3074   0048A6                     l5293:
   3075                           
-  3076                           ;main_menu.c: 412:             leds = (leds >> 1);
+  3076                           ;main.c: 412:             leds = (leds >> 1);
   3077   0048A6  90D8               	bcf	status,0,c
   3078   0048A8  323C               	rrcf	game_state5@leds^0,f,c
   3079   0048AA                     
-  3080                           ;main_menu.c: 413:             bsp_drive_led(leds);
+  3080                           ;main.c: 413:             bsp_drive_led(leds);
   3081   0048AA  503C               	movf	game_state5@leds^0,w,c
   3082   0048AC  6EE6               	movwf	postinc1,c
   3083   0048AE  ECC9  F026         	call	_bsp_drive_led	;wreg free
   3084   0048B2                     
-  3085                           ;main_menu.c: 414:             leds += 0b10000000;
+  3085                           ;main.c: 414:             leds += 0b10000000;
   3086   0048B2  0E80               	movlw	128
   3087   0048B4  263C               	addwf	game_state5@leds^0,f,c
   3088   0048B6                     
-  3089                           ;main_menu.c: 415:             if (leds == 0b11111111) leds = 0b10000000;
+  3089                           ;main.c: 415:             if (leds == 0b11111111) leds = 0b10000000;
   3090   0048B6  283C               	incf	game_state5@leds^0,w,c
   3091   0048B8  A4D8               	btfss	status,2,c
   3092   0048BA  EF61  F024         	goto	u4741
@@ -3210,7 +3210,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3099   0048CA  EF92  F024         	goto	l487
   3100   0048CE                     l5303:
   3101                           
-  3102                           ;main_menu.c: 418:             fsm_transition(fsm, &state5);
+  3102                           ;main.c: 418:             fsm_transition(fsm, &state5);
   3103   0048CE  0EF2               	movlw	low _state5
   3104   0048D0  6EE6               	movwf	postinc1,c
   3105   0048D2  0E41               	movlw	high _state5
@@ -3222,7 +3222,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3111   0048DC  CFE3 FFE6          	movff	plusw1,postinc1
   3112   0048E0  EC61  F02C         	call	_fsm_transition	;wreg free
   3113                           
-  3114                           ;main_menu.c: 419:             break;
+  3114                           ;main.c: 419:             break;
   3115   0048E4  EF92  F024         	goto	l487
   3116   0048E8                     l5307:
   3117                           
@@ -3280,7 +3280,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3167                           
   3168 ;; *************** function _state6 *****************
   3169 ;; Defined at:
-  3170 ;;		line 249 in file "main_menu.c"
+  3170 ;;		line 249 in file "main.c"
   3171 ;; Parameters:    Size  Location     Type
   3172 ;;  fsm             2  [STACK] PTR struct fsm_t
   3173 ;;		 -> fsm(2), 
@@ -3329,11 +3329,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3208   0050D6                     _state6:
   3209                           	callstack 0
   3210   0050D6                     
-  3211                           ;main_menu.c: 251:  switch(event){
+  3211                           ;main.c: 251:  switch(event){
   3212   0050D6  EFAD  F028         	goto	l5141
   3213   0050DA                     l5125:
   3214                           
-  3215                           ;main_menu.c: 253:             printf("Enter state 6\n");
+  3215                           ;main.c: 253:             printf("Enter state 6\n");
   3216   0050DA  0E66               	movlw	low STR_28
   3217   0050DC  6EE6               	movwf	postinc1,c
   3218   0050DE  0EFF               	movlw	high STR_28
@@ -3342,7 +3342,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3221   0050E4  6EE6               	movwf	postinc1,c
   3222   0050E6  EC36  F02C         	call	_printf	;wreg free
   3223   0050EA                     
-  3224                           ;main_menu.c: 254:             LCD_ShowString(1, "    5_GAME           ");
+  3224                           ;main.c: 254:             LCD_ShowString(1, "    5_GAME           ");
   3225   0050EA  0E44               	movlw	low STR_22
   3226   0050EC  6EE6               	movwf	postinc1,c
   3227   0050EE  0EFD               	movlw	high STR_22
@@ -3351,7 +3351,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3230   0050F4  6EE6               	movwf	postinc1,c
   3231   0050F6  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3232   0050FA                     
-  3233                           ;main_menu.c: 255:             LCD_ShowString(2, ">>> 6_HW             ");
+  3233                           ;main.c: 255:             LCD_ShowString(2, ">>> 6_HW             ");
   3234   0050FA  0EAA               	movlw	low STR_30
   3235   0050FC  6EE6               	movwf	postinc1,c
   3236   0050FE  0EFC               	movlw	high STR_30
@@ -3360,11 +3360,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3239   005104  6EE6               	movwf	postinc1,c
   3240   005106  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3241                           
-  3242                           ;main_menu.c: 256:             break;
+  3242                           ;main.c: 256:             break;
   3243   00510A  EFCB  F028         	goto	l421
   3244   00510E                     l5131:
   3245                           
-  3246                           ;main_menu.c: 258:             printf("Exit state 6\n");
+  3246                           ;main.c: 258:             printf("Exit state 6\n");
   3247   00510E  0ED8               	movlw	low STR_31
   3248   005110  6EE6               	movwf	postinc1,c
   3249   005112  0EFF               	movlw	high STR_31
@@ -3373,14 +3373,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3252   005118  6EE6               	movwf	postinc1,c
   3253   00511A  EC36  F02C         	call	_printf	;wreg free
   3254   00511E                     
-  3255                           ;main_menu.c: 259:             LCD_Clear();
+  3255                           ;main.c: 259:             LCD_Clear();
   3256   00511E  EC89  F02C         	call	_LCD_Clear	;wreg free
   3257                           
-  3258                           ;main_menu.c: 260:             break;
+  3258                           ;main.c: 260:             break;
   3259   005122  EFCB  F028         	goto	l421
   3260   005126                     l5135:
   3261                           
-  3262                           ;main_menu.c: 262:             fsm_transition(fsm, &state5);
+  3262                           ;main.c: 262:             fsm_transition(fsm, &state5);
   3263   005126  0EF2               	movlw	low _state5
   3264   005128  6EE6               	movwf	postinc1,c
   3265   00512A  0E41               	movlw	high _state5
@@ -3392,11 +3392,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3271   005134  CFE3 FFE6          	movff	plusw1,postinc1
   3272   005138  EC61  F02C         	call	_fsm_transition	;wreg free
   3273                           
-  3274                           ;main_menu.c: 263:             break;
+  3274                           ;main.c: 263:             break;
   3275   00513C  EFCB  F028         	goto	l421
   3276   005140                     l5137:
   3277                           
-  3278                           ;main_menu.c: 265:             fsm_transition(fsm, &hw_state6);
+  3278                           ;main.c: 265:             fsm_transition(fsm, &hw_state6);
   3279   005140  0E68               	movlw	low _hw_state6
   3280   005142  6EE6               	movwf	postinc1,c
   3281   005144  0E47               	movlw	high _hw_state6
@@ -3408,7 +3408,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3287   00514E  CFE3 FFE6          	movff	plusw1,postinc1
   3288   005152  EC61  F02C         	call	_fsm_transition	;wreg free
   3289                           
-  3290                           ;main_menu.c: 266:             break;
+  3290                           ;main.c: 266:             break;
   3291   005156  EFCB  F028         	goto	l421
   3292   00515A                     l5141:
   3293                           
@@ -3466,7 +3466,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3343                           
   3344 ;; *************** function _dac_state4 *****************
   3345 ;; Defined at:
-  3346 ;;		line 369 in file "main_menu.c"
+  3346 ;;		line 369 in file "main.c"
   3347 ;; Parameters:    Size  Location     Type
   3348 ;;  fsm             2  [STACK] PTR struct fsm_t
   3349 ;;		 -> fsm(2), 
@@ -3515,11 +3515,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3384   00492C                     _dac_state4:
   3385                           	callstack 0
   3386   00492C                     
-  3387                           ;main_menu.c: 371:     static uint8_t leds = 0;;main_menu.c: 372:     switch(event){
+  3387                           ;main.c: 371:     static uint8_t leds = 0;;main.c: 372:     switch(event){
   3388   00492C  EFE5  F024         	goto	l5271
   3389   004930                     l5243:
   3390                           
-  3391                           ;main_menu.c: 374:             printf("Enter state 4_DAC\n");
+  3391                           ;main.c: 374:             printf("Enter state 4_DAC\n");
   3392   004930  0EEC               	movlw	low STR_49
   3393   004932  6EE6               	movwf	postinc1,c
   3394   004934  0EFD               	movlw	high STR_49
@@ -3528,7 +3528,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3397   00493A  6EE6               	movwf	postinc1,c
   3398   00493C  EC36  F02C         	call	_printf	;wreg free
   3399   004940                     
-  3400                           ;main_menu.c: 375:             LCD_ShowString(1, "Rozsvecovani led");
+  3400                           ;main.c: 375:             LCD_ShowString(1, "Rozsvecovani led");
   3401   004940  0EFB               	movlw	low STR_33
   3402   004942  6EE6               	movwf	postinc1,c
   3403   004944  0EFE               	movlw	high STR_33
@@ -3537,7 +3537,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3406   00494A  6EE6               	movwf	postinc1,c
   3407   00494C  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3408   004950                     
-  3409                           ;main_menu.c: 376:             LCD_ShowString(2, "mackej BTN2     ");
+  3409                           ;main.c: 376:             LCD_ShowString(2, "mackej BTN2     ");
   3410   004950  0ED9               	movlw	low STR_34
   3411   004952  6EE6               	movwf	postinc1,c
   3412   004954  0EFE               	movlw	high STR_34
@@ -3546,15 +3546,15 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3415   00495A  6EE6               	movwf	postinc1,c
   3416   00495C  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3417   004960                     
-  3418                           ;main_menu.c: 377:             leds = 0b11000000;
+  3418                           ;main.c: 377:             leds = 0b11000000;
   3419   004960  0EC0               	movlw	192
   3420   004962  6E3D               	movwf	dac_state4@leds^0,c
   3421                           
-  3422                           ;main_menu.c: 378:             break;
+  3422                           ;main.c: 378:             break;
   3423   004964  EF03  F025         	goto	l475
   3424   004968                     l5251:
   3425                           
-  3426                           ;main_menu.c: 380:             printf("Exit state 4_DAC\n");
+  3426                           ;main.c: 380:             printf("Exit state 4_DAC\n");
   3427   004968  0E5E               	movlw	low STR_52
   3428   00496A  6EE6               	movwf	postinc1,c
   3429   00496C  0EFE               	movlw	high STR_52
@@ -3563,32 +3563,32 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3432   004972  6EE6               	movwf	postinc1,c
   3433   004974  EC36  F02C         	call	_printf	;wreg free
   3434   004978                     
-  3435                           ;main_menu.c: 381:             LCD_Clear();
+  3435                           ;main.c: 381:             LCD_Clear();
   3436   004978  EC89  F02C         	call	_LCD_Clear	;wreg free
   3437   00497C                     
-  3438                           ;main_menu.c: 382:             bsp_drive_led(0);
+  3438                           ;main.c: 382:             bsp_drive_led(0);
   3439   00497C  0E00               	movlw	0
   3440   00497E  6EE6               	movwf	postinc1,c
   3441   004980  ECC9  F026         	call	_bsp_drive_led	;wreg free
   3442                           
-  3443                           ;main_menu.c: 383:             break;
+  3443                           ;main.c: 383:             break;
   3444   004984  EF03  F025         	goto	l475
   3445   004988                     l5257:
   3446                           
-  3447                           ;main_menu.c: 385:             leds = (leds >> 1);
+  3447                           ;main.c: 385:             leds = (leds >> 1);
   3448   004988  90D8               	bcf	status,0,c
   3449   00498A  323D               	rrcf	dac_state4@leds^0,f,c
   3450   00498C                     
-  3451                           ;main_menu.c: 386:             bsp_drive_led(leds);
+  3451                           ;main.c: 386:             bsp_drive_led(leds);
   3452   00498C  503D               	movf	dac_state4@leds^0,w,c
   3453   00498E  6EE6               	movwf	postinc1,c
   3454   004990  ECC9  F026         	call	_bsp_drive_led	;wreg free
   3455   004994                     
-  3456                           ;main_menu.c: 387:             leds += 0b10000000;
+  3456                           ;main.c: 387:             leds += 0b10000000;
   3457   004994  0E80               	movlw	128
   3458   004996  263D               	addwf	dac_state4@leds^0,f,c
   3459   004998                     
-  3460                           ;main_menu.c: 388:             if (leds == 0b11111111) leds = 0b10000000;
+  3460                           ;main.c: 388:             if (leds == 0b11111111) leds = 0b10000000;
   3461   004998  283D               	incf	dac_state4@leds^0,w,c
   3462   00499A  A4D8               	btfss	status,2,c
   3463   00499C  EFD2  F024         	goto	u4731
@@ -3601,7 +3601,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3470   0049AC  EF03  F025         	goto	l475
   3471   0049B0                     l5267:
   3472                           
-  3473                           ;main_menu.c: 391:             fsm_transition(fsm, &state4);
+  3473                           ;main.c: 391:             fsm_transition(fsm, &state4);
   3474   0049B0  0EDC               	movlw	low _state4
   3475   0049B2  6EE6               	movwf	postinc1,c
   3476   0049B4  0E42               	movlw	high _state4
@@ -3613,7 +3613,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3482   0049BE  CFE3 FFE6          	movff	plusw1,postinc1
   3483   0049C2  EC61  F02C         	call	_fsm_transition	;wreg free
   3484                           
-  3485                           ;main_menu.c: 392:             break;
+  3485                           ;main.c: 392:             break;
   3486   0049C6  EF03  F025         	goto	l475
   3487   0049CA                     l5271:
   3488                           
@@ -3671,7 +3671,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3538                           
   3539 ;; *************** function _state5 *****************
   3540 ;; Defined at:
-  3541 ;;		line 225 in file "main_menu.c"
+  3541 ;;		line 225 in file "main.c"
   3542 ;; Parameters:    Size  Location     Type
   3543 ;;  fsm             2  [STACK] PTR struct fsm_t
   3544 ;;		 -> fsm(2), 
@@ -3721,11 +3721,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3580   0041F2                     _state5:
   3581                           	callstack 0
   3582   0041F2                     
-  3583                           ;main_menu.c: 227:  switch(event){
+  3583                           ;main.c: 227:  switch(event){
   3584   0041F2  EF48  F021         	goto	l5117
   3585   0041F6                     l5099:
   3586                           
-  3587                           ;main_menu.c: 229:             printf("Enter state 5\n");
+  3587                           ;main.c: 229:             printf("Enter state 5\n");
   3588   0041F6  0E57               	movlw	low STR_24
   3589   0041F8  6EE6               	movwf	postinc1,c
   3590   0041FA  0EFF               	movlw	high STR_24
@@ -3734,7 +3734,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3593   004200  6EE6               	movwf	postinc1,c
   3594   004202  EC36  F02C         	call	_printf	;wreg free
   3595   004206                     
-  3596                           ;main_menu.c: 230:             LCD_ShowString(1, ">>> 5_GAME           ");
+  3596                           ;main.c: 230:             LCD_ShowString(1, ">>> 5_GAME           ");
   3597   004206  0E5A               	movlw	low STR_25
   3598   004208  6EE6               	movwf	postinc1,c
   3599   00420A  0EFD               	movlw	high STR_25
@@ -3743,7 +3743,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3602   004210  6EE6               	movwf	postinc1,c
   3603   004212  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3604   004216                     
-  3605                           ;main_menu.c: 231:             LCD_ShowString(2, "    6_HW             ");
+  3605                           ;main.c: 231:             LCD_ShowString(2, "    6_HW             ");
   3606   004216  0E94               	movlw	low STR_26
   3607   004218  6EE6               	movwf	postinc1,c
   3608   00421A  0EFC               	movlw	high STR_26
@@ -3752,11 +3752,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3611   004220  6EE6               	movwf	postinc1,c
   3612   004222  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3613                           
-  3614                           ;main_menu.c: 232:             break;
+  3614                           ;main.c: 232:             break;
   3615   004226  EF6A  F021         	goto	l412
   3616   00422A                     l5105:
   3617                           
-  3618                           ;main_menu.c: 234:             printf("Exit state 5\n");
+  3618                           ;main.c: 234:             printf("Exit state 5\n");
   3619   00422A  0ECA               	movlw	low STR_27
   3620   00422C  6EE6               	movwf	postinc1,c
   3621   00422E  0EFF               	movlw	high STR_27
@@ -3765,14 +3765,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3624   004234  6EE6               	movwf	postinc1,c
   3625   004236  EC36  F02C         	call	_printf	;wreg free
   3626   00423A                     
-  3627                           ;main_menu.c: 235:             LCD_Clear();
+  3627                           ;main.c: 235:             LCD_Clear();
   3628   00423A  EC89  F02C         	call	_LCD_Clear	;wreg free
   3629                           
-  3630                           ;main_menu.c: 236:             break;
+  3630                           ;main.c: 236:             break;
   3631   00423E  EF6A  F021         	goto	l412
   3632   004242                     l5109:
   3633                           
-  3634                           ;main_menu.c: 238:             fsm_transition(fsm, &state4);
+  3634                           ;main.c: 238:             fsm_transition(fsm, &state4);
   3635   004242  0EDC               	movlw	low _state4
   3636   004244  6EE6               	movwf	postinc1,c
   3637   004246  0E42               	movlw	high _state4
@@ -3784,11 +3784,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3643   004250  CFE3 FFE6          	movff	plusw1,postinc1
   3644   004254  EC61  F02C         	call	_fsm_transition	;wreg free
   3645                           
-  3646                           ;main_menu.c: 239:             break;
+  3646                           ;main.c: 239:             break;
   3647   004258  EF6A  F021         	goto	l412
   3648   00425C                     l5111:
   3649                           
-  3650                           ;main_menu.c: 241:             fsm_transition(fsm, &state6);
+  3650                           ;main.c: 241:             fsm_transition(fsm, &state6);
   3651   00425C  0ED6               	movlw	low _state6
   3652   00425E  6EE6               	movwf	postinc1,c
   3653   004260  0E50               	movlw	high _state6
@@ -3800,11 +3800,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3659   00426A  CFE3 FFE6          	movff	plusw1,postinc1
   3660   00426E  EC61  F02C         	call	_fsm_transition	;wreg free
   3661                           
-  3662                           ;main_menu.c: 242:             break;
+  3662                           ;main.c: 242:             break;
   3663   004272  EF6A  F021         	goto	l412
   3664   004276                     l5113:
   3665                           
-  3666                           ;main_menu.c: 244:             fsm_transition(fsm, &game_state5);
+  3666                           ;main.c: 244:             fsm_transition(fsm, &game_state5);
   3667   004276  0E4A               	movlw	low _game_state5
   3668   004278  6EE6               	movwf	postinc1,c
   3669   00427A  0E48               	movlw	high _game_state5
@@ -3816,7 +3816,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3675   004284  CFE3 FFE6          	movff	plusw1,postinc1
   3676   004288  EC61  F02C         	call	_fsm_transition	;wreg free
   3677                           
-  3678                           ;main_menu.c: 245:             break;
+  3678                           ;main.c: 245:             break;
   3679   00428C  EF6A  F021         	goto	l412
   3680   004290                     l5117:
   3681                           
@@ -3877,7 +3877,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3734                           
   3735 ;; *************** function _adc_state3 *****************
   3736 ;; Defined at:
-  3737 ;;		line 345 in file "main_menu.c"
+  3737 ;;		line 345 in file "main.c"
   3738 ;; Parameters:    Size  Location     Type
   3739 ;;  fsm             2  [STACK] PTR struct fsm_t
   3740 ;;		 -> fsm(2), 
@@ -3936,11 +3936,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3784   003B1C  0E00               	movlw	0
   3785   003B1E  22E2               	addwfc	fsr1h,f,c
   3786   003B20                     
-  3787                           ;main_menu.c: 347:  switch(event){
+  3787                           ;main.c: 347:  switch(event){
   3788   003B20  EF13  F01E         	goto	l5453
   3789   003B24                     l5437:
   3790                           
-  3791                           ;main_menu.c: 349:             LCD_ShowString(1, "Potenciometr:           ");
+  3791                           ;main.c: 349:             LCD_ShowString(1, "Potenciometr:           ");
   3792   003B24  0E4D               	movlw	low STR_45
   3793   003B26  6EE6               	movwf	postinc1,c
   3794   003B28  0EFC               	movlw	high STR_45
@@ -3949,7 +3949,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3797   003B2E  6EE6               	movwf	postinc1,c
   3798   003B30  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3799   003B34                     
-  3800                           ;main_menu.c: 350:             printf("Enter state 3_ADC\n");
+  3800                           ;main.c: 350:             printf("Enter state 3_ADC\n");
   3801   003B34  0EFF               	movlw	low STR_46
   3802   003B36  6EE6               	movwf	postinc1,c
   3803   003B38  0EFD               	movlw	high STR_46
@@ -3958,11 +3958,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3806   003B3E  6EE6               	movwf	postinc1,c
   3807   003B40  EC36  F02C         	call	_printf	;wreg free
   3808                           
-  3809                           ;main_menu.c: 351:             break;
+  3809                           ;main.c: 351:             break;
   3810   003B44  EF31  F01E         	goto	l463
   3811   003B48                     l5441:
   3812                           
-  3813                           ;main_menu.c: 353:             printf("Exit state 3_ADC\n");
+  3813                           ;main.c: 353:             printf("Exit state 3_ADC\n");
   3814   003B48  0E70               	movlw	low STR_47
   3815   003B4A  6EE6               	movwf	postinc1,c
   3816   003B4C  0EFE               	movlw	high STR_47
@@ -3971,14 +3971,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3819   003B52  6EE6               	movwf	postinc1,c
   3820   003B54  EC36  F02C         	call	_printf	;wreg free
   3821   003B58                     
-  3822                           ;main_menu.c: 354:             LCD_Clear();
+  3822                           ;main.c: 354:             LCD_Clear();
   3823   003B58  EC89  F02C         	call	_LCD_Clear	;wreg free
   3824                           
-  3825                           ;main_menu.c: 355:             break;
+  3825                           ;main.c: 355:             break;
   3826   003B5C  EF31  F01E         	goto	l463
   3827   003B60                     l5445:
   3828                           
-  3829                           ;main_menu.c: 357:             fsm_transition(fsm, &state3);
+  3829                           ;main.c: 357:             fsm_transition(fsm, &state3);
   3830   003B60  0EC6               	movlw	low _state3
   3831   003B62  6EE6               	movwf	postinc1,c
   3832   003B64  0E43               	movlw	high _state3
@@ -3990,12 +3990,12 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3838   003B6E  CFE3 FFE6          	movff	plusw1,postinc1
   3839   003B72  EC61  F02C         	call	_fsm_transition	;wreg free
   3840                           
-  3841                           ;main_menu.c: 358:             break;
+  3841                           ;main.c: 358:             break;
   3842   003B76  EF31  F01E         	goto	l463
   3843   003B7A                     l5447:
   3844                           
-  3845                           ;main_menu.c: 360:         {;main_menu.c: 361:             char str[17];;main_menu.c: 36
-      +                          2:             sprintf(str, "POT: %.1f mV          ", (float)adc_read(5)*3.22265625);
+  3845                           ;main.c: 360:         {;main.c: 361:             char str[17];;main.c: 362:             
+      +                          sprintf(str, "POT: %.1f mV          ", (float)adc_read(5)*3.22265625);
   3846   003B7A  0E00               	movlw	0
   3847   003B7C  6EE6               	movwf	postinc1,c
   3848   003B7E  0E40               	movlw	64
@@ -4049,7 +4049,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3896   003C00  6EE6               	movwf	postinc1,c
   3897   003C02  EC37  F027         	call	_sprintf	;wreg free
   3898   003C06                     
-  3899                           ;main_menu.c: 363:             LCD_ShowString(2, str);
+  3899                           ;main.c: 363:             LCD_ShowString(2, str);
   3900                           ;stkvar	_str @ sp[(-17)+0]
   3901   003C06  0EEF               	movlw	239
   3902   003C08  24E1               	addwf	fsr1l,w,c
@@ -4063,7 +4063,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3910   003C1C  6EE6               	movwf	postinc1,c
   3911   003C1E  EC5A  F026         	call	_LCD_ShowString	;wreg free
   3912                           
-  3913                           ;main_menu.c: 364:             break;
+  3913                           ;main.c: 364:             break;
   3914   003C22  EF31  F01E         	goto	l463
   3915   003C26                     l5453:
   3916                           
@@ -4122,7 +4122,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   3967                           
   3968 ;; *************** function _state4 *****************
   3969 ;; Defined at:
-  3970 ;;		line 201 in file "main_menu.c"
+  3970 ;;		line 201 in file "main.c"
   3971 ;; Parameters:    Size  Location     Type
   3972 ;;  fsm             2  [STACK] PTR struct fsm_t
   3973 ;;		 -> fsm(2), 
@@ -4172,11 +4172,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4009   0042DC                     _state4:
   4010                           	callstack 0
   4011   0042DC                     
-  4012                           ;main_menu.c: 203:  switch(event){
+  4012                           ;main.c: 203:  switch(event){
   4013   0042DC  EFBD  F021         	goto	l5091
   4014   0042E0                     l5073:
   4015                           
-  4016                           ;main_menu.c: 205:             printf("Enter state 4\n");
+  4016                           ;main.c: 205:             printf("Enter state 4\n");
   4017   0042E0  0E48               	movlw	low STR_20
   4018   0042E2  6EE6               	movwf	postinc1,c
   4019   0042E4  0EFF               	movlw	high STR_20
@@ -4185,7 +4185,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4022   0042EA  6EE6               	movwf	postinc1,c
   4023   0042EC  EC36  F02C         	call	_printf	;wreg free
   4024   0042F0                     
-  4025                           ;main_menu.c: 206:             LCD_ShowString(1, ">>> 4_DAC            ");
+  4025                           ;main.c: 206:             LCD_ShowString(1, ">>> 4_DAC            ");
   4026   0042F0  0ED6               	movlw	low STR_21
   4027   0042F2  6EE6               	movwf	postinc1,c
   4028   0042F4  0EFC               	movlw	high STR_21
@@ -4194,7 +4194,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4031   0042FA  6EE6               	movwf	postinc1,c
   4032   0042FC  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4033   004300                     
-  4034                           ;main_menu.c: 207:             LCD_ShowString(2, "    5_GAME           ");
+  4034                           ;main.c: 207:             LCD_ShowString(2, "    5_GAME           ");
   4035   004300  0E44               	movlw	low STR_22
   4036   004302  6EE6               	movwf	postinc1,c
   4037   004304  0EFD               	movlw	high STR_22
@@ -4203,11 +4203,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4040   00430A  6EE6               	movwf	postinc1,c
   4041   00430C  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4042                           
-  4043                           ;main_menu.c: 208:             break;
+  4043                           ;main.c: 208:             break;
   4044   004310  EFDF  F021         	goto	l402
   4045   004314                     l5079:
   4046                           
-  4047                           ;main_menu.c: 210:             printf("Exit state 4\n");
+  4047                           ;main.c: 210:             printf("Exit state 4\n");
   4048   004314  0EBC               	movlw	low STR_23
   4049   004316  6EE6               	movwf	postinc1,c
   4050   004318  0EFF               	movlw	high STR_23
@@ -4216,14 +4216,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4053   00431E  6EE6               	movwf	postinc1,c
   4054   004320  EC36  F02C         	call	_printf	;wreg free
   4055   004324                     
-  4056                           ;main_menu.c: 211:             LCD_Clear();
+  4056                           ;main.c: 211:             LCD_Clear();
   4057   004324  EC89  F02C         	call	_LCD_Clear	;wreg free
   4058                           
-  4059                           ;main_menu.c: 212:             break;
+  4059                           ;main.c: 212:             break;
   4060   004328  EFDF  F021         	goto	l402
   4061   00432C                     l5083:
   4062                           
-  4063                           ;main_menu.c: 214:             fsm_transition(fsm, &state3);
+  4063                           ;main.c: 214:             fsm_transition(fsm, &state3);
   4064   00432C  0EC6               	movlw	low _state3
   4065   00432E  6EE6               	movwf	postinc1,c
   4066   004330  0E43               	movlw	high _state3
@@ -4235,11 +4235,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4072   00433A  CFE3 FFE6          	movff	plusw1,postinc1
   4073   00433E  EC61  F02C         	call	_fsm_transition	;wreg free
   4074                           
-  4075                           ;main_menu.c: 215:             break;
+  4075                           ;main.c: 215:             break;
   4076   004342  EFDF  F021         	goto	l402
   4077   004346                     l5085:
   4078                           
-  4079                           ;main_menu.c: 217:             fsm_transition(fsm, &state5);
+  4079                           ;main.c: 217:             fsm_transition(fsm, &state5);
   4080   004346  0EF2               	movlw	low _state5
   4081   004348  6EE6               	movwf	postinc1,c
   4082   00434A  0E41               	movlw	high _state5
@@ -4251,11 +4251,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4088   004354  CFE3 FFE6          	movff	plusw1,postinc1
   4089   004358  EC61  F02C         	call	_fsm_transition	;wreg free
   4090                           
-  4091                           ;main_menu.c: 218:             break;
+  4091                           ;main.c: 218:             break;
   4092   00435C  EFDF  F021         	goto	l402
   4093   004360                     l5087:
   4094                           
-  4095                           ;main_menu.c: 220:             fsm_transition(fsm, &dac_state4);
+  4095                           ;main.c: 220:             fsm_transition(fsm, &dac_state4);
   4096   004360  0E2C               	movlw	low _dac_state4
   4097   004362  6EE6               	movwf	postinc1,c
   4098   004364  0E49               	movlw	high _dac_state4
@@ -4267,7 +4267,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4104   00436E  CFE3 FFE6          	movff	plusw1,postinc1
   4105   004372  EC61  F02C         	call	_fsm_transition	;wreg free
   4106                           
-  4107                           ;main_menu.c: 221:             break;
+  4107                           ;main.c: 221:             break;
   4108   004376  EFDF  F021         	goto	l402
   4109   00437A                     l5091:
   4110                           
@@ -4328,7 +4328,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4163                           
   4164 ;; *************** function _pwm_state2 *****************
   4165 ;; Defined at:
-  4166 ;;		line 318 in file "main_menu.c"
+  4166 ;;		line 318 in file "main.c"
   4167 ;; Parameters:    Size  Location     Type
   4168 ;;  fsm             2  [STACK] PTR struct fsm_t
   4169 ;;		 -> fsm(2), 
@@ -4377,11 +4377,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4204   004A0E                     _pwm_state2:
   4205                           	callstack 0
   4206   004A0E                     
-  4207                           ;main_menu.c: 320:     static uint8_t leds = 0;;main_menu.c: 321:     switch(event){
+  4207                           ;main.c: 320:     static uint8_t leds = 0;;main.c: 321:     switch(event){
   4208   004A0E  EF56  F025         	goto	l5235
   4209   004A12                     l5207:
   4210                           
-  4211                           ;main_menu.c: 323:             printf("Enter state 2_PWM\n");
+  4211                           ;main.c: 323:             printf("Enter state 2_PWM\n");
   4212   004A12  0E25               	movlw	low STR_41
   4213   004A14  6EE6               	movwf	postinc1,c
   4214   004A16  0EFE               	movlw	high STR_41
@@ -4390,7 +4390,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4217   004A1C  6EE6               	movwf	postinc1,c
   4218   004A1E  EC36  F02C         	call	_printf	;wreg free
   4219   004A22                     
-  4220                           ;main_menu.c: 324:             LCD_ShowString(1, "Rozsvecovani led");
+  4220                           ;main.c: 324:             LCD_ShowString(1, "Rozsvecovani led");
   4221   004A22  0EFB               	movlw	low STR_33
   4222   004A24  6EE6               	movwf	postinc1,c
   4223   004A26  0EFE               	movlw	high STR_33
@@ -4399,7 +4399,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4226   004A2C  6EE6               	movwf	postinc1,c
   4227   004A2E  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4228   004A32                     
-  4229                           ;main_menu.c: 325:             LCD_ShowString(2, "mackej BTN2     ");
+  4229                           ;main.c: 325:             LCD_ShowString(2, "mackej BTN2     ");
   4230   004A32  0ED9               	movlw	low STR_34
   4231   004A34  6EE6               	movwf	postinc1,c
   4232   004A36  0EFE               	movlw	high STR_34
@@ -4408,15 +4408,15 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4235   004A3C  6EE6               	movwf	postinc1,c
   4236   004A3E  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4237   004A42                     
-  4238                           ;main_menu.c: 326:             leds = 0b11000000;
+  4238                           ;main.c: 326:             leds = 0b11000000;
   4239   004A42  0EC0               	movlw	192
   4240   004A44  6E3E               	movwf	pwm_state2@leds^0,c
   4241                           
-  4242                           ;main_menu.c: 327:             break;
+  4242                           ;main.c: 327:             break;
   4243   004A46  EF74  F025         	goto	l454
   4244   004A4A                     l5215:
   4245                           
-  4246                           ;main_menu.c: 329:             printf("Exit state 2_PWM\n");
+  4246                           ;main.c: 329:             printf("Exit state 2_PWM\n");
   4247   004A4A  0E82               	movlw	low STR_44
   4248   004A4C  6EE6               	movwf	postinc1,c
   4249   004A4E  0EFE               	movlw	high STR_44
@@ -4425,32 +4425,32 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4252   004A54  6EE6               	movwf	postinc1,c
   4253   004A56  EC36  F02C         	call	_printf	;wreg free
   4254   004A5A                     
-  4255                           ;main_menu.c: 330:             LCD_Clear();
+  4255                           ;main.c: 330:             LCD_Clear();
   4256   004A5A  EC89  F02C         	call	_LCD_Clear	;wreg free
   4257   004A5E                     
-  4258                           ;main_menu.c: 331:             bsp_drive_led(0);
+  4258                           ;main.c: 331:             bsp_drive_led(0);
   4259   004A5E  0E00               	movlw	0
   4260   004A60  6EE6               	movwf	postinc1,c
   4261   004A62  ECC9  F026         	call	_bsp_drive_led	;wreg free
   4262                           
-  4263                           ;main_menu.c: 332:             break;
+  4263                           ;main.c: 332:             break;
   4264   004A66  EF74  F025         	goto	l454
   4265   004A6A                     l5221:
   4266                           
-  4267                           ;main_menu.c: 334:             leds = (leds >> 1);
+  4267                           ;main.c: 334:             leds = (leds >> 1);
   4268   004A6A  90D8               	bcf	status,0,c
   4269   004A6C  323E               	rrcf	pwm_state2@leds^0,f,c
   4270   004A6E                     
-  4271                           ;main_menu.c: 335:             bsp_drive_led(leds);
+  4271                           ;main.c: 335:             bsp_drive_led(leds);
   4272   004A6E  503E               	movf	pwm_state2@leds^0,w,c
   4273   004A70  6EE6               	movwf	postinc1,c
   4274   004A72  ECC9  F026         	call	_bsp_drive_led	;wreg free
   4275   004A76                     
-  4276                           ;main_menu.c: 336:             leds += 0b10000000;
+  4276                           ;main.c: 336:             leds += 0b10000000;
   4277   004A76  0E80               	movlw	128
   4278   004A78  263E               	addwf	pwm_state2@leds^0,f,c
   4279   004A7A                     
-  4280                           ;main_menu.c: 337:             if (leds == 0b11111111) leds = 0b10000000;
+  4280                           ;main.c: 337:             if (leds == 0b11111111) leds = 0b10000000;
   4281   004A7A  283E               	incf	pwm_state2@leds^0,w,c
   4282   004A7C  A4D8               	btfss	status,2,c
   4283   004A7E  EF43  F025         	goto	u4721
@@ -4463,7 +4463,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4290   004A8E  EF74  F025         	goto	l454
   4291   004A92                     l5231:
   4292                           
-  4293                           ;main_menu.c: 340:             fsm_transition(fsm, &state2);
+  4293                           ;main.c: 340:             fsm_transition(fsm, &state2);
   4294   004A92  0EB0               	movlw	low _state2
   4295   004A94  6EE6               	movwf	postinc1,c
   4296   004A96  0E44               	movlw	high _state2
@@ -4475,7 +4475,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4302   004AA0  CFE3 FFE6          	movff	plusw1,postinc1
   4303   004AA4  EC61  F02C         	call	_fsm_transition	;wreg free
   4304                           
-  4305                           ;main_menu.c: 341:             break;
+  4305                           ;main.c: 341:             break;
   4306   004AA8  EF74  F025         	goto	l454
   4307   004AAC                     l5235:
   4308                           
@@ -4533,7 +4533,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4358                           
   4359 ;; *************** function _state3 *****************
   4360 ;; Defined at:
-  4361 ;;		line 177 in file "main_menu.c"
+  4361 ;;		line 177 in file "main.c"
   4362 ;; Parameters:    Size  Location     Type
   4363 ;;  fsm             2  [STACK] PTR struct fsm_t
   4364 ;;		 -> fsm(2), 
@@ -4583,11 +4583,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4400   0043C6                     _state3:
   4401                           	callstack 0
   4402   0043C6                     
-  4403                           ;main_menu.c: 179:  switch(event){
+  4403                           ;main.c: 179:  switch(event){
   4404   0043C6  EF32  F022         	goto	l5065
   4405   0043CA                     l5047:
   4406                           
-  4407                           ;main_menu.c: 181:             printf("Enter state 3\n");
+  4407                           ;main.c: 181:             printf("Enter state 3\n");
   4408   0043CA  0E39               	movlw	low STR_16
   4409   0043CC  6EE6               	movwf	postinc1,c
   4410   0043CE  0EFF               	movlw	high STR_16
@@ -4596,7 +4596,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4413   0043D4  6EE6               	movwf	postinc1,c
   4414   0043D6  EC36  F02C         	call	_printf	;wreg free
   4415   0043DA                     
-  4416                           ;main_menu.c: 182:             LCD_ShowString(1, ">>> 3_ADC            ");
+  4416                           ;main.c: 182:             LCD_ShowString(1, ">>> 3_ADC            ");
   4417   0043DA  0E02               	movlw	low STR_17
   4418   0043DC  6EE6               	movwf	postinc1,c
   4419   0043DE  0EFD               	movlw	high STR_17
@@ -4605,7 +4605,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4422   0043E4  6EE6               	movwf	postinc1,c
   4423   0043E6  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4424   0043EA                     
-  4425                           ;main_menu.c: 183:             LCD_ShowString(2, "    4_DAC            ");
+  4425                           ;main.c: 183:             LCD_ShowString(2, "    4_DAC            ");
   4426   0043EA  0EC0               	movlw	low STR_18
   4427   0043EC  6EE6               	movwf	postinc1,c
   4428   0043EE  0EFC               	movlw	high STR_18
@@ -4614,11 +4614,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4431   0043F4  6EE6               	movwf	postinc1,c
   4432   0043F6  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4433                           
-  4434                           ;main_menu.c: 184:             break;
+  4434                           ;main.c: 184:             break;
   4435   0043FA  EF54  F022         	goto	l392
   4436   0043FE                     l5053:
   4437                           
-  4438                           ;main_menu.c: 186:             printf("Exit state 3\n");
+  4438                           ;main.c: 186:             printf("Exit state 3\n");
   4439   0043FE  0EAE               	movlw	low STR_19
   4440   004400  6EE6               	movwf	postinc1,c
   4441   004402  0EFF               	movlw	high STR_19
@@ -4627,14 +4627,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4444   004408  6EE6               	movwf	postinc1,c
   4445   00440A  EC36  F02C         	call	_printf	;wreg free
   4446   00440E                     
-  4447                           ;main_menu.c: 187:             LCD_Clear();
+  4447                           ;main.c: 187:             LCD_Clear();
   4448   00440E  EC89  F02C         	call	_LCD_Clear	;wreg free
   4449                           
-  4450                           ;main_menu.c: 188:             break;
+  4450                           ;main.c: 188:             break;
   4451   004412  EF54  F022         	goto	l392
   4452   004416                     l5057:
   4453                           
-  4454                           ;main_menu.c: 190:             fsm_transition(fsm, &state2);
+  4454                           ;main.c: 190:             fsm_transition(fsm, &state2);
   4455   004416  0EB0               	movlw	low _state2
   4456   004418  6EE6               	movwf	postinc1,c
   4457   00441A  0E44               	movlw	high _state2
@@ -4646,11 +4646,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4463   004424  CFE3 FFE6          	movff	plusw1,postinc1
   4464   004428  EC61  F02C         	call	_fsm_transition	;wreg free
   4465                           
-  4466                           ;main_menu.c: 191:             break;
+  4466                           ;main.c: 191:             break;
   4467   00442C  EF54  F022         	goto	l392
   4468   004430                     l5059:
   4469                           
-  4470                           ;main_menu.c: 193:             fsm_transition(fsm, &state4);
+  4470                           ;main.c: 193:             fsm_transition(fsm, &state4);
   4471   004430  0EDC               	movlw	low _state4
   4472   004432  6EE6               	movwf	postinc1,c
   4473   004434  0E42               	movlw	high _state4
@@ -4662,11 +4662,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4479   00443E  CFE3 FFE6          	movff	plusw1,postinc1
   4480   004442  EC61  F02C         	call	_fsm_transition	;wreg free
   4481                           
-  4482                           ;main_menu.c: 194:             break;
+  4482                           ;main.c: 194:             break;
   4483   004446  EF54  F022         	goto	l392
   4484   00444A                     l5061:
   4485                           
-  4486                           ;main_menu.c: 196:             fsm_transition(fsm, &adc_state3);
+  4486                           ;main.c: 196:             fsm_transition(fsm, &adc_state3);
   4487   00444A  0E18               	movlw	low _adc_state3
   4488   00444C  6EE6               	movwf	postinc1,c
   4489   00444E  0E3B               	movlw	high _adc_state3
@@ -4678,7 +4678,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4495   004458  CFE3 FFE6          	movff	plusw1,postinc1
   4496   00445C  EC61  F02C         	call	_fsm_transition	;wreg free
   4497                           
-  4498                           ;main_menu.c: 197:             break;
+  4498                           ;main.c: 197:             break;
   4499   004460  EF54  F022         	goto	l392
   4500   004464                     l5065:
   4501                           
@@ -4739,7 +4739,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4554                           
   4555 ;; *************** function _state2 *****************
   4556 ;; Defined at:
-  4557 ;;		line 153 in file "main_menu.c"
+  4557 ;;		line 153 in file "main.c"
   4558 ;; Parameters:    Size  Location     Type
   4559 ;;  fsm             2  [STACK] PTR struct fsm_t
   4560 ;;		 -> fsm(2), 
@@ -4789,11 +4789,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4596   0044B0                     _state2:
   4597                           	callstack 0
   4598   0044B0                     
-  4599                           ;main_menu.c: 155:  switch(event){
+  4599                           ;main.c: 155:  switch(event){
   4600   0044B0  EFA7  F022         	goto	l5039
   4601   0044B4                     l5021:
   4602                           
-  4603                           ;main_menu.c: 157:             printf("Enter state 2\n");
+  4603                           ;main.c: 157:             printf("Enter state 2\n");
   4604   0044B4  0E2A               	movlw	low STR_12
   4605   0044B6  6EE6               	movwf	postinc1,c
   4606   0044B8  0EFF               	movlw	high STR_12
@@ -4802,7 +4802,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4609   0044BE  6EE6               	movwf	postinc1,c
   4610   0044C0  EC36  F02C         	call	_printf	;wreg free
   4611   0044C4                     
-  4612                           ;main_menu.c: 158:             LCD_ShowString(1, ">>> 2_PWM            ");
+  4612                           ;main.c: 158:             LCD_ShowString(1, ">>> 2_PWM            ");
   4613   0044C4  0E2E               	movlw	low STR_13
   4614   0044C6  6EE6               	movwf	postinc1,c
   4615   0044C8  0EFD               	movlw	high STR_13
@@ -4811,7 +4811,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4618   0044CE  6EE6               	movwf	postinc1,c
   4619   0044D0  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4620   0044D4                     
-  4621                           ;main_menu.c: 159:             LCD_ShowString(2, "    3_ADC            ");
+  4621                           ;main.c: 159:             LCD_ShowString(2, "    3_ADC            ");
   4622   0044D4  0EEC               	movlw	low STR_14
   4623   0044D6  6EE6               	movwf	postinc1,c
   4624   0044D8  0EFC               	movlw	high STR_14
@@ -4820,11 +4820,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4627   0044DE  6EE6               	movwf	postinc1,c
   4628   0044E0  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4629                           
-  4630                           ;main_menu.c: 160:             break;
+  4630                           ;main.c: 160:             break;
   4631   0044E4  EFC9  F022         	goto	l382
   4632   0044E8                     l5027:
   4633                           
-  4634                           ;main_menu.c: 162:             printf("Exit state 2\n");
+  4634                           ;main.c: 162:             printf("Exit state 2\n");
   4635   0044E8  0EA0               	movlw	low STR_15
   4636   0044EA  6EE6               	movwf	postinc1,c
   4637   0044EC  0EFF               	movlw	high STR_15
@@ -4833,14 +4833,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4640   0044F2  6EE6               	movwf	postinc1,c
   4641   0044F4  EC36  F02C         	call	_printf	;wreg free
   4642   0044F8                     
-  4643                           ;main_menu.c: 163:             LCD_Clear();
+  4643                           ;main.c: 163:             LCD_Clear();
   4644   0044F8  EC89  F02C         	call	_LCD_Clear	;wreg free
   4645                           
-  4646                           ;main_menu.c: 164:             break;
+  4646                           ;main.c: 164:             break;
   4647   0044FC  EFC9  F022         	goto	l382
   4648   004500                     l5031:
   4649                           
-  4650                           ;main_menu.c: 166:             fsm_transition(fsm, &state1);
+  4650                           ;main.c: 166:             fsm_transition(fsm, &state1);
   4651   004500  0E9A               	movlw	low _state1
   4652   004502  6EE6               	movwf	postinc1,c
   4653   004504  0E45               	movlw	high _state1
@@ -4852,11 +4852,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4659   00450E  CFE3 FFE6          	movff	plusw1,postinc1
   4660   004512  EC61  F02C         	call	_fsm_transition	;wreg free
   4661                           
-  4662                           ;main_menu.c: 167:             break;
+  4662                           ;main.c: 167:             break;
   4663   004516  EFC9  F022         	goto	l382
   4664   00451A                     l5033:
   4665                           
-  4666                           ;main_menu.c: 169:             fsm_transition(fsm, &state3);
+  4666                           ;main.c: 169:             fsm_transition(fsm, &state3);
   4667   00451A  0EC6               	movlw	low _state3
   4668   00451C  6EE6               	movwf	postinc1,c
   4669   00451E  0E43               	movlw	high _state3
@@ -4868,11 +4868,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4675   004528  CFE3 FFE6          	movff	plusw1,postinc1
   4676   00452C  EC61  F02C         	call	_fsm_transition	;wreg free
   4677                           
-  4678                           ;main_menu.c: 170:             break;
+  4678                           ;main.c: 170:             break;
   4679   004530  EFC9  F022         	goto	l382
   4680   004534                     l5035:
   4681                           
-  4682                           ;main_menu.c: 172:             fsm_transition(fsm, &pwm_state2);
+  4682                           ;main.c: 172:             fsm_transition(fsm, &pwm_state2);
   4683   004534  0E0E               	movlw	low _pwm_state2
   4684   004536  6EE6               	movwf	postinc1,c
   4685   004538  0E4A               	movlw	high _pwm_state2
@@ -4884,7 +4884,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4691   004542  CFE3 FFE6          	movff	plusw1,postinc1
   4692   004546  EC61  F02C         	call	_fsm_transition	;wreg free
   4693                           
-  4694                           ;main_menu.c: 173:             break;
+  4694                           ;main.c: 173:             break;
   4695   00454A  EFC9  F022         	goto	l382
   4696   00454E                     l5039:
   4697                           
@@ -4945,7 +4945,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4750                           
   4751 ;; *************** function _gpio_state0 *****************
   4752 ;; Defined at:
-  4753 ;;		line 270 in file "main_menu.c"
+  4753 ;;		line 270 in file "main.c"
   4754 ;; Parameters:    Size  Location     Type
   4755 ;;  fsm             2  [STACK] PTR struct fsm_t
   4756 ;;		 -> fsm(2), 
@@ -4994,11 +4994,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4791   004AF0                     _gpio_state0:
   4792                           	callstack 0
   4793   004AF0                     
-  4794                           ;main_menu.c: 272:     static uint8_t leds = 0;;main_menu.c: 273:     switch(event){
+  4794                           ;main.c: 272:     static uint8_t leds = 0;;main.c: 273:     switch(event){
   4795   004AF0  EFC7  F025         	goto	l5177
   4796   004AF4                     l5149:
   4797                           
-  4798                           ;main_menu.c: 275:             printf("Enter state 0_GPIO\n");
+  4798                           ;main.c: 275:             printf("Enter state 0_GPIO\n");
   4799   004AF4  0EC4               	movlw	low STR_32
   4800   004AF6  6EE6               	movwf	postinc1,c
   4801   004AF8  0EFD               	movlw	high STR_32
@@ -5007,7 +5007,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4804   004AFE  6EE6               	movwf	postinc1,c
   4805   004B00  EC36  F02C         	call	_printf	;wreg free
   4806   004B04                     
-  4807                           ;main_menu.c: 276:             LCD_ShowString(1, "Rozsvecovani led");
+  4807                           ;main.c: 276:             LCD_ShowString(1, "Rozsvecovani led");
   4808   004B04  0EFB               	movlw	low STR_33
   4809   004B06  6EE6               	movwf	postinc1,c
   4810   004B08  0EFE               	movlw	high STR_33
@@ -5016,7 +5016,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4813   004B0E  6EE6               	movwf	postinc1,c
   4814   004B10  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4815   004B14                     
-  4816                           ;main_menu.c: 277:             LCD_ShowString(2, "mackej BTN2     ");
+  4816                           ;main.c: 277:             LCD_ShowString(2, "mackej BTN2     ");
   4817   004B14  0ED9               	movlw	low STR_34
   4818   004B16  6EE6               	movwf	postinc1,c
   4819   004B18  0EFE               	movlw	high STR_34
@@ -5025,15 +5025,15 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4822   004B1E  6EE6               	movwf	postinc1,c
   4823   004B20  EC5A  F026         	call	_LCD_ShowString	;wreg free
   4824   004B24                     
-  4825                           ;main_menu.c: 278:             leds = 0b11000000;
+  4825                           ;main.c: 278:             leds = 0b11000000;
   4826   004B24  0EC0               	movlw	192
   4827   004B26  6E3F               	movwf	gpio_state0@leds^0,c
   4828                           
-  4829                           ;main_menu.c: 279:             break;
+  4829                           ;main.c: 279:             break;
   4830   004B28  EFE5  F025         	goto	l433
   4831   004B2C                     l5157:
   4832                           
-  4833                           ;main_menu.c: 281:             printf("Exit state 0_GPIO\n");
+  4833                           ;main.c: 281:             printf("Exit state 0_GPIO\n");
   4834   004B2C  0E38               	movlw	low STR_35
   4835   004B2E  6EE6               	movwf	postinc1,c
   4836   004B30  0EFE               	movlw	high STR_35
@@ -5042,32 +5042,32 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4839   004B36  6EE6               	movwf	postinc1,c
   4840   004B38  EC36  F02C         	call	_printf	;wreg free
   4841   004B3C                     
-  4842                           ;main_menu.c: 282:             LCD_Clear();
+  4842                           ;main.c: 282:             LCD_Clear();
   4843   004B3C  EC89  F02C         	call	_LCD_Clear	;wreg free
   4844   004B40                     
-  4845                           ;main_menu.c: 283:             bsp_drive_led(0);
+  4845                           ;main.c: 283:             bsp_drive_led(0);
   4846   004B40  0E00               	movlw	0
   4847   004B42  6EE6               	movwf	postinc1,c
   4848   004B44  ECC9  F026         	call	_bsp_drive_led	;wreg free
   4849                           
-  4850                           ;main_menu.c: 284:             break;
+  4850                           ;main.c: 284:             break;
   4851   004B48  EFE5  F025         	goto	l433
   4852   004B4C                     l5163:
   4853                           
-  4854                           ;main_menu.c: 286:             leds = (leds >> 1);
+  4854                           ;main.c: 286:             leds = (leds >> 1);
   4855   004B4C  90D8               	bcf	status,0,c
   4856   004B4E  323F               	rrcf	gpio_state0@leds^0,f,c
   4857   004B50                     
-  4858                           ;main_menu.c: 287:             bsp_drive_led(leds);
+  4858                           ;main.c: 287:             bsp_drive_led(leds);
   4859   004B50  503F               	movf	gpio_state0@leds^0,w,c
   4860   004B52  6EE6               	movwf	postinc1,c
   4861   004B54  ECC9  F026         	call	_bsp_drive_led	;wreg free
   4862   004B58                     
-  4863                           ;main_menu.c: 288:             leds += 0b10000000;
+  4863                           ;main.c: 288:             leds += 0b10000000;
   4864   004B58  0E80               	movlw	128
   4865   004B5A  263F               	addwf	gpio_state0@leds^0,f,c
   4866   004B5C                     
-  4867                           ;main_menu.c: 289:             if (leds == 0b11111111) leds = 0b10000000;
+  4867                           ;main.c: 289:             if (leds == 0b11111111) leds = 0b10000000;
   4868   004B5C  283F               	incf	gpio_state0@leds^0,w,c
   4869   004B5E  A4D8               	btfss	status,2,c
   4870   004B60  EFB4  F025         	goto	u4711
@@ -5080,7 +5080,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4877   004B70  EFE5  F025         	goto	l433
   4878   004B74                     l5173:
   4879                           
-  4880                           ;main_menu.c: 292:             fsm_transition(fsm, &state0);
+  4880                           ;main.c: 292:             fsm_transition(fsm, &state0);
   4881   004B74  0E9E               	movlw	low _state0
   4882   004B76  6EE6               	movwf	postinc1,c
   4883   004B78  0E51               	movlw	high _state0
@@ -5092,7 +5092,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4889   004B82  CFE3 FFE6          	movff	plusw1,postinc1
   4890   004B86  EC61  F02C         	call	_fsm_transition	;wreg free
   4891                           
-  4892                           ;main_menu.c: 293:             break;
+  4892                           ;main.c: 293:             break;
   4893   004B8A  EFE5  F025         	goto	l433
   4894   004B8E                     l5177:
   4895                           
@@ -5150,7 +5150,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4945                           
   4946 ;; *************** function _state1 *****************
   4947 ;; Defined at:
-  4948 ;;		line 129 in file "main_menu.c"
+  4948 ;;		line 129 in file "main.c"
   4949 ;; Parameters:    Size  Location     Type
   4950 ;;  fsm             2  [STACK] PTR struct fsm_t
   4951 ;;		 -> fsm(2), 
@@ -5200,11 +5200,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   4987   00459A                     _state1:
   4988                           	callstack 0
   4989   00459A                     
-  4990                           ;main_menu.c: 131:  switch(event){
+  4990                           ;main.c: 131:  switch(event){
   4991   00459A  EF1C  F023         	goto	l5013
   4992   00459E                     l4995:
   4993                           
-  4994                           ;main_menu.c: 133:             printf("Enter state 1\n");
+  4994                           ;main.c: 133:             printf("Enter state 1\n");
   4995   00459E  0E1B               	movlw	low STR_8
   4996   0045A0  6EE6               	movwf	postinc1,c
   4997   0045A2  0EFF               	movlw	high STR_8
@@ -5213,7 +5213,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5000   0045A8  6EE6               	movwf	postinc1,c
   5001   0045AA  EC36  F02C         	call	_printf	;wreg free
   5002   0045AE                     
-  5003                           ;main_menu.c: 134:             LCD_ShowString(1, ">>> 1_UART           ");
+  5003                           ;main.c: 134:             LCD_ShowString(1, ">>> 1_UART           ");
   5004   0045AE  0E70               	movlw	low STR_9
   5005   0045B0  6EE6               	movwf	postinc1,c
   5006   0045B2  0EFD               	movlw	high STR_9
@@ -5222,7 +5222,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5009   0045B8  6EE6               	movwf	postinc1,c
   5010   0045BA  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5011   0045BE                     
-  5012                           ;main_menu.c: 135:             LCD_ShowString(2, "    2_PWM            ");
+  5012                           ;main.c: 135:             LCD_ShowString(2, "    2_PWM            ");
   5013   0045BE  0E18               	movlw	low STR_10
   5014   0045C0  6EE6               	movwf	postinc1,c
   5015   0045C2  0EFD               	movlw	high STR_10
@@ -5231,11 +5231,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5018   0045C8  6EE6               	movwf	postinc1,c
   5019   0045CA  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5020                           
-  5021                           ;main_menu.c: 136:             break;
+  5021                           ;main.c: 136:             break;
   5022   0045CE  EF3E  F023         	goto	l372
   5023   0045D2                     l5001:
   5024                           
-  5025                           ;main_menu.c: 138:             printf("Exit state 1\n");
+  5025                           ;main.c: 138:             printf("Exit state 1\n");
   5026   0045D2  0E92               	movlw	low STR_11
   5027   0045D4  6EE6               	movwf	postinc1,c
   5028   0045D6  0EFF               	movlw	high STR_11
@@ -5244,14 +5244,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5031   0045DC  6EE6               	movwf	postinc1,c
   5032   0045DE  EC36  F02C         	call	_printf	;wreg free
   5033   0045E2                     
-  5034                           ;main_menu.c: 139:             LCD_Clear();
+  5034                           ;main.c: 139:             LCD_Clear();
   5035   0045E2  EC89  F02C         	call	_LCD_Clear	;wreg free
   5036                           
-  5037                           ;main_menu.c: 140:             break;
+  5037                           ;main.c: 140:             break;
   5038   0045E6  EF3E  F023         	goto	l372
   5039   0045EA                     l5005:
   5040                           
-  5041                           ;main_menu.c: 142:             fsm_transition(fsm, &state0);
+  5041                           ;main.c: 142:             fsm_transition(fsm, &state0);
   5042   0045EA  0E9E               	movlw	low _state0
   5043   0045EC  6EE6               	movwf	postinc1,c
   5044   0045EE  0E51               	movlw	high _state0
@@ -5263,11 +5263,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5050   0045F8  CFE3 FFE6          	movff	plusw1,postinc1
   5051   0045FC  EC61  F02C         	call	_fsm_transition	;wreg free
   5052                           
-  5053                           ;main_menu.c: 143:             break;
+  5053                           ;main.c: 143:             break;
   5054   004600  EF3E  F023         	goto	l372
   5055   004604                     l5007:
   5056                           
-  5057                           ;main_menu.c: 145:             fsm_transition(fsm, &state2);
+  5057                           ;main.c: 145:             fsm_transition(fsm, &state2);
   5058   004604  0EB0               	movlw	low _state2
   5059   004606  6EE6               	movwf	postinc1,c
   5060   004608  0E44               	movlw	high _state2
@@ -5279,11 +5279,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5066   004612  CFE3 FFE6          	movff	plusw1,postinc1
   5067   004616  EC61  F02C         	call	_fsm_transition	;wreg free
   5068                           
-  5069                           ;main_menu.c: 146:             break;
+  5069                           ;main.c: 146:             break;
   5070   00461A  EF3E  F023         	goto	l372
   5071   00461E                     l5009:
   5072                           
-  5073                           ;main_menu.c: 148:             fsm_transition(fsm, &uart_state1);
+  5073                           ;main.c: 148:             fsm_transition(fsm, &uart_state1);
   5074   00461E  0E0C               	movlw	low _uart_state1
   5075   004620  6EE6               	movwf	postinc1,c
   5076   004622  0E50               	movlw	high _uart_state1
@@ -5295,7 +5295,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5082   00462C  CFE3 FFE6          	movff	plusw1,postinc1
   5083   004630  EC61  F02C         	call	_fsm_transition	;wreg free
   5084                           
-  5085                           ;main_menu.c: 149:             break;
+  5085                           ;main.c: 149:             break;
   5086   004634  EF3E  F023         	goto	l372
   5087   004638                     l5013:
   5088                           
@@ -5356,7 +5356,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5141                           
   5142 ;; *************** function _state0 *****************
   5143 ;; Defined at:
-  5144 ;;		line 108 in file "main_menu.c"
+  5144 ;;		line 108 in file "main.c"
   5145 ;; Parameters:    Size  Location     Type
   5146 ;;  fsm             2  [STACK] PTR struct fsm_t
   5147 ;;		 -> fsm(2), 
@@ -5406,11 +5406,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5183   00519E                     _state0:
   5184                           	callstack 0
   5185   00519E                     
-  5186                           ;main_menu.c: 110:  switch(event){
+  5186                           ;main.c: 110:  switch(event){
   5187   00519E  EF11  F029         	goto	l4987
   5188   0051A2                     l4971:
   5189                           
-  5190                           ;main_menu.c: 112:             printf("Enter state 0\n");
+  5190                           ;main.c: 112:             printf("Enter state 0\n");
   5191   0051A2  0E0C               	movlw	low STR_4
   5192   0051A4  6EE6               	movwf	postinc1,c
   5193   0051A6  0EFF               	movlw	high STR_4
@@ -5419,7 +5419,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5196   0051AC  6EE6               	movwf	postinc1,c
   5197   0051AE  EC36  F02C         	call	_printf	;wreg free
   5198   0051B2                     
-  5199                           ;main_menu.c: 113:             LCD_ShowString(1, ">>> 0_GPIO          ");
+  5199                           ;main.c: 113:             LCD_ShowString(1, ">>> 0_GPIO          ");
   5200   0051B2  0E86               	movlw	low STR_5
   5201   0051B4  6EE6               	movwf	postinc1,c
   5202   0051B6  0EFD               	movlw	high STR_5
@@ -5428,7 +5428,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5205   0051BC  6EE6               	movwf	postinc1,c
   5206   0051BE  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5207   0051C2                     
-  5208                           ;main_menu.c: 114:             LCD_ShowString(2, "    1_UART          ");
+  5208                           ;main.c: 114:             LCD_ShowString(2, "    1_UART          ");
   5209   0051C2  0E9B               	movlw	low STR_6
   5210   0051C4  6EE6               	movwf	postinc1,c
   5211   0051C6  0EFD               	movlw	high STR_6
@@ -5437,11 +5437,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5214   0051CC  6EE6               	movwf	postinc1,c
   5215   0051CE  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5216                           
-  5217                           ;main_menu.c: 115:             break;
+  5217                           ;main.c: 115:             break;
   5218   0051D2  EF2F  F029         	goto	l362
   5219   0051D6                     l4977:
   5220                           
-  5221                           ;main_menu.c: 117:             printf("Exit state 0\n");
+  5221                           ;main.c: 117:             printf("Exit state 0\n");
   5222   0051D6  0E84               	movlw	low STR_7
   5223   0051D8  6EE6               	movwf	postinc1,c
   5224   0051DA  0EFF               	movlw	high STR_7
@@ -5450,14 +5450,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5227   0051E0  6EE6               	movwf	postinc1,c
   5228   0051E2  EC36  F02C         	call	_printf	;wreg free
   5229   0051E6                     
-  5230                           ;main_menu.c: 118:             LCD_Clear();
+  5230                           ;main.c: 118:             LCD_Clear();
   5231   0051E6  EC89  F02C         	call	_LCD_Clear	;wreg free
   5232                           
-  5233                           ;main_menu.c: 119:             break;
+  5233                           ;main.c: 119:             break;
   5234   0051EA  EF2F  F029         	goto	l362
   5235   0051EE                     l4981:
   5236                           
-  5237                           ;main_menu.c: 121:             fsm_transition(fsm, &state1);
+  5237                           ;main.c: 121:             fsm_transition(fsm, &state1);
   5238   0051EE  0E9A               	movlw	low _state1
   5239   0051F0  6EE6               	movwf	postinc1,c
   5240   0051F2  0E45               	movlw	high _state1
@@ -5469,11 +5469,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5246   0051FC  CFE3 FFE6          	movff	plusw1,postinc1
   5247   005200  EC61  F02C         	call	_fsm_transition	;wreg free
   5248                           
-  5249                           ;main_menu.c: 122:             break;
+  5249                           ;main.c: 122:             break;
   5250   005204  EF2F  F029         	goto	l362
   5251   005208                     l4983:
   5252                           
-  5253                           ;main_menu.c: 124:             fsm_transition(fsm, &gpio_state0);
+  5253                           ;main.c: 124:             fsm_transition(fsm, &gpio_state0);
   5254   005208  0EF0               	movlw	low _gpio_state0
   5255   00520A  6EE6               	movwf	postinc1,c
   5256   00520C  0E4A               	movlw	high _gpio_state0
@@ -5485,7 +5485,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5262   005216  CFE3 FFE6          	movff	plusw1,postinc1
   5263   00521A  EC61  F02C         	call	_fsm_transition	;wreg free
   5264                           
-  5265                           ;main_menu.c: 125:             break;
+  5265                           ;main.c: 125:             break;
   5266   00521E  EF2F  F029         	goto	l362
   5267   005222                     l4987:
   5268                           
@@ -5543,7 +5543,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5318                           
   5319 ;; *************** function _init *****************
   5320 ;; Defined at:
-  5321 ;;		line 87 in file "main_menu.c"
+  5321 ;;		line 87 in file "main.c"
   5322 ;; Parameters:    Size  Location     Type
   5323 ;;  fsm             2  [STACK] PTR struct fsm_t
   5324 ;;		 -> fsm(2), 
@@ -5591,11 +5591,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5358   005266                     _init:
   5359                           	callstack 0
   5360   005266                     
-  5361                           ;main_menu.c: 89:     switch(event){
+  5361                           ;main.c: 89:     switch(event){
   5362   005266  EF68  F029         	goto	l4963
   5363   00526A                     l4953:
   5364                           
-  5365                           ;main_menu.c: 91:             LCD_ShowString(1, "Welcome         ");
+  5365                           ;main.c: 91:             LCD_ShowString(1, "Welcome         ");
   5366   00526A  0EC8               	movlw	low STR_1
   5367   00526C  6EE6               	movwf	postinc1,c
   5368   00526E  0EFE               	movlw	high STR_1
@@ -5604,7 +5604,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5371   005274  6EE6               	movwf	postinc1,c
   5372   005276  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5373                           
-  5374                           ;main_menu.c: 92:             LCD_ShowString(2, "      ^  v  >  <");
+  5374                           ;main.c: 92:             LCD_ShowString(2, "      ^  v  >  <");
   5375   00527A  0EEA               	movlw	low STR_2
   5376   00527C  6EE6               	movwf	postinc1,c
   5377   00527E  0EFE               	movlw	high STR_2
@@ -5613,7 +5613,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5380   005284  6EE6               	movwf	postinc1,c
   5381   005286  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5382   00528A                     
-  5383                           ;main_menu.c: 93:             bsp_set_timeout(5000);
+  5383                           ;main.c: 93:             bsp_set_timeout(5000);
   5384   00528A  0E88               	movlw	136
   5385   00528C  6EE6               	movwf	postinc1,c
   5386   00528E  0E13               	movlw	19
@@ -5624,11 +5624,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5391   005298  6EE6               	movwf	postinc1,c
   5392   00529A  EC4F  F02D         	call	_bsp_set_timeout	;wreg free
   5393                           
-  5394                           ;main_menu.c: 94:             break;
+  5394                           ;main.c: 94:             break;
   5395   00529E  EF92  F029         	goto	l353
   5396   0052A2                     l4957:
   5397                           
-  5398                           ;main_menu.c: 96:             printf("Init state exit\n");
+  5398                           ;main.c: 96:             printf("Init state exit\n");
   5399   0052A2  0EB7               	movlw	low STR_3
   5400   0052A4  6EE6               	movwf	postinc1,c
   5401   0052A6  0EFE               	movlw	high STR_3
@@ -5637,12 +5637,12 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5404   0052AC  6EE6               	movwf	postinc1,c
   5405   0052AE  EC36  F02C         	call	_printf	;wreg free
   5406                           
-  5407                           ;main_menu.c: 97:             break;
+  5407                           ;main.c: 97:             break;
   5408   0052B2  EF92  F029         	goto	l353
   5409   0052B6                     l351:
   5410   0052B6                     l4959:
   5411                           
-  5412                           ;main_menu.c: 103:             fsm_transition(fsm, &state0);
+  5412                           ;main.c: 103:             fsm_transition(fsm, &state0);
   5413   0052B6  0E9E               	movlw	low _state0
   5414   0052B8  6EE6               	movwf	postinc1,c
   5415   0052BA  0E51               	movlw	high _state0
@@ -5654,7 +5654,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5421   0052C4  CFE3 FFE6          	movff	plusw1,postinc1
   5422   0052C8  EC61  F02C         	call	_fsm_transition	;wreg free
   5423                           
-  5424                           ;main_menu.c: 104:             break;
+  5424                           ;main.c: 104:             break;
   5425   0052CC  EF92  F029         	goto	l353
   5426   0052D0                     l4963:
   5427                           
@@ -5721,7 +5721,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5486                           
   5487 ;; *************** function _uart_state1 *****************
   5488 ;; Defined at:
-  5489 ;;		line 297 in file "main_menu.c"
+  5489 ;;		line 297 in file "main.c"
   5490 ;; Parameters:    Size  Location     Type
   5491 ;;  fsm             2  [STACK] PTR struct fsm_t
   5492 ;;		 -> fsm(2), 
@@ -5769,11 +5769,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5526   00500C                     _uart_state1:
   5527                           	callstack 0
   5528   00500C                     
-  5529                           ;main_menu.c: 299:     switch(event){
+  5529                           ;main.c: 299:     switch(event){
   5530   00500C  EF49  F028         	goto	l5199
   5531   005010                     l5185:
   5532                           
-  5533                           ;main_menu.c: 301:             printf("Enter state 1_UART\n");
+  5533                           ;main.c: 301:             printf("Enter state 1_UART\n");
   5534   005010  0ED8               	movlw	low STR_36
   5535   005012  6EE6               	movwf	postinc1,c
   5536   005014  0EFD               	movlw	high STR_36
@@ -5782,7 +5782,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5539   00501A  6EE6               	movwf	postinc1,c
   5540   00501C  EC36  F02C         	call	_printf	;wreg free
   5541   005020                     
-  5542                           ;main_menu.c: 302:             LCD_ShowString(1, "Zadej zpravu:         ");
+  5542                           ;main.c: 302:             LCD_ShowString(1, "Zadej zpravu:         ");
   5543   005020  0E7D               	movlw	low STR_37
   5544   005022  6EE6               	movwf	postinc1,c
   5545   005024  0EFC               	movlw	high STR_37
@@ -5791,7 +5791,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5548   00502A  6EE6               	movwf	postinc1,c
   5549   00502C  EC5A  F026         	call	_LCD_ShowString	;wreg free
   5550   005030                     
-  5551                           ;main_menu.c: 303:             printf("Zadej zpravu:\n");
+  5551                           ;main.c: 303:             printf("Zadej zpravu:\n");
   5552   005030  0E75               	movlw	low STR_38
   5553   005032  6EE6               	movwf	postinc1,c
   5554   005034  0EFF               	movlw	high STR_38
@@ -5800,11 +5800,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5557   00503A  6EE6               	movwf	postinc1,c
   5558   00503C  EC36  F02C         	call	_printf	;wreg free
   5559                           
-  5560                           ;main_menu.c: 304:             break;
+  5560                           ;main.c: 304:             break;
   5561   005040  EF67  F028         	goto	l442
   5562   005044                     l5191:
   5563                           
-  5564                           ;main_menu.c: 306:             printf("Exit state 1_UART\n");
+  5564                           ;main.c: 306:             printf("Exit state 1_UART\n");
   5565   005044  0E4B               	movlw	low STR_39
   5566   005046  6EE6               	movwf	postinc1,c
   5567   005048  0EFE               	movlw	high STR_39
@@ -5813,14 +5813,14 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5570   00504E  6EE6               	movwf	postinc1,c
   5571   005050  EC36  F02C         	call	_printf	;wreg free
   5572   005054                     
-  5573                           ;main_menu.c: 307:             LCD_Clear();
+  5573                           ;main.c: 307:             LCD_Clear();
   5574   005054  EC89  F02C         	call	_LCD_Clear	;wreg free
   5575                           
-  5576                           ;main_menu.c: 308:             break;
+  5576                           ;main.c: 308:             break;
   5577   005058  EF67  F028         	goto	l442
   5578   00505C                     l5195:
   5579                           
-  5580                           ;main_menu.c: 310:             fsm_transition(fsm, &state1);
+  5580                           ;main.c: 310:             fsm_transition(fsm, &state1);
   5581   00505C  0E9A               	movlw	low _state1
   5582   00505E  6EE6               	movwf	postinc1,c
   5583   005060  0E45               	movlw	high _state1
@@ -5832,11 +5832,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5589   00506A  CFE3 FFE6          	movff	plusw1,postinc1
   5590   00506E  EC61  F02C         	call	_fsm_transition	;wreg free
   5591                           
-  5592                           ;main_menu.c: 311:             break;
+  5592                           ;main.c: 311:             break;
   5593   005072  EF67  F028         	goto	l442
   5594   005076                     l5197:
   5595                           
-  5596                           ;main_menu.c: 313:             printf("Zprava: %s\n", msg.data);
+  5596                           ;main.c: 313:             printf("Zprava: %s\n", msg.data);
   5597   005076  0ED2               	movlw	low _msg
   5598   005078  6EE6               	movwf	postinc1,c
   5599   00507A  0E00               	movlw	high _msg
@@ -5849,7 +5849,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   5606   005088  6EE6               	movwf	postinc1,c
   5607   00508A  EC36  F02C         	call	_printf	;wreg free
   5608                           
-  5609                           ;main_menu.c: 314:     }
+  5609                           ;main.c: 314:     }
   5610   00508E  EF67  F028         	goto	l442
   5611   005092                     l5199:
   5612                           
@@ -18137,7 +18137,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
  17474                           
  17475 ;; *************** function _rc_isr_handle *****************
  17476 ;; Defined at:
- 17477 ;;		line 450 in file "main_menu.c"
+ 17477 ;;		line 450 in file "main.c"
  17478 ;; Parameters:    Size  Location     Type
  17479 ;;		None
  17480 ;; Auto vars:     Size  Location     Type
@@ -18181,12 +18181,12 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
       +                          gsize = 0, retsize = 0 argfudge = 0
  17513   005746  52E6               	movf	postinc1,f,c
  17514   005748                     
- 17515                           ;main_menu.c: 452:     char rchar = RCREG1;
+ 17515                           ;main.c: 452:     char rchar = RCREG1;
  17516                           ;stkvar	_rchar @ sp[(-1)+0]
  17517   005748  0EFF               	movlw	-1
  17518   00574A  CFAE FFE3          	movff	4014,plusw1	;volatile
  17519   00574E                     
- 17520                           ;main_menu.c: 454:     if(rchar != '\n'){
+ 17520                           ;main.c: 454:     if(rchar != '\n'){
  17521                           ;stkvar	_rchar @ sp[(-1)+0]
  17522   00574E  0EFF               	movlw	-1
  17523   005750  CFE3 F001          	movff	plusw1,btemp
@@ -18199,7 +18199,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
  17530   005762  EFC9  F02B         	goto	l5519
  17531   005766                     u499_40:
  17532   005766                     
- 17533                           ;main_menu.c: 455:         msg.data[msg.idx++] = rchar;
+ 17533                           ;main.c: 455:         msg.data[msg.idx++] = rchar;
  17534                           ;stkvar	_rchar @ sp[(-1)+0]
  17535   005766  0ED2               	movlw	low _msg
  17536   005768  0100               	movlb	0	; () banked
@@ -18215,7 +18215,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
  17546   00577A  2BF2               	incf	(_msg+32)& (0+255),f,b	;volatile
  17547   00577C                     
  17548                           ; BSR set to: 0
- 17549                           ;main_menu.c: 456:         if(msg.idx > 31){
+ 17549                           ;main.c: 456:         if(msg.idx > 31){
  17550   00577C  0E1F               	movlw	31
  17551   00577E  65F2               	cpfsgt	(_msg+32)& (0+255),b	;volatile
  17552   005780  EFC4  F02B         	goto	u500_41
@@ -18225,12 +18225,12 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
  17556   00578C                     u500_40:
  17557   00578C                     
  17558                           ; BSR set to: 0
- 17559                           ;main_menu.c: 457:             msg.idx = 0;
+ 17559                           ;main.c: 457:             msg.idx = 0;
  17560   00578C  6BF2               	clrf	(_msg+32)& (0+255),b	;volatile
  17561   00578E  EFD6  F02B         	goto	l505
  17562   005792                     l5519:
  17563                           
- 17564                           ;main_menu.c: 461:         msg.data[msg.idx] = '\0';
+ 17564                           ;main.c: 461:         msg.data[msg.idx] = '\0';
  17565   005792  0ED2               	movlw	low _msg
  17566   005794  0100               	movlb	0	; () banked
  17567   005796  25F2               	addwf	(_msg+32)& (0+255),w,b	;volatile
@@ -18241,11 +18241,11 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
  17572   0057A0  6ADF               	clrf	indf2,c
  17573   0057A2                     
  17574                           ; BSR set to: 0
- 17575                           ;main_menu.c: 462:         msg.idx = 0;
+ 17575                           ;main.c: 462:         msg.idx = 0;
  17576   0057A2  6BF2               	clrf	(_msg+32)& (0+255),b	;volatile
  17577   0057A4                     
  17578                           ; BSR set to: 0
- 17579                           ;main_menu.c: 463:         fsm_add_event(9U);
+ 17579                           ;main.c: 463:         fsm_add_event(9U);
  17580   0057A4  0E09               	movlw	9
  17581   0057A6  6EE6               	movwf	postinc1,c
  17582   0057A8  ECAF  F02D         	call	_fsm_add_event	;wreg free
@@ -19548,7 +19548,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Fri May 03 16:37:22 2024
+Symbol Table                                                                                   Fri May 03 16:41:39 2024
 
                          l5 5482                          l10 40E4                          l22 5B70  
                         l31 59E4                          l25 5B28                          l34 5908  

@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=evt_queue.c fsm.c uart.c lcd.c bsp.c adc.c main_menu.c
+SOURCEFILES_QUOTED_IF_SPACED=evt_queue.c fsm.c uart.c lcd.c bsp.c adc.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/evt_queue.p1 ${OBJECTDIR}/fsm.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/bsp.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/main_menu.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/evt_queue.p1.d ${OBJECTDIR}/fsm.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/bsp.p1.d ${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/main_menu.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/evt_queue.p1 ${OBJECTDIR}/fsm.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/bsp.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/main.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/evt_queue.p1.d ${OBJECTDIR}/fsm.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/bsp.p1.d ${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/main.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/evt_queue.p1 ${OBJECTDIR}/fsm.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/bsp.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/main_menu.p1
+OBJECTFILES=${OBJECTDIR}/evt_queue.p1 ${OBJECTDIR}/fsm.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/bsp.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/main.p1
 
 # Source Files
-SOURCEFILES=evt_queue.c fsm.c uart.c lcd.c bsp.c adc.c main_menu.c
+SOURCEFILES=evt_queue.c fsm.c uart.c lcd.c bsp.c adc.c main.c
 
 
 
@@ -136,13 +136,13 @@ ${OBJECTDIR}/adc.p1: adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/adc.d ${OBJECTDIR}/adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main_menu.p1: main_menu.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_menu.p1.d 
-	@${RM} ${OBJECTDIR}/main_menu.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=reentrant:auto:auto:auto     -o ${OBJECTDIR}/main_menu.p1 main_menu.c 
-	@-${MV} ${OBJECTDIR}/main_menu.d ${OBJECTDIR}/main_menu.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main_menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=reentrant:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/evt_queue.p1: evt_queue.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -193,13 +193,13 @@ ${OBJECTDIR}/adc.p1: adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/adc.d ${OBJECTDIR}/adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main_menu.p1: main_menu.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_menu.p1.d 
-	@${RM} ${OBJECTDIR}/main_menu.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=reentrant:auto:auto:auto     -o ${OBJECTDIR}/main_menu.p1 main_menu.c 
-	@-${MV} ${OBJECTDIR}/main_menu.d ${OBJECTDIR}/main_menu.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main_menu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=reentrant:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

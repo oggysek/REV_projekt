@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\dat\20231012153220_en.msgs \
   -cn -h+dist/default/production\rev_projekt.X.production.sym \
   --cmf=dist/default/production\rev_projekt.X.production.cmf -z -Q18F46K22 \
-  -oC:\Users\oggys\AppData\Local\Temp\xcAs7lg.\driver_tmp_3.o \
+  -oC:\Users\oggys\AppData\Local\Temp\xcAs8as.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/rev_projekt.X.production.map \
-  --md=C:\Users\oggys\AppData\Local\Temp\xcAs7lg.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\oggys\AppData\Local\Temp\xcAs8as.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0FEh-0F37h -pstack=STACK \
   -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
   -AMEDIUMCONST=01000h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0F37h \
@@ -29,7 +29,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\oggys\AppData\Local\Temp\xcAs7lg.\driver_tmp_14.o \
+  C:\Users\oggys\AppData\Local\Temp\xcAs8as.\driver_tmp_14.o \
   dist/default/production\rev_projekt.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Machine type is 18F46K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\oggys\AppData\Local\Temp\xcAs7lg.\driver_tmp_14.o
+C:\Users\oggys\AppData\Local\Temp\xcAs8as.\driver_tmp_14.o
                 stack                                FE       FE      E3A       FE       2
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
@@ -999,27 +999,6 @@ C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 
 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c estimated size: 6286
 
-main_menu.c
-		_uart_state1   		CODE           	500C	0000	202
-		_rc_isr_handle 		CODE           	5746	0000	106
-		_init          		CODE           	5266	0000	198
-		_dac_state4    		CODE           	492C	0000	226
-		_pwm_state2    		CODE           	4A0E	0000	226
-		_adc_state3    		CODE           	3B18	0000	340
-		_state1        		CODE           	459A	0000	234
-		_state4        		CODE           	42DC	0000	234
-		_main          		CODE           	532C	0000	180
-		_game_state5   		CODE           	484A	0000	226
-		_gpio_state0   		CODE           	4AF0	0000	226
-		_state2        		CODE           	44B0	0000	234
-		_state5        		CODE           	41F2	0000	234
-		_state0        		CODE           	519E	0000	200
-		_hw_state6     		CODE           	4768	0000	226
-		_state3        		CODE           	43C6	0000	234
-		_state6        		CODE           	50D6	0000	200
-
-main_menu.c estimated size: 3726
-
 adc.c
 		_adc_read      		CODE           	5810	0000	92
 		_adc_init      		CODE           	5AF4	0000	30
@@ -1073,6 +1052,27 @@ C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\labs.c
 		_labs          		CODE           	56CA	0000	124
 
 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\labs.c estimated size: 124
+
+main.c
+		_uart_state1   		CODE           	500C	0000	202
+		_rc_isr_handle 		CODE           	5746	0000	106
+		_init          		CODE           	5266	0000	198
+		_dac_state4    		CODE           	492C	0000	226
+		_pwm_state2    		CODE           	4A0E	0000	226
+		_adc_state3    		CODE           	3B18	0000	340
+		_state1        		CODE           	459A	0000	234
+		_state4        		CODE           	42DC	0000	234
+		_main          		CODE           	532C	0000	180
+		_game_state5   		CODE           	484A	0000	226
+		_gpio_state0   		CODE           	4AF0	0000	226
+		_state2        		CODE           	44B0	0000	234
+		_state5        		CODE           	41F2	0000	234
+		_state0        		CODE           	519E	0000	200
+		_hw_state6     		CODE           	4768	0000	226
+		_state3        		CODE           	43C6	0000	234
+		_state6        		CODE           	50D6	0000	200
+
+main.c estimated size: 3726
 
 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
 		_strncmp       		CODE           	3478	0000	480

@@ -107,7 +107,7 @@
 [v _LCD_Send LCD_Send `R(v  1 s 1 LCD_Send ]
 "97
 [v _LCD_Clear LCD_Clear `R(v  1 e 1 0 ]
-"52 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"52 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _main main `R(i  1 e 2 0 ]
 "87
 [v _init init `R(v  1 e 1 0 ]
@@ -864,7 +864,7 @@
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\fsm.c
 [v _event_queue event_queue `VES24  1 s 34 event_queue ]
 [s S1771 . 33 `[32]uc 1 data 32 0 `uc 1 idx 1 32 ]
-"50 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"50 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _msg msg `VES1771  1 s 33 msg ]
 "52
 [v _main main `R(i  1 e 2 0 ]
@@ -945,7 +945,7 @@
 [v _event event `uc  1 p 1 -3 ]
 "22
 } 0
-"423 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"423 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _hw_state6 hw_state6 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
@@ -1503,7 +1503,7 @@
 {
 "110
 } 0
-"450 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"450 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _rc_isr_handle rc_isr_handle `R(v  1 e 1 0 ]
 {
 "452
