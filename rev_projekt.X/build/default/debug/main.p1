@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "43 main.c
 [; ;main.c: 43: typedef struct{
-[s S860 `uc -> 32 `i `uc 1 `i 1 ]
+[s S860 `uc -> 32 `i `uc 1 `uc 1 ]
 [n S860 . data idx last ]
 [p mainexit ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
@@ -1760,14 +1760,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "316
 [; ;main.c: 316:                 msg_rev.data[msg_rev.idx++] = msg.data[msg.last--];
-[e = *U + &U . _msg_rev 0 * -> ++ . _msg_rev 1 -> -> 1 `i `Vuc `ux -> -> # *U &U . _msg_rev 0 `ui `ux *U + &U . _msg 0 * -> -> -- . _msg 2 -> -> 1 `i `Vi `ui `ux -> -> # *U &U . _msg 0 `ui `ux ]
+[e = *U + &U . _msg_rev 0 * -> ++ . _msg_rev 1 -> -> 1 `i `Vuc `ux -> -> # *U &U . _msg_rev 0 `ui `ux *U + &U . _msg 0 * -> -- . _msg 2 -> -> 1 `i `Vuc `ux -> -> # *U &U . _msg 0 `ui `ux ]
 "317
 [; ;main.c: 317:             }
 }
 [e :U 945 ]
 "315
 [; ;main.c: 315:             while (msg.last > -1) {
-[e $ > . _msg 2 -U -> 1 `i 946  ]
+[e $ > -> . _msg 2 `i -U -> 1 `i 946  ]
 [e :U 947 ]
 "318
 [; ;main.c: 318:             msg_rev.data[msg_rev.idx] = '\0';
@@ -2292,7 +2292,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U . _msg 0 * -> . _msg 1 `ux -> -> # *U &U . _msg 0 `ui `ux -> -> 0 `ui `uc ]
 "467
 [; ;main.c: 467:         msg.last = msg.idx - 1;
-[e = . _msg 2 - -> . _msg 1 `i -> 1 `i ]
+[e = . _msg 2 -> - -> . _msg 1 `i -> 1 `i `uc ]
 "468
 [; ;main.c: 468:         msg.idx = 0;
 [e = . _msg 1 -> -> 0 `i `uc ]
@@ -2307,8 +2307,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 471: }
 [e :UE 987 ]
 }
-[p f _printf 8650752 ]
 [p f _sprintf 8462336 ]
+[p f _printf 8650752 ]
 [a 33C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
 [a 42C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
 [a 50C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]

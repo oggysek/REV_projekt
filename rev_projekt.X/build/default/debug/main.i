@@ -9892,7 +9892,7 @@ typedef struct{
 
     char data[32];
     char idx;
-    int last;
+    char last;
 
 }uart_msg_t;
 

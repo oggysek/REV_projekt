@@ -44,10 +44,11 @@ typedef struct{
 
     char data[32];
     char idx;
+    int last;
     
 }uart_msg_t;
 
-volatile static uart_msg_t msg;
+volatile static uart_msg_t msg, msg_rev;
 
 int main(void) {
     __delay_ms(100);
@@ -310,9 +311,13 @@ void uart_state1(fsm_t *fsm, uint8_t event){
             fsm_transition(fsm, &state1);
             break;
         case EV_RC_MSG:
-            printf("Zprava: %s\n", msg.data);
+            msg_rev.idx = 0;
+            while (msg.last > -1) {
+                msg_rev.data[msg_rev.idx++] = msg.data[msg.last--];
+            }
+            msg_rev.data[msg_rev.idx] = '\0';
+            printf("Zprava: %s\n", msg_rev.data);
     }
-
 }
 
 void pwm_state2(fsm_t *fsm, uint8_t event){
@@ -459,6 +464,7 @@ void rc_isr_handle(void){
     }
     else{
         msg.data[msg.idx] = '\0';
+        msg.last = msg.idx - 1;
         msg.idx = 0;
         fsm_add_event(EV_RC_MSG);
     }

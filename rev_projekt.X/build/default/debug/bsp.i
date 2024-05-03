@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "bsp.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,20 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
-#pragma config FOSC = HSMP
-#pragma config PLLCFG = ON
-#pragma config WDTEN = OFF
-
-
+# 1 "bsp.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9645,157 +9632,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
-# 13 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 14 "main.c" 2
-
-
+# 1 "bsp.c" 2
 
 # 1 "./bsp.h" 1
 # 21 "./bsp.h"
@@ -9821,15 +9658,7 @@ long bsp_get_timeout(void);
 void bsp_set_timeout(long timeout);
 void bsp_stop_timeout(void);
 void bsp_reg_RC_cb(void (*cb)(void));
-# 17 "main.c" 2
-
-# 1 "./uart.h" 1
-
-
-
-void uart_init(void);
-void putch(char data);
-# 18 "main.c" 2
+# 2 "bsp.c" 2
 
 # 1 "./fsm.h" 1
 # 16 "./fsm.h"
@@ -9847,473 +9676,145 @@ void fsm_transition(fsm_t *fsm, state_fp new_state);
 
 void fsm_add_event(uint8_t in);
 uint8_t fsm_get_event(uint8_t *out);
-# 19 "main.c" 2
-
-# 1 "./lcd.h" 1
+# 3 "bsp.c" 2
 
 
+volatile static long bsp_timeout;
+volatile static btn_filter_t buttons = {0};
+static void(*RC_isr_cb)(void) = ((void*)0);
+
+void bsp_init(void) {
+
+    TRISCbits.RC0 = 1;
+    TRISAbits.RA4 = 1;
+    TRISAbits.RA3 = 1;
+    TRISAbits.RA2 = 1;
 
 
-void LCD_Init(void);
-void LCD_ShowString(char line, char a[]);
-static void LCD_Send(unsigned char data);
-void LCD_Clear(void);
-void LCD_Reset(void);
-# 20 "main.c" 2
-
-# 1 "./adc.h" 1
-# 10 "./adc.h"
-void adc_init(void);
-uint16_t adc_read(uint8_t channel);
-# 21 "main.c" 2
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
 
 
+    TRISBbits.TRISB5 = 0;
+
+    ANSELA = 0;
+
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+
+    T2CONbits.T2CKPS = 0b11;
+    T2CONbits.T2OUTPS = 0b1001;
+    PR2 = 250;
+    IPR1bits.TMR2IP = 0;
+    TMR2IE = 1;
+    TMR2IF = 0;
+
+    T6CONbits.T6CKPS = 0b11;
+    T6CONbits.T6OUTPS = 0b0100;
+    PR6 = 100;
+    TMR6IE = 1;
+    TMR6IF = 0;
 
 
-void rc_isr_handle(void);
+    T1CONbits.TMR1CS = 0b00;
+    T1CONbits.T1CKPS = 0b11;
+    TMR1IE = 1;
+    TMR1IF = 0;
 
-void init(fsm_t *fsm, uint8_t event);
-void state0(fsm_t *fsm, uint8_t event);
-void state1(fsm_t *fsm, uint8_t event);
-void state2(fsm_t *fsm, uint8_t event);
-void state3(fsm_t *fsm, uint8_t event);
-void state4(fsm_t *fsm, uint8_t event);
-void state5(fsm_t *fsm, uint8_t event);
-void state6(fsm_t *fsm, uint8_t event);
-void gpio_state0(fsm_t *fsm, uint8_t event);
-void uart_state1(fsm_t *fsm, uint8_t event);
-void pwm_state2(fsm_t *fsm, uint8_t event);
-void adc_state3(fsm_t *fsm, uint8_t event);
-void dac_state4(fsm_t *fsm, uint8_t event);
-void game_state5(fsm_t *fsm, uint8_t event);
-void hw_state6(fsm_t *fsm, uint8_t event);
+    IPEN = 1;
+}
 
-typedef struct{
-
-    char data[32];
-    char idx;
-    int last;
-
-}uart_msg_t;
-
-volatile static uart_msg_t msg, msg_rev;
-
-int main(void) {
-    _delay((unsigned long)((100)*(32e6/4000.0)));
-    bsp_init();
-    uart_init();
-    adc_init();
-    LCD_Init();
+void bsp_drive_led(char input) {
+    LATDbits.LD6 = input & 1 ? 0 : 1;
+    LATDbits.LD5 = input & 2 ? 0 : 1;
+    LATDbits.LD4 = input & 4 ? 0 : 1;
+    LATCbits.LC4 = input & 8 ? 0 : 1;
+    LATDbits.LD3 = input & 16 ? 0 : 1;
+    LATDbits.LD2 = input & 32 ? 0 : 1;
+}
 
 
-    GIEL = 1;
-    GIEH = 1;
+void bsp_set_timeout(long timeout_in){
+    bsp_timeout = timeout_in;
+    TMR6 = 0;
+    TMR6ON = 1;
+}
 
-    TMR2ON = 1;
-    TMR1ON = 1;
+long bsp_get_timeout(void){
+    return bsp_timeout;
+}
 
-    bsp_reg_RC_cb(rc_isr_handle);
+void bsp_stop_timeout(void){
+    TMR6ON = 0;
+}
 
- fsm_t fsm;
-    uint8_t event = 0;
+void bsp_reg_RC_cb(void (*cb)(void)){
 
-    fsm_init(&fsm, &init);
+    RC_isr_cb = cb;
 
-    while(1){
-        if (fsm_get_event(&event)){
+}
 
-            fsm_dispatch(&fsm, event);
+void __attribute__((picinterrupt(("high_priority")))) HIGH_ISR(void){
 
+    if (TMR1IF && TMR1IE ){
+        fsm_add_event(8U);
+        TMR1 = 55535;
+        TMR1IF = 0;
+    }
+
+    if (TMR6IF && TMR6IE ){
+        if(--bsp_timeout <= 0){
+            fsm_add_event(7U);
+            TMR6ON = 0;
         }
+        LATBbits.LB5 ^= 1;
+        TMR6IF = 0;
     }
 
- return 0;
-}
-
-
-
-
-void init(fsm_t *fsm, uint8_t event){
-
-    switch(event){
-        case 1U:
-            LCD_ShowString(1, "Welcome         ");
-            LCD_ShowString(2, "      ^  v  >  <");
-            bsp_set_timeout(5000);
-            break;
-        case 2U:
-            printf("Init state exit\n");
-            break;
-        case 3U:
-        case 4U:
-        case 5U:
-        case 6U:
-        case 7U:
-            fsm_transition(fsm, &state0);
-            break;
-    }
-}
-
-void state0(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 0\n");
-            LCD_ShowString(1, ">>> 0_GPIO          ");
-            LCD_ShowString(2, "    1_UART          ");
-            break;
-        case 2U:
-            printf("Exit state 0\n");
-            LCD_Clear();
-            break;
-        case 4U:
-            fsm_transition(fsm, &state1);
-            break;
-        case 5U:
-            fsm_transition(fsm, &gpio_state0);
-            break;
-    }
-}
-
-void state1(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 1\n");
-            LCD_ShowString(1, ">>> 1_UART           ");
-            LCD_ShowString(2, "    2_PWM            ");
-            break;
-        case 2U:
-            printf("Exit state 1\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state0);
-            break;
-        case 4U:
-            fsm_transition(fsm, &state2);
-            break;
-        case 5U:
-            fsm_transition(fsm, &uart_state1);
-            break;
-    }
-}
-
-void state2(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 2\n");
-            LCD_ShowString(1, ">>> 2_PWM            ");
-            LCD_ShowString(2, "    3_ADC            ");
-            break;
-        case 2U:
-            printf("Exit state 2\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state1);
-            break;
-        case 4U:
-            fsm_transition(fsm, &state3);
-            break;
-        case 5U:
-            fsm_transition(fsm, &pwm_state2);
-            break;
-    }
-}
-
-void state3(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 3\n");
-            LCD_ShowString(1, ">>> 3_ADC            ");
-            LCD_ShowString(2, "    4_DAC            ");
-            break;
-        case 2U:
-            printf("Exit state 3\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state2);
-            break;
-        case 4U:
-            fsm_transition(fsm, &state4);
-            break;
-        case 5U:
-            fsm_transition(fsm, &adc_state3);
-            break;
-    }
-}
-
-void state4(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 4\n");
-            LCD_ShowString(1, ">>> 4_DAC            ");
-            LCD_ShowString(2, "    5_GAME           ");
-            break;
-        case 2U:
-            printf("Exit state 4\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state3);
-            break;
-        case 4U:
-            fsm_transition(fsm, &state5);
-            break;
-        case 5U:
-            fsm_transition(fsm, &dac_state4);
-            break;
-    }
-}
-
-void state5(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 5\n");
-            LCD_ShowString(1, ">>> 5_GAME           ");
-            LCD_ShowString(2, "    6_HW             ");
-            break;
-        case 2U:
-            printf("Exit state 5\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state4);
-            break;
-        case 4U:
-            fsm_transition(fsm, &state6);
-            break;
-        case 5U:
-            fsm_transition(fsm, &game_state5);
-            break;
-    }
-}
-
-void state6(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            printf("Enter state 6\n");
-            LCD_ShowString(1, "    5_GAME           ");
-            LCD_ShowString(2, ">>> 6_HW             ");
-            break;
-        case 2U:
-            printf("Exit state 6\n");
-            LCD_Clear();
-            break;
-        case 3U:
-            fsm_transition(fsm, &state5);
-            break;
-        case 5U:
-            fsm_transition(fsm, &hw_state6);
-            break;
-    }
-}
-
-void gpio_state0(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
-    switch(event){
-        case 1U:
-            printf("Enter state 0_GPIO\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
-            break;
-        case 2U:
-            printf("Exit state 0_GPIO\n");
-            LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
-            break;
-        case 6U:
-            fsm_transition(fsm, &state0);
-            break;
-    }
-}
-
-void uart_state1(fsm_t *fsm, uint8_t event){
-
-    switch(event){
-        case 1U:
-            printf("Enter state 1_UART\n");
-            LCD_ShowString(1, "Zadej zpravu:         ");
-            printf("Zadej zpravu:\n");
-            break;
-        case 2U:
-            printf("Exit state 1_UART\n");
-            LCD_Clear();
-            break;
-        case 6U:
-            fsm_transition(fsm, &state1);
-            break;
-        case 9U:
-            msg_rev.idx = 0;
-            while (msg.last > -1) {
-                msg_rev.data[msg_rev.idx++] = msg.data[msg.last--];
-            }
-            msg_rev.data[msg_rev.idx] = '\0';
-            printf("Zprava: %s\n", msg_rev.data);
-    }
-}
-
-void pwm_state2(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
-    switch(event){
-        case 1U:
-            printf("Enter state 2_PWM\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
-            break;
-        case 2U:
-            printf("Exit state 2_PWM\n");
-            LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
-            break;
-        case 6U:
-            fsm_transition(fsm, &state2);
-            break;
-    }
-}
-
-void adc_state3(fsm_t *fsm, uint8_t event){
-
- switch(event){
-        case 1U:
-            LCD_ShowString(1, "Potenciometr:           ");
-            printf("Enter state 3_ADC\n");
-            break;
-        case 2U:
-            printf("Exit state 3_ADC\n");
-            LCD_Clear();
-            break;
-        case 6U:
-            fsm_transition(fsm, &state3);
-            break;
-        case 8U:
-        {
-            char str[17];
-            sprintf(str, "POT: %.1f mV          ", (float)adc_read(5)*3.22265625);
-            LCD_ShowString(2, str);
-            break;
+    if(RC1IF && RC1IE){
+        if(RC_isr_cb != ((void*)0)){
+            RC_isr_cb();
         }
     }
 }
 
-void dac_state4(fsm_t *fsm, uint8_t event){
+void __attribute__((picinterrupt(("low_priority")))) LOW_ISR(void){
 
-    static uint8_t leds = 0;
-    switch(event){
-        case 1U:
-            printf("Enter state 4_DAC\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
-            break;
-        case 2U:
-            printf("Exit state 4_DAC\n");
-            LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
-            break;
-        case 6U:
-            fsm_transition(fsm, &state4);
-            break;
-    }
-}
+    if (TMR2IF && TMR2IE ){
 
-void game_state5(fsm_t *fsm, uint8_t event){
+        buttons.btn1_acc<<=1;
+        buttons.btn1_acc |= PORTCbits.RC0;
 
-    static uint8_t leds = 0;
-    switch(event){
-        case 1U:
-            printf("Enter state 5_GAME\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
-            break;
-        case 2U:
-            printf("Exit state 5_GAME\n");
-            LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
-            break;
-        case 6U:
-            fsm_transition(fsm, &state5);
-            break;
-    }
-}
+        buttons.btn2_acc<<=1;
+        buttons.btn2_acc |= PORTAbits.RA4;
 
-void hw_state6(fsm_t *fsm, uint8_t event){
+        buttons.btn3_acc<<=1;
+        buttons.btn3_acc |= PORTAbits.RA3;
 
-    static uint8_t leds = 0;
-    switch(event){
-        case 1U:
-            printf("Enter state 6_HW\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
-            break;
-        case 2U:
-            printf("Exit state 6_HW\n");
-            LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
-            break;
-        case 6U:
-            fsm_transition(fsm, &state6);
-            break;
-    }
-}
+        buttons.btn4_acc<<=1;
+        buttons.btn4_acc |= PORTAbits.RA2;
 
-void rc_isr_handle(void){
-
-    char rchar = RCREG1;
-
-    if(rchar != '\n'){
-        msg.data[msg.idx++] = rchar;
-        if(msg.idx > 31){
-            msg.idx = 0;
+        if(buttons.btn1_acc == 0b01111111){
+           fsm_add_event(3U);
         }
-    }
-    else{
-        msg.data[msg.idx] = '\0';
-        msg.last = msg.idx - 1;
-        msg.idx = 0;
-        fsm_add_event(9U);
+        if(buttons.btn2_acc == 0b01111111){
+           fsm_add_event(4U);
+        }
+        if(buttons.btn3_acc == 0b01111111){
+           fsm_add_event(5U);
+        }
+        if(buttons.btn4_acc == 0b01111111){
+           fsm_add_event(6U);
+        }
+
+        TMR2IF = 0;
     }
 }

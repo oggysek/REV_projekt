@@ -863,10 +863,10 @@
 ]
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\fsm.c
 [v _event_queue event_queue `VES24  1 s 34 event_queue ]
-[s S1771 . 35 `[32]uc 1 data 32 0 `uc 1 idx 1 32 `i 1 last 2 33 ]
+[s S1771 . 34 `[32]uc 1 data 32 0 `uc 1 idx 1 32 `uc 1 last 1 33 ]
 "51 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
-[v _msg msg `VES1771  1 s 35 msg ]
-[v _msg_rev msg_rev `VES1771  1 s 35 msg_rev ]
+[v _msg msg `VES1771  1 s 34 msg ]
+[v _msg_rev msg_rev `VES1771  1 s 34 msg_rev ]
 "53
 [v _main main `R(i  1 e 2 0 ]
 {
