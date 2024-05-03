@@ -107,23 +107,39 @@
 [v _LCD_Send LCD_Send `R(v  1 s 1 LCD_Send ]
 "97
 [v _LCD_Clear LCD_Clear `R(v  1 e 1 0 ]
-"37 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"52 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
 [v _main main `R(i  1 e 2 0 ]
-"72
+"87
 [v _init init `R(v  1 e 1 0 ]
-"88
+"108
+[v _state0 state0 `R(v  1 e 1 0 ]
+"129
 [v _state1 state1 `R(v  1 e 1 0 ]
-"114
+"153
 [v _state2 state2 `R(v  1 e 1 0 ]
-"140
+"177
 [v _state3 state3 `R(v  1 e 1 0 ]
-"163
+"201
 [v _state4 state4 `R(v  1 e 1 0 ]
-"184
-[v _uart_state uart_state `R(v  1 e 1 0 ]
-"204
-[v _pot_state pot_state `R(v  1 e 1 0 ]
-"229
+"225
+[v _state5 state5 `R(v  1 e 1 0 ]
+"249
+[v _state6 state6 `R(v  1 e 1 0 ]
+"270
+[v _gpio_state0 gpio_state0 `R(v  1 e 1 0 ]
+"297
+[v _uart_state1 uart_state1 `R(v  1 e 1 0 ]
+"318
+[v _pwm_state2 pwm_state2 `R(v  1 e 1 0 ]
+"345
+[v _adc_state3 adc_state3 `R(v  1 e 1 0 ]
+"369
+[v _dac_state4 dac_state4 `R(v  1 e 1 0 ]
+"396
+[v _game_state5 game_state5 `R(v  1 e 1 0 ]
+"423
+[v _hw_state6 hw_state6 `R(v  1 e 1 0 ]
+"450
 [v _rc_isr_handle rc_isr_handle `R(v  1 e 1 0 ]
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\uart.c
 [v _uart_init uart_init `R(v  1 e 1 0 ]
@@ -848,17 +864,17 @@
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\fsm.c
 [v _event_queue event_queue `VES24  1 s 34 event_queue ]
 [s S1771 . 33 `[32]uc 1 data 32 0 `uc 1 idx 1 32 ]
-"35 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"50 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
 [v _msg msg `VES1771  1 s 33 msg ]
-"37
+"52
 [v _main main `R(i  1 e 2 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
-"53
+"68
 [v _fsm fsm `S50  1 a 2 0 ]
-"54
+"69
 [v _event event `uc  1 a 1 2 ]
-"67
+"82
 } 3
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\uart.c
 [v _uart_init uart_init `R(v  1 e 1 0 ]
@@ -929,68 +945,146 @@
 [v _event event `uc  1 p 1 -3 ]
 "22
 } 0
-"204 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
-[v _pot_state pot_state `R(v  1 e 1 0 ]
+"423 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+[v _hw_state6 hw_state6 `R(v  1 e 1 0 ]
 {
-"220
-[v _str str `[17]uc  1 a 17 0 ]
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
-"204
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"227
+"425
+[v hw_state6@leds leds `uc  1 s 1 leds ]
+"448
+} 0
+"396
+[v _game_state5 game_state5 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"398
+[v game_state5@leds leds `uc  1 s 1 leds ]
+"421
+} 0
+"249
+[v _state6 state6 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"268
+} 0
+"369
+[v _dac_state4 dac_state4 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"371
+[v dac_state4@leds leds `uc  1 s 1 leds ]
+"394
+} 0
+"225
+[v _state5 state5 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"247
+} 0
+"345
+[v _adc_state3 adc_state3 `R(v  1 e 1 0 ]
+{
+"361
+[v _str str `[17]uc  1 a 17 0 ]
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+"345
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"367
 } 17
-"163
+"201
 [v _state4 state4 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"182
+"223
 } 0
-"140
+"318
+[v _pwm_state2 pwm_state2 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"320
+[v pwm_state2@leds leds `uc  1 s 1 leds ]
+"343
+} 0
+"177
 [v _state3 state3 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"161
+"199
 } 0
-"114
+"153
 [v _state2 state2 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"138
+"175
 } 0
-"88
+"270
+[v _gpio_state0 gpio_state0 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"272
+[v gpio_state0@leds leds `uc  1 s 1 leds ]
+"295
+} 0
+"129
 [v _state1 state1 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"90
-[v state1@leds leds `uc  1 s 1 leds ]
-"112
+"151
 } 0
-"72
+"108
+[v _state0 state0 `R(v  1 e 1 0 ]
+{
+[s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+[v _fsm fsm `*.39S50  1 p 2 -2 ]
+[v _event event `uc  1 p 1 -3 ]
+"127
+} 0
+"87
 [v _init init `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"86
+"106
 } 0
-"184
-[v _uart_state uart_state `R(v  1 e 1 0 ]
+"297
+[v _uart_state1 uart_state1 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"203
+"316
 } 0
-"58 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\bsp.c
+"68 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\bsp.c
+[v _bsp_set_timeout bsp_set_timeout `R(v  1 e 1 0 ]
+{
+[v _timeout_in timeout_in `l  1 p 4 -4 ]
+"72
+} 0
+"58
 [v _bsp_drive_led bsp_drive_led `R(v  1 e 1 0 ]
 {
 [v _input input `uc  1 p 1 -1 ]
@@ -999,10 +1093,10 @@
 "9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `R(i  1 e 2 0 ]
 {
-[u S2396 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S2486 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S2399 _IO_FILE 12 `S2396 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _f f `S2399  1 a 12 0 ]
+[s S2489 _IO_FILE 12 `S2486 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _f f `S2489  1 a 12 0 ]
 "12
 [v _ap ap `[1]*.39v  1 a 2 12 ]
 "9
@@ -1010,32 +1104,6 @@
 [v _fmt fmt `*.32Cuc  1 p 2 -5 ]
 "23
 } 14
-"15 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\adc.c
-[v _adc_read adc_read `R(us  1 e 2 0 ]
-{
-"20
-[v _result result `us  1 a 2 0 ]
-"15
-[v _channel channel `uc  1 p 1 -1 ]
-"23
-} 2
-"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `R(d  1 e 4 0 ]
-{
-"13
-[v _arg arg `ul  1 a 4 0 ]
-"12
-[v _exp exp `uc  1 a 1 4 ]
-"10
-[v _sign sign `uc  1 p 1 -1 ]
-[v _val val `l  1 p 4 -5 ]
-"44
-} 5
-"97 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\lcd.c
-[v _LCD_Clear LCD_Clear `R(v  1 e 1 0 ]
-{
-"109
-} 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
 [v _printf printf `R(i  1 e 2 0 ]
 {
@@ -1050,9 +1118,9 @@
 {
 "1549
 [v _cfmt cfmt `*.32uc  1 a 2 0 ]
-[s S2431 _IO_FILE 0 ]
+[s S2521 _IO_FILE 0 ]
 "1546
-[v _fp fp `*.39S2431  1 p 2 -2 ]
+[v _fp fp `*.39S2521  1 p 2 -2 ]
 [v _fmt fmt `*.32Cuc  1 p 2 -4 ]
 [v _ap ap `*.39*.39v  1 p 2 -6 ]
 "1569
@@ -1060,15 +1128,15 @@
 "1048
 [v _vfpfcnvrt vfpfcnvrt `R(v  1 s 1 vfpfcnvrt ]
 {
-[u S2486 . 4 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+[u S2576 . 4 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
 "1059
-[v _convarg convarg `S2486  1 a 4 2 ]
+[v _convarg convarg `S2576  1 a 4 2 ]
 "1050
 [v _cp cp `*.32uc  1 a 2 6 ]
 [v _c c `uc  1 a 1 8 ]
-[s S2431 _IO_FILE 0 ]
+[s S2521 _IO_FILE 0 ]
 "1048
-[v _fp fp `*.39S2431  1 p 2 -2 ]
+[v _fp fp `*.39S2521  1 p 2 -2 ]
 [v _fmt fmt `*.39*.32uc  1 p 2 -4 ]
 [v _ap ap `*.39*.39v  1 p 2 -6 ]
 "1543
@@ -1098,9 +1166,9 @@
 "865
 [v _i i `i  1 a 2 13 ]
 [v _w w `i  1 a 2 15 ]
-[s S2431 _IO_FILE 0 ]
+[s S2521 _IO_FILE 0 ]
 "862
-[v _fp fp `*.39S2431  1 p 2 -2 ]
+[v _fp fp `*.39S2521  1 p 2 -2 ]
 [v _s s `*.39uc  1 p 2 -4 ]
 "864
 [v stoa@F1170 F1170 `[7]uc  1 s 7 F1170 ]
@@ -1130,15 +1198,15 @@
 "531
 [v _efgtoa efgtoa `R(v  1 s 1 efgtoa ]
 {
-[u S2444 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[u S2534 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "536
-[v _u u `S2444  1 a 4 2 ]
-[v _g g `S2444  1 a 4 6 ]
+[v _u u `S2534  1 a 4 2 ]
+[v _g g `S2534  1 a 4 6 ]
 "535
 [v _l l `d  1 a 4 10 ]
 [v _h h `d  1 a 4 14 ]
 "536
-[v _ou ou `S2444  1 a 4 18 ]
+[v _ou ou `S2534  1 a 4 18 ]
 "534
 [v _n n `i  1 a 2 22 ]
 [v _i i `i  1 a 2 24 ]
@@ -1154,9 +1222,9 @@
 [v _nmode nmode `uc  1 a 1 41 ]
 [v _mode mode `uc  1 a 1 42 ]
 [v _pp pp `uc  1 a 1 43 ]
-[s S2431 _IO_FILE 0 ]
+[s S2521 _IO_FILE 0 ]
 "531
-[v _fp fp `*.39S2431  1 p 2 -2 ]
+[v _fp fp `*.39S2521  1 p 2 -2 ]
 [v _f f `d  1 p 4 -6 ]
 [v _c c `uc  1 p 1 -7 ]
 "812
@@ -1179,9 +1247,9 @@
 "154
 [v _w w `i  1 a 2 0 ]
 [v _i i `i  1 a 2 2 ]
-[s S2431 _IO_FILE 0 ]
+[s S2521 _IO_FILE 0 ]
 "152
-[v _fp fp `*.39S2431  1 p 2 -2 ]
+[v _fp fp `*.39S2521  1 p 2 -2 ]
 [v _buf buf `*.39uc  1 p 2 -4 ]
 [v _p p `i  1 p 2 -6 ]
 "183
@@ -1195,18 +1263,18 @@
 [v _c c `uc  1 a 1 2 ]
 "8
 [v _s s `*.39Cuc  1 p 2 -2 ]
-[u S2396 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2399 _IO_FILE 12 `S2396 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _fp fp `*.39S2399  1 p 2 -4 ]
+[u S2486 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2489 _IO_FILE 12 `S2486 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _fp fp `*.39S2489  1 p 2 -4 ]
 "19
 } 3
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `R(i  1 e 2 0 ]
 {
 [v _c c `i  1 p 2 -2 ]
-[u S2396 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2399 _IO_FILE 12 `S2396 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _fp fp `*.39S2399  1 p 2 -4 ]
+[u S2486 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2489 _IO_FILE 12 `S2486 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _fp fp `*.39S2489  1 p 2 -4 ]
 "24
 } 0
 "22 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\uart.c
@@ -1239,9 +1307,9 @@
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\floorf.c
 [v _floorf floorf `R(f  1 e 4 0 ]
 {
-[u S2586 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2676 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v _u u `S2586  1 a 4 0 ]
+[v _u u `S2676  1 a 4 0 ]
 "7
 [v _m m `ul  1 a 4 4 ]
 "6
@@ -1249,21 +1317,21 @@
 "3
 [v _x x `f  1 p 4 -4 ]
 "4
-[v floorf@F526 F526 `S2586  1 s 4 F526 ]
+[v floorf@F526 F526 `S2676  1 s 4 F526 ]
 "27
 } 10
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `R(i  1 e 2 0 ]
 {
-[u S2586 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2676 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v _u u `S2586  1 a 4 0 ]
+[v _u u `S2676  1 a 4 0 ]
 "7
 [v _e e `i  1 a 2 4 ]
 "4
 [v _x x `f  1 p 4 -4 ]
 "5
-[v ___fpclassifyf@F465 F465 `S2586  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S2676  1 s 4 F465 ]
 "11
 } 6
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
@@ -1308,17 +1376,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `R(d  1 e 4 0 ]
 {
-[s S2261 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2351 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2266 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2269 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2261 1 fAsBytes 4 0 `S2266 1 fAsWords 4 0 ]
-[v _prod prod `S2269  1 a 4 0 ]
+[s S2356 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2359 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2351 1 fAsBytes 4 0 `S2356 1 fAsWords 4 0 ]
+[v _prod prod `S2359  1 a 4 0 ]
 "12
 [v _grs grs `ul  1 a 4 4 ]
-[s S2337 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2427 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2340 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2337 1 nAsBytes 2 0 ]
-[v _temp temp `S2340  1 a 2 8 ]
+[u S2430 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2427 1 nAsBytes 2 0 ]
+[v _temp temp `S2430  1 a 2 8 ]
 "10
 [v _bexp bexp `uc  1 a 1 10 ]
 "11
@@ -1364,12 +1432,27 @@
 [v _a a `d  1 p 4 -8 ]
 "185
 } 13
-"68 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\bsp.c
-[v _bsp_set_timeout bsp_set_timeout `R(v  1 e 1 0 ]
+"15 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\adc.c
+[v _adc_read adc_read `R(us  1 e 2 0 ]
 {
-[v _timeout_in timeout_in `l  1 p 4 -4 ]
-"72
-} 0
+"20
+[v _result result `us  1 a 2 0 ]
+"15
+[v _channel channel `uc  1 p 1 -1 ]
+"23
+} 2
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `R(d  1 e 4 0 ]
+{
+"13
+[v _arg arg `ul  1 a 4 0 ]
+"12
+[v _exp exp `uc  1 a 1 4 ]
+"10
+[v _sign sign `uc  1 p 1 -1 ]
+[v _val val `l  1 p 4 -5 ]
+"44
+} 5
 "58 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\lcd.c
 [v _LCD_ShowString LCD_ShowString `R(v  1 e 1 0 ]
 {
@@ -1380,6 +1463,11 @@
 [v _textData textData `*.34uc  1 p 2 -3 ]
 "86
 } 1
+"97
+[v _LCD_Clear LCD_Clear `R(v  1 e 1 0 ]
+{
+"109
+} 0
 "88
 [v _LCD_Send LCD_Send `R(v  1 s 1 LCD_Send ]
 {
@@ -1415,10 +1503,10 @@
 {
 "110
 } 0
-"229 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
+"450 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main_menu.c
 [v _rc_isr_handle rc_isr_handle `R(v  1 e 1 0 ]
 {
-"231
+"452
 [v _rchar rchar `uc  1 a 1 0 ]
-"244
+"465
 } 1

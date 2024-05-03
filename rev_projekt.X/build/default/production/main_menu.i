@@ -8,6 +8,13 @@
 # 2 "<built-in>" 2
 # 1 "main_menu.c" 2
 
+
+
+
+
+
+
+
 #pragma config FOSC = HSMP
 #pragma config PLLCFG = ON
 #pragma config WDTEN = OFF
@@ -9638,7 +9645,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\xc.h" 2 3
-# 6 "main_menu.c" 2
+# 13 "main_menu.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
@@ -9786,7 +9793,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 7 "main_menu.c" 2
+# 14 "main_menu.c" 2
 
 
 
@@ -9814,7 +9821,7 @@ long bsp_get_timeout(void);
 void bsp_set_timeout(long timeout);
 void bsp_stop_timeout(void);
 void bsp_reg_RC_cb(void (*cb)(void));
-# 10 "main_menu.c" 2
+# 17 "main_menu.c" 2
 
 # 1 "./uart.h" 1
 
@@ -9822,7 +9829,7 @@ void bsp_reg_RC_cb(void (*cb)(void));
 
 void uart_init(void);
 void putch(char data);
-# 11 "main_menu.c" 2
+# 18 "main_menu.c" 2
 
 # 1 "./fsm.h" 1
 # 16 "./fsm.h"
@@ -9840,7 +9847,7 @@ void fsm_transition(fsm_t *fsm, state_fp new_state);
 
 void fsm_add_event(uint8_t in);
 uint8_t fsm_get_event(uint8_t *out);
-# 12 "main_menu.c" 2
+# 19 "main_menu.c" 2
 
 # 1 "./lcd.h" 1
 
@@ -9852,13 +9859,13 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 13 "main_menu.c" 2
+# 20 "main_menu.c" 2
 
 # 1 "./adc.h" 1
 # 10 "./adc.h"
 void adc_init(void);
 uint16_t adc_read(uint8_t channel);
-# 14 "main_menu.c" 2
+# 21 "main_menu.c" 2
 
 
 
@@ -9866,12 +9873,20 @@ uint16_t adc_read(uint8_t channel);
 void rc_isr_handle(void);
 
 void init(fsm_t *fsm, uint8_t event);
+void state0(fsm_t *fsm, uint8_t event);
 void state1(fsm_t *fsm, uint8_t event);
 void state2(fsm_t *fsm, uint8_t event);
 void state3(fsm_t *fsm, uint8_t event);
 void state4(fsm_t *fsm, uint8_t event);
-void uart_state(fsm_t *fsm, uint8_t event);
-void pot_state(fsm_t *fsm, uint8_t event);
+void state5(fsm_t *fsm, uint8_t event);
+void state6(fsm_t *fsm, uint8_t event);
+void gpio_state0(fsm_t *fsm, uint8_t event);
+void uart_state1(fsm_t *fsm, uint8_t event);
+void pwm_state2(fsm_t *fsm, uint8_t event);
+void adc_state3(fsm_t *fsm, uint8_t event);
+void dac_state4(fsm_t *fsm, uint8_t event);
+void game_state5(fsm_t *fsm, uint8_t event);
+void hw_state6(fsm_t *fsm, uint8_t event);
 
 typedef struct{
 
@@ -9922,39 +9937,63 @@ void init(fsm_t *fsm, uint8_t event){
     switch(event){
         case 1U:
             LCD_ShowString(1, "Welcome         ");
-            bsp_set_timeout(3000);
+            LCD_ShowString(2, "      ^  v  >  <");
+            bsp_set_timeout(5000);
             break;
         case 2U:
             printf("Init state exit\n");
             break;
+        case 3U:
+        case 4U:
+        case 5U:
+        case 6U:
         case 7U:
+            fsm_transition(fsm, &state0);
+            break;
+    }
+}
+
+void state0(fsm_t *fsm, uint8_t event){
+
+ switch(event){
+        case 1U:
+            printf("Enter state 0\n");
+            LCD_ShowString(1, ">>> 0_GPIO          ");
+            LCD_ShowString(2, "    1_UART          ");
+            break;
+        case 2U:
+            printf("Exit state 0\n");
+            LCD_Clear();
+            break;
+        case 4U:
             fsm_transition(fsm, &state1);
+            break;
+        case 5U:
+            fsm_transition(fsm, &gpio_state0);
             break;
     }
 }
 
 void state1(fsm_t *fsm, uint8_t event){
 
-    static uint8_t leds = 0;
-
  switch(event){
         case 1U:
-            LCD_ShowString(1, ">>> 0_GPIO          ");
-            LCD_ShowString(2, "    State2           ");
-            leds = 0b11000000;
+            printf("Enter state 1\n");
+            LCD_ShowString(1, ">>> 1_UART           ");
+            LCD_ShowString(2, "    2_PWM            ");
             break;
         case 2U:
-            bsp_drive_led(0);
             printf("Exit state 1\n");
+            LCD_Clear();
             break;
         case 3U:
+            fsm_transition(fsm, &state0);
+            break;
+        case 4U:
             fsm_transition(fsm, &state2);
             break;
         case 5U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
+            fsm_transition(fsm, &uart_state1);
             break;
     }
 }
@@ -9963,24 +10002,22 @@ void state2(fsm_t *fsm, uint8_t event){
 
  switch(event){
         case 1U:
-            LCD_ShowString(1, ">>> State2           ");
-            LCD_ShowString(2, "    State3           ");
-            bsp_set_timeout(500);
+            printf("Enter state 2\n");
+            LCD_ShowString(1, ">>> 2_PWM            ");
+            LCD_ShowString(2, "    3_ADC            ");
             break;
         case 2U:
             printf("Exit state 2\n");
-            LATDbits.LD6 = 1;
             LCD_Clear();
             break;
         case 3U:
-            fsm_transition(fsm, &state3);
-            break;
-        case 4U:
             fsm_transition(fsm, &state1);
             break;
-        case 7U:
-            LATDbits.LD6 ^= 1;
-            bsp_set_timeout(500);
+        case 4U:
+            fsm_transition(fsm, &state3);
+            break;
+        case 5U:
+            fsm_transition(fsm, &pwm_state2);
             break;
     }
 }
@@ -9989,21 +10026,22 @@ void state3(fsm_t *fsm, uint8_t event){
 
  switch(event){
         case 1U:
-            LCD_ShowString(1, ">>> State3           ");
-            LCD_ShowString(2, "    State4           ");
+            printf("Enter state 3\n");
+            LCD_ShowString(1, ">>> 3_ADC            ");
+            LCD_ShowString(2, "    4_DAC            ");
             break;
         case 2U:
             printf("Exit state 3\n");
             LCD_Clear();
             break;
         case 3U:
-            fsm_transition(fsm, &state4);
-            break;
-        case 4U:
             fsm_transition(fsm, &state2);
             break;
+        case 4U:
+            fsm_transition(fsm, &state4);
+            break;
         case 5U:
-            fsm_transition(fsm, &pot_state);
+            fsm_transition(fsm, &adc_state3);
             break;
     }
 }
@@ -10013,51 +10051,154 @@ void state4(fsm_t *fsm, uint8_t event){
  switch(event){
         case 1U:
             printf("Enter state 4\n");
-            LCD_ShowString(1, "    State3           ");
-            LCD_ShowString(2, ">>> State4           ");
+            LCD_ShowString(1, ">>> 4_DAC            ");
+            LCD_ShowString(2, "    5_GAME           ");
             break;
         case 2U:
             printf("Exit state 4\n");
             LCD_Clear();
             break;
-        case 4U:
+        case 3U:
             fsm_transition(fsm, &state3);
             break;
+        case 4U:
+            fsm_transition(fsm, &state5);
+            break;
         case 5U:
-            fsm_transition(fsm, &uart_state);
+            fsm_transition(fsm, &dac_state4);
             break;
     }
 }
 
-void uart_state(fsm_t *fsm, uint8_t event){
+void state5(fsm_t *fsm, uint8_t event){
+
+ switch(event){
+        case 1U:
+            printf("Enter state 5\n");
+            LCD_ShowString(1, ">>> 5_GAME           ");
+            LCD_ShowString(2, "    6_HW             ");
+            break;
+        case 2U:
+            printf("Exit state 5\n");
+            LCD_Clear();
+            break;
+        case 3U:
+            fsm_transition(fsm, &state4);
+            break;
+        case 4U:
+            fsm_transition(fsm, &state6);
+            break;
+        case 5U:
+            fsm_transition(fsm, &game_state5);
+            break;
+    }
+}
+
+void state6(fsm_t *fsm, uint8_t event){
+
+ switch(event){
+        case 1U:
+            printf("Enter state 6\n");
+            LCD_ShowString(1, "    5_GAME           ");
+            LCD_ShowString(2, ">>> 6_HW             ");
+            break;
+        case 2U:
+            printf("Exit state 6\n");
+            LCD_Clear();
+            break;
+        case 3U:
+            fsm_transition(fsm, &state5);
+            break;
+        case 5U:
+            fsm_transition(fsm, &hw_state6);
+            break;
+    }
+}
+
+void gpio_state0(fsm_t *fsm, uint8_t event){
+
+    static uint8_t leds = 0;
+    switch(event){
+        case 1U:
+            printf("Enter state 0_GPIO\n");
+            LCD_ShowString(1, "Rozsvecovani led");
+            LCD_ShowString(2, "mackej BTN2     ");
+            leds = 0b11000000;
+            break;
+        case 2U:
+            printf("Exit state 0_GPIO\n");
+            LCD_Clear();
+            bsp_drive_led(0);
+            break;
+        case 4U:
+            leds = (leds >> 1);
+            bsp_drive_led(leds);
+            leds += 0b10000000;
+            if (leds == 0b11111111) leds = 0b10000000;
+            break;
+        case 6U:
+            fsm_transition(fsm, &state0);
+            break;
+    }
+}
+
+void uart_state1(fsm_t *fsm, uint8_t event){
 
     switch(event){
         case 1U:
-            printf("Enter state Uart\n");
+            printf("Enter state 1_UART\n");
             LCD_ShowString(1, "Zadej zpravu:         ");
             printf("Zadej zpravu:\n");
             break;
         case 2U:
-            printf("Exit state Uart\n");
+            printf("Exit state 1_UART\n");
             LCD_Clear();
             break;
         case 6U:
-            fsm_transition(fsm, &state4);
+            fsm_transition(fsm, &state1);
             break;
         case 9U:
             printf("Zprava: %s\n", msg.data);
     }
 
 }
-void pot_state(fsm_t *fsm, uint8_t event){
+
+void pwm_state2(fsm_t *fsm, uint8_t event){
+
+    static uint8_t leds = 0;
+    switch(event){
+        case 1U:
+            printf("Enter state 2_PWM\n");
+            LCD_ShowString(1, "Rozsvecovani led");
+            LCD_ShowString(2, "mackej BTN2     ");
+            leds = 0b11000000;
+            break;
+        case 2U:
+            printf("Exit state 2_PWM\n");
+            LCD_Clear();
+            bsp_drive_led(0);
+            break;
+        case 4U:
+            leds = (leds >> 1);
+            bsp_drive_led(leds);
+            leds += 0b10000000;
+            if (leds == 0b11111111) leds = 0b10000000;
+            break;
+        case 6U:
+            fsm_transition(fsm, &state2);
+            break;
+    }
+}
+
+void adc_state3(fsm_t *fsm, uint8_t event){
 
  switch(event){
         case 1U:
             LCD_ShowString(1, "Potenciometr:           ");
-            printf("Enter state POT\n");
+            printf("Enter state 3_ADC\n");
             break;
         case 2U:
-            printf("Exit state POT\n");
+            printf("Exit state 3_ADC\n");
             LCD_Clear();
             break;
         case 6U:
@@ -10071,7 +10212,87 @@ void pot_state(fsm_t *fsm, uint8_t event){
             break;
         }
     }
+}
 
+void dac_state4(fsm_t *fsm, uint8_t event){
+
+    static uint8_t leds = 0;
+    switch(event){
+        case 1U:
+            printf("Enter state 4_DAC\n");
+            LCD_ShowString(1, "Rozsvecovani led");
+            LCD_ShowString(2, "mackej BTN2     ");
+            leds = 0b11000000;
+            break;
+        case 2U:
+            printf("Exit state 4_DAC\n");
+            LCD_Clear();
+            bsp_drive_led(0);
+            break;
+        case 4U:
+            leds = (leds >> 1);
+            bsp_drive_led(leds);
+            leds += 0b10000000;
+            if (leds == 0b11111111) leds = 0b10000000;
+            break;
+        case 6U:
+            fsm_transition(fsm, &state4);
+            break;
+    }
+}
+
+void game_state5(fsm_t *fsm, uint8_t event){
+
+    static uint8_t leds = 0;
+    switch(event){
+        case 1U:
+            printf("Enter state 5_GAME\n");
+            LCD_ShowString(1, "Rozsvecovani led");
+            LCD_ShowString(2, "mackej BTN2     ");
+            leds = 0b11000000;
+            break;
+        case 2U:
+            printf("Exit state 5_GAME\n");
+            LCD_Clear();
+            bsp_drive_led(0);
+            break;
+        case 4U:
+            leds = (leds >> 1);
+            bsp_drive_led(leds);
+            leds += 0b10000000;
+            if (leds == 0b11111111) leds = 0b10000000;
+            break;
+        case 6U:
+            fsm_transition(fsm, &state5);
+            break;
+    }
+}
+
+void hw_state6(fsm_t *fsm, uint8_t event){
+
+    static uint8_t leds = 0;
+    switch(event){
+        case 1U:
+            printf("Enter state 6_HW\n");
+            LCD_ShowString(1, "Rozsvecovani led");
+            LCD_ShowString(2, "mackej BTN2     ");
+            leds = 0b11000000;
+            break;
+        case 2U:
+            printf("Exit state 6_HW\n");
+            LCD_Clear();
+            bsp_drive_led(0);
+            break;
+        case 4U:
+            leds = (leds >> 1);
+            bsp_drive_led(leds);
+            leds += 0b10000000;
+            if (leds == 0b11111111) leds = 0b10000000;
+            break;
+        case 6U:
+            fsm_transition(fsm, &state6);
+            break;
+    }
 }
 
 void rc_isr_handle(void){
