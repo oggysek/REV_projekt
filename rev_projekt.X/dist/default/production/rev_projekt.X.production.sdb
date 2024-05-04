@@ -135,11 +135,11 @@
 [v _adc_state3 adc_state3 `R(v  1 e 1 0 ]
 "374
 [v _dac_state4 dac_state4 `R(v  1 e 1 0 ]
-"401
+"411
 [v _game_state5 game_state5 `R(v  1 e 1 0 ]
-"428
+"438
 [v _hw_state6 hw_state6 `R(v  1 e 1 0 ]
-"455
+"465
 [v _rc_isr_handle rc_isr_handle `R(v  1 e 1 0 ]
 "4 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\uart.c
 [v _uart_init uart_init `R(v  1 e 1 0 ]
@@ -946,25 +946,25 @@
 [v _event event `uc  1 p 1 -3 ]
 "22
 } 0
-"428 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
+"438 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _hw_state6 hw_state6 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"430
+"440
 [v hw_state6@leds leds `uc  1 s 1 leds ]
-"453
+"463
 } 0
-"401
+"411
 [v _game_state5 game_state5 `R(v  1 e 1 0 ]
 {
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"403
+"413
 [v game_state5@leds leds `uc  1 s 1 leds ]
-"426
+"436
 } 0
 "250
 [v _state6 state6 `R(v  1 e 1 0 ]
@@ -977,13 +977,22 @@
 "374
 [v _dac_state4 dac_state4 `R(v  1 e 1 0 ]
 {
+"398
+[v _i i `l  1 a 4 0 ]
+"393
+[v _i i `l  1 a 4 4 ]
+"395
+[v _i i `i  1 a 2 8 ]
+"390
+[v _i i `i  1 a 2 10 ]
+"376
+[v _led_state led_state `uc  1 a 1 12 ]
 [s S50 fsm_t 2 `*.37R(v 1 state 2 0 ]
+"374
 [v _fsm fsm `*.39S50  1 p 2 -2 ]
 [v _event event `uc  1 p 1 -3 ]
-"376
-[v dac_state4@leds leds `uc  1 s 1 leds ]
-"399
-} 0
+"409
+} 13
 "226
 [v _state5 state5 `R(v  1 e 1 0 ]
 {
@@ -1094,10 +1103,10 @@
 "9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `R(i  1 e 2 0 ]
 {
-[u S2492 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S2576 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S2495 _IO_FILE 12 `S2492 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _f f `S2495  1 a 12 0 ]
+[s S2579 _IO_FILE 12 `S2576 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _f f `S2579  1 a 12 0 ]
 "12
 [v _ap ap `[1]*.39v  1 a 2 12 ]
 "9
@@ -1119,9 +1128,9 @@
 {
 "1549
 [v _cfmt cfmt `*.32uc  1 a 2 0 ]
-[s S2527 _IO_FILE 0 ]
+[s S2611 _IO_FILE 0 ]
 "1546
-[v _fp fp `*.39S2527  1 p 2 -2 ]
+[v _fp fp `*.39S2611  1 p 2 -2 ]
 [v _fmt fmt `*.32Cuc  1 p 2 -4 ]
 [v _ap ap `*.39*.39v  1 p 2 -6 ]
 "1569
@@ -1129,15 +1138,15 @@
 "1048
 [v _vfpfcnvrt vfpfcnvrt `R(v  1 s 1 vfpfcnvrt ]
 {
-[u S2582 . 4 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+[u S2666 . 4 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
 "1059
-[v _convarg convarg `S2582  1 a 4 2 ]
+[v _convarg convarg `S2666  1 a 4 2 ]
 "1050
 [v _cp cp `*.32uc  1 a 2 6 ]
 [v _c c `uc  1 a 1 8 ]
-[s S2527 _IO_FILE 0 ]
+[s S2611 _IO_FILE 0 ]
 "1048
-[v _fp fp `*.39S2527  1 p 2 -2 ]
+[v _fp fp `*.39S2611  1 p 2 -2 ]
 [v _fmt fmt `*.39*.32uc  1 p 2 -4 ]
 [v _ap ap `*.39*.39v  1 p 2 -6 ]
 "1543
@@ -1167,9 +1176,9 @@
 "865
 [v _i i `i  1 a 2 13 ]
 [v _w w `i  1 a 2 15 ]
-[s S2527 _IO_FILE 0 ]
+[s S2611 _IO_FILE 0 ]
 "862
-[v _fp fp `*.39S2527  1 p 2 -2 ]
+[v _fp fp `*.39S2611  1 p 2 -2 ]
 [v _s s `*.39uc  1 p 2 -4 ]
 "864
 [v stoa@F1170 F1170 `[7]uc  1 s 7 F1170 ]
@@ -1199,15 +1208,15 @@
 "531
 [v _efgtoa efgtoa `R(v  1 s 1 efgtoa ]
 {
-[u S2540 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[u S2624 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "536
-[v _u u `S2540  1 a 4 2 ]
-[v _g g `S2540  1 a 4 6 ]
+[v _u u `S2624  1 a 4 2 ]
+[v _g g `S2624  1 a 4 6 ]
 "535
 [v _l l `d  1 a 4 10 ]
 [v _h h `d  1 a 4 14 ]
 "536
-[v _ou ou `S2540  1 a 4 18 ]
+[v _ou ou `S2624  1 a 4 18 ]
 "534
 [v _n n `i  1 a 2 22 ]
 [v _i i `i  1 a 2 24 ]
@@ -1223,9 +1232,9 @@
 [v _nmode nmode `uc  1 a 1 41 ]
 [v _mode mode `uc  1 a 1 42 ]
 [v _pp pp `uc  1 a 1 43 ]
-[s S2527 _IO_FILE 0 ]
+[s S2611 _IO_FILE 0 ]
 "531
-[v _fp fp `*.39S2527  1 p 2 -2 ]
+[v _fp fp `*.39S2611  1 p 2 -2 ]
 [v _f f `d  1 p 4 -6 ]
 [v _c c `uc  1 p 1 -7 ]
 "812
@@ -1248,9 +1257,9 @@
 "154
 [v _w w `i  1 a 2 0 ]
 [v _i i `i  1 a 2 2 ]
-[s S2527 _IO_FILE 0 ]
+[s S2611 _IO_FILE 0 ]
 "152
-[v _fp fp `*.39S2527  1 p 2 -2 ]
+[v _fp fp `*.39S2611  1 p 2 -2 ]
 [v _buf buf `*.39uc  1 p 2 -4 ]
 [v _p p `i  1 p 2 -6 ]
 "183
@@ -1264,18 +1273,18 @@
 [v _c c `uc  1 a 1 2 ]
 "8
 [v _s s `*.39Cuc  1 p 2 -2 ]
-[u S2492 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2495 _IO_FILE 12 `S2492 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _fp fp `*.39S2495  1 p 2 -4 ]
+[u S2576 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2579 _IO_FILE 12 `S2576 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _fp fp `*.39S2579  1 p 2 -4 ]
 "19
 } 3
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `R(i  1 e 2 0 ]
 {
 [v _c c `i  1 p 2 -2 ]
-[u S2492 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2495 _IO_FILE 12 `S2492 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v _fp fp `*.39S2495  1 p 2 -4 ]
+[u S2576 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2579 _IO_FILE 12 `S2576 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v _fp fp `*.39S2579  1 p 2 -4 ]
 "24
 } 0
 "22 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\uart.c
@@ -1308,9 +1317,9 @@
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\floorf.c
 [v _floorf floorf `R(f  1 e 4 0 ]
 {
-[u S2682 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2766 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v _u u `S2682  1 a 4 0 ]
+[v _u u `S2766  1 a 4 0 ]
 "7
 [v _m m `ul  1 a 4 4 ]
 "6
@@ -1318,21 +1327,21 @@
 "3
 [v _x x `f  1 p 4 -4 ]
 "4
-[v floorf@F526 F526 `S2682  1 s 4 F526 ]
+[v floorf@F526 F526 `S2766  1 s 4 F526 ]
 "27
 } 10
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `R(i  1 e 2 0 ]
 {
-[u S2682 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S2766 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v _u u `S2682  1 a 4 0 ]
+[v _u u `S2766  1 a 4 0 ]
 "7
 [v _e e `i  1 a 2 4 ]
 "4
 [v _x x `f  1 p 4 -4 ]
 "5
-[v ___fpclassifyf@F465 F465 `S2682  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S2766  1 s 4 F465 ]
 "11
 } 6
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
@@ -1377,17 +1386,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `R(d  1 e 4 0 ]
 {
-[s S2357 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2441 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2362 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2365 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2357 1 fAsBytes 4 0 `S2362 1 fAsWords 4 0 ]
-[v _prod prod `S2365  1 a 4 0 ]
+[s S2446 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2449 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2441 1 fAsBytes 4 0 `S2446 1 fAsWords 4 0 ]
+[v _prod prod `S2449  1 a 4 0 ]
 "12
 [v _grs grs `ul  1 a 4 4 ]
-[s S2433 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2517 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2436 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2433 1 nAsBytes 2 0 ]
-[v _temp temp `S2436  1 a 2 8 ]
+[u S2520 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2517 1 nAsBytes 2 0 ]
+[v _temp temp `S2520  1 a 2 8 ]
 "10
 [v _bexp bexp `uc  1 a 1 10 ]
 "11
@@ -1504,10 +1513,10 @@
 {
 "110
 } 0
-"455 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
+"465 C:\Users\oggys\Documents\GitHub\REV_projekt\rev_projekt.X\main.c
 [v _rc_isr_handle rc_isr_handle `R(v  1 e 1 0 ]
 {
-"457
+"467
 [v _rchar rchar `uc  1 a 1 0 ]
-"471
+"481
 } 1

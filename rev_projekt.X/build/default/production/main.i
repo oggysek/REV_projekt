@@ -10212,7 +10212,7 @@ void adc_state3(fsm_t *fsm, uint8_t event){
         case 8U:
         {
             char str[17];
-            sprintf(str, "POT: %.1f mV          ", (float)adc_read(5)*3.22265625);
+            sprintf(str, "POT1:%.1fPOT2:%.1f          ", (float)adc_read(5)*3.22265625*0.001, (float)adc_read(4)*3.22265625*0.001);
             LCD_ShowString(2, str);
             break;
         }
@@ -10221,13 +10221,12 @@ void adc_state3(fsm_t *fsm, uint8_t event){
 
 void dac_state4(fsm_t *fsm, uint8_t event){
 
-    static uint8_t leds = 0;
+    unsigned char led_state = 0b110000;
     switch(event){
         case 1U:
             printf("Enter state 4_DAC\n");
             LCD_ShowString(1, "Rozsvecovani led");
             LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
             break;
         case 2U:
             printf("Exit state 4_DAC\n");
@@ -10235,13 +10234,24 @@ void dac_state4(fsm_t *fsm, uint8_t event){
             bsp_drive_led(0);
             break;
         case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
+            while (!PORTAbits.RA2) {
+                for (int i = 0; i<4; i++){
+                    led_state = led_state >> 1;
+                    bsp_drive_led(led_state);
+                    for(long i=1; i<50000; i++);
+                }
+                for (int i = 0; i<4; i++){
+                    led_state = led_state << 1;
+                    bsp_drive_led(led_state);
+                    for(long i=1; i<50000; i++);
+                }
+            }
             break;
         case 6U:
             fsm_transition(fsm, &state4);
+            break;
+        case 7U:
+            fsm_transition(fsm, &dac_state4);
             break;
     }
 }
