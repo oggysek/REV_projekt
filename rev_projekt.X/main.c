@@ -21,6 +21,9 @@
 #include "adc.h"
 
 #define _XTAL_FREQ 32e6
+#define SETDUTY(x) CCPR1L = x
+
+
 
 void rc_isr_handle(void);
 
@@ -70,6 +73,35 @@ int main(void) {
     uint8_t event = 0; 
 
     fsm_init(&fsm, &init);
+    
+    
+    
+    //init - PWM
+    TRISDbits.RD5 = 1;              // nastavim jako vstup pin P1B
+    TRISCbits.RC2 = 1;              // nastavim jako vstup pin P1A
+    
+    
+    CCPTMRS0bits.C1TSEL = 0b00;     // Timer 2 
+    PR2 = 199;                      // f = 10kHz
+    CCP1CONbits.P1M = 0b00;         // PWM single
+    CCP1CONbits.CCP1M = 0b1100;     // PWM single
+    CCPR1L = 0;                     // strida 0%    
+    T2CONbits.T2CKPS = 0b00;        // 1:1 Prescaler
+    TMR2IF = 0;                     // nastavi se az pretece timer
+    TMR2ON = 1;                     // staci zapnout defaultne je nastaven jak chceme
+    while(!TMR2IF){};               // cekam az jednou pretece
+        
+    TRISDbits.RD5 = 0;              // nastavim jako vystup pin P1B
+    TRISCbits.RC2 = 0;              // nastavim jako vystup pin P1A
+            
+    // ADC pro potenciometr
+    ANSELE = 0b1;                   //RE0/AN5
+    ADCON2bits.ADFM = 0;            //left justified
+    ADCON2bits.ADCS = 0b110;        //Fosc/64
+    ADCON2bits.ACQT = 0b110;        //16 Tad
+    ADCON0bits.ADON = 1;            //ADC zapnout
+    ADCON0bits.CHS = 5;             // kanal AN5
+    
 
     while(1){
         if (fsm_get_event(&event)){
@@ -326,24 +358,24 @@ void pwm_state2(fsm_t *fsm, uint8_t event){
     switch(event){
         case EV_ENTRY:
             printf("Enter state 2_PWM\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
+            LCD_ShowString(1, "Toceni motoru         ");
+            LCD_ShowString(2, "toc potenciometrem      ");
             leds = 0b11000000;
+            PSTR1CON |= 0b0011;               // steering na P1B a P1A
             break;
         case EV_EXIT:
             printf("Exit state 2_PWM\n");
             LCD_Clear();
+            PSTR1CON &= 0b1100;             // zastavi steering na P1B a P1A
             bsp_drive_led(0);
-            break;
-        case EV_BTN2_PRESSED:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case EV_BTN4_PRESSED:
             fsm_transition(fsm, &state2);
             break;
+        case EV_TICK:
+            GODONE = 1;                 // spustim konverzi
+            while(GODONE){};            // cekam na konverzi
+            SETDUTY(ADRESH);            // nastavim stridu pouzivam jen 8hornich bitu
     }
 }
 

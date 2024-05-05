@@ -9870,6 +9870,9 @@ uint16_t adc_read(uint8_t channel);
 
 
 
+
+
+
 void rc_isr_handle(void);
 
 void init(fsm_t *fsm, uint8_t event);
@@ -9918,6 +9921,35 @@ int main(void) {
     uint8_t event = 0;
 
     fsm_init(&fsm, &init);
+
+
+
+
+    TRISDbits.RD5 = 1;
+    TRISCbits.RC2 = 1;
+
+
+    CCPTMRS0bits.C1TSEL = 0b00;
+    PR2 = 199;
+    CCP1CONbits.P1M = 0b00;
+    CCP1CONbits.CCP1M = 0b1100;
+    CCPR1L = 0;
+    T2CONbits.T2CKPS = 0b00;
+    TMR2IF = 0;
+    TMR2ON = 1;
+    while(!TMR2IF){};
+
+    TRISDbits.RD5 = 0;
+    TRISCbits.RC2 = 0;
+
+
+    ANSELE = 0b1;
+    ADCON2bits.ADFM = 0;
+    ADCON2bits.ADCS = 0b110;
+    ADCON2bits.ACQT = 0b110;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.CHS = 5;
+
 
     while(1){
         if (fsm_get_event(&event)){
@@ -10174,24 +10206,24 @@ void pwm_state2(fsm_t *fsm, uint8_t event){
     switch(event){
         case 1U:
             printf("Enter state 2_PWM\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
+            LCD_ShowString(1, "Toceni motoru         ");
+            LCD_ShowString(2, "toc potenciometrem      ");
             leds = 0b11000000;
+            PSTR1CON |= 0b11;
             break;
         case 2U:
             printf("Exit state 2_PWM\n");
             LCD_Clear();
+            PSTR1CON &= 0b1100;
             bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case 6U:
             fsm_transition(fsm, &state2);
             break;
+        case 8U:
+            GODONE = 1;
+            while(GODONE){};
+            CCPR1L = ADRESH;
     }
 }
 
@@ -10212,7 +10244,7 @@ void adc_state3(fsm_t *fsm, uint8_t event){
         case 8U:
         {
             char str[17];
-            sprintf(str, "POT1:%.1fPOT2:%.1f          ", (float)adc_read(5)*3.22265625*0.001, (float)adc_read(4)*3.22265625*0.001);
+            sprintf(str, "POT1:%.1fPOT2:%.1f", (float)adc_read(5)*3.22265625*0.001, (float)adc_read(4)*3.22265625*0.001);
             LCD_ShowString(2, str);
             break;
         }

@@ -32,7 +32,7 @@ void bsp_init(void) {
     LED4 = 1;
     LED5 = 1;
     LED6 = 1;   
-    // PWM nebo DAC
+    
     T2CONbits.T2CKPS = 0b11;        
     T2CONbits.T2OUTPS = 0b1001;     
     PR2 = 250;                      
