@@ -10177,6 +10177,7 @@ void gpio_state0(fsm_t *fsm, uint8_t event){
 
 void uart_state1(fsm_t *fsm, uint8_t event){
 
+    char str[17];
     switch(event){
         case 1U:
             printf("Enter state 1_UART\n");
@@ -10197,6 +10198,9 @@ void uart_state1(fsm_t *fsm, uint8_t event){
             }
             msg_rev.data[msg_rev.idx] = '\0';
             printf("Zprava: %s\n", msg_rev.data);
+            sprintf(str, "%s                                                                                          ", msg_rev.data);
+            LCD_ShowString(2, str);
+            break;
     }
 }
 
@@ -10209,7 +10213,7 @@ void pwm_state2(fsm_t *fsm, uint8_t event){
             LCD_ShowString(1, "Toceni motoru         ");
             LCD_ShowString(2, "toc potenciometrem      ");
             leds = 0b11000000;
-            PSTR1CON |= 0b11;
+            PSTR1CON |= 0b0011;
             break;
         case 2U:
             printf("Exit state 2_PWM\n");

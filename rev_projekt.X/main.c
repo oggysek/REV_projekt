@@ -329,6 +329,7 @@ void gpio_state0(fsm_t *fsm, uint8_t event){
 
 void uart_state1(fsm_t *fsm, uint8_t event){
 
+    char str[17];
     switch(event){
         case EV_ENTRY:
             printf("Enter state 1_UART\n");
@@ -349,6 +350,9 @@ void uart_state1(fsm_t *fsm, uint8_t event){
             }
             msg_rev.data[msg_rev.idx] = '\0';
             printf("Zprava: %s\n", msg_rev.data);
+            sprintf(str, "%s", msg_rev.data);
+            LCD_ShowString(2, str);
+            break;
     }
 }
 
