@@ -9797,6 +9797,7 @@ char *tempnam(const char *, const char *);
 
 
 
+
 # 1 "./bsp.h" 1
 # 21 "./bsp.h"
 typedef struct {
@@ -9821,7 +9822,7 @@ long bsp_get_timeout(void);
 void bsp_set_timeout(long timeout);
 void bsp_stop_timeout(void);
 void bsp_reg_RC_cb(void (*cb)(void));
-# 17 "main.c" 2
+# 18 "main.c" 2
 
 # 1 "./uart.h" 1
 
@@ -9829,7 +9830,7 @@ void bsp_reg_RC_cb(void (*cb)(void));
 
 void uart_init(void);
 void putch(char data);
-# 18 "main.c" 2
+# 19 "main.c" 2
 
 # 1 "./fsm.h" 1
 # 16 "./fsm.h"
@@ -9847,7 +9848,7 @@ void fsm_transition(fsm_t *fsm, state_fp new_state);
 
 void fsm_add_event(uint8_t in);
 uint8_t fsm_get_event(uint8_t *out);
-# 19 "main.c" 2
+# 20 "main.c" 2
 
 # 1 "./lcd.h" 1
 
@@ -9859,13 +9860,13 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 20 "main.c" 2
+# 21 "main.c" 2
 
 # 1 "./adc.h" 1
 # 10 "./adc.h"
 void adc_init(void);
 uint16_t adc_read(uint8_t channel);
-# 21 "main.c" 2
+# 22 "main.c" 2
 
 
 
@@ -10177,7 +10178,6 @@ void gpio_state0(fsm_t *fsm, uint8_t event){
 
 void uart_state1(fsm_t *fsm, uint8_t event){
 
-    char str[17];
     switch(event){
         case 1U:
             printf("Enter state 1_UART\n");
@@ -10198,9 +10198,6 @@ void uart_state1(fsm_t *fsm, uint8_t event){
             }
             msg_rev.data[msg_rev.idx] = '\0';
             printf("Zprava: %s\n", msg_rev.data);
-            sprintf(str, "%s                                                                                          ", msg_rev.data);
-            LCD_ShowString(2, str);
-            break;
     }
 }
 
@@ -10247,8 +10244,11 @@ void adc_state3(fsm_t *fsm, uint8_t event){
             break;
         case 8U:
         {
+            float potak1, potak2;
             char str[17];
-            sprintf(str, "POT1:%.1fPOT2:%.1f", (float)adc_read(5)*3.22265625*0.001, (float)adc_read(4)*3.22265625*0.001);
+            potak1 = (float)(adc_read(5)-128)*0.00005050196;
+            potak2 = (float)(adc_read(4)-128)*0.00005050196;
+            sprintf(str, "POT1:%.1fPOT2:%.1f", potak1, potak2);
             LCD_ShowString(2, str);
             break;
         }
@@ -10256,89 +10256,58 @@ void adc_state3(fsm_t *fsm, uint8_t event){
 }
 
 void dac_state4(fsm_t *fsm, uint8_t event){
-
-    unsigned char led_state = 0b110000;
     switch(event){
         case 1U:
             printf("Enter state 4_DAC\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
+            LCD_ShowString(1, "Orezana sinusvka");
+            LCD_ShowString(2, "    NEFUNKCNI   ");
             break;
         case 2U:
             printf("Exit state 4_DAC\n");
             LCD_Clear();
             bsp_drive_led(0);
             break;
-        case 4U:
-            while (!PORTAbits.RA2) {
-                for (int i = 0; i<4; i++){
-                    led_state = led_state >> 1;
-                    bsp_drive_led(led_state);
-                    for(long i=1; i<50000; i++);
-                }
-                for (int i = 0; i<4; i++){
-                    led_state = led_state << 1;
-                    bsp_drive_led(led_state);
-                    for(long i=1; i<50000; i++);
-                }
-            }
-            break;
         case 6U:
             fsm_transition(fsm, &state4);
-            break;
-        case 7U:
-            fsm_transition(fsm, &dac_state4);
             break;
     }
 }
 
 void game_state5(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
+    char str[17];
     switch(event){
         case 1U:
             printf("Enter state 5_GAME\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
+            LCD_ShowString(1, "Rychlost reakce");
+            srand(12345);
+            char cislo = (rand() % 4) + 1;
+            sprintf(str, "%d      NEFUNKCNI", cislo);
+            LCD_ShowString(2, str);
+            bsp_set_timeout(5000);
             break;
         case 2U:
             printf("Exit state 5_GAME\n");
             LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case 6U:
+            fsm_transition(fsm, &state5);
+            break;
+        case 7U:
             fsm_transition(fsm, &state5);
             break;
     }
 }
 
 void hw_state6(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
     switch(event){
         case 1U:
             printf("Enter state 6_HW\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
+            LCD_ShowString(1, "Prehravani hudby");
+            LCD_ShowString(2, "    NEFUNKCNI   ");
             break;
         case 2U:
             printf("Exit state 6_HW\n");
             LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case 4U:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case 6U:
             fsm_transition(fsm, &state6);

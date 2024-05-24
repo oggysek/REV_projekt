@@ -13,6 +13,7 @@
 #include <xc.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #include "bsp.h"
 #include "uart.h"
@@ -329,7 +330,6 @@ void gpio_state0(fsm_t *fsm, uint8_t event){
 
 void uart_state1(fsm_t *fsm, uint8_t event){
 
-    char str[17];
     switch(event){
         case EV_ENTRY:
             printf("Enter state 1_UART\n");
@@ -350,9 +350,6 @@ void uart_state1(fsm_t *fsm, uint8_t event){
             }
             msg_rev.data[msg_rev.idx] = '\0';
             printf("Zprava: %s\n", msg_rev.data);
-            sprintf(str, "%s", msg_rev.data);
-            LCD_ShowString(2, str);
-            break;
     }
 }
 
@@ -399,8 +396,11 @@ void adc_state3(fsm_t *fsm, uint8_t event){
             break;
         case EV_TICK:
         {
+            float potak1, potak2;
             char str[17];
-            sprintf(str, "POT1:%.1fPOT2:%.1f", (float)adc_read(POT1)*3.22265625*0.001, (float)adc_read(POT2)*3.22265625*0.001);
+            potak1 = (float)(adc_read(POT1)-128)*0.00005050196;
+            potak2 = (float)(adc_read(POT2)-128)*0.00005050196;
+            sprintf(str, "POT1:%.1fPOT2:%.1f", potak1, potak2);
             LCD_ShowString(2, str);
             break;
         }
@@ -408,89 +408,58 @@ void adc_state3(fsm_t *fsm, uint8_t event){
 }
 
 void dac_state4(fsm_t *fsm, uint8_t event){
-    
-    unsigned char led_state = 0b110000;
     switch(event){
         case EV_ENTRY:
             printf("Enter state 4_DAC\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
+            LCD_ShowString(1, "Orezana sinusvka");
+            LCD_ShowString(2, "    NEFUNKCNI   ");
             break;
         case EV_EXIT:
             printf("Exit state 4_DAC\n");
             LCD_Clear();
             bsp_drive_led(0);
             break;
-        case EV_BTN2_PRESSED:
-            while (!BTN4) {
-                for (int i = 0; i<4; i++){
-                    led_state = led_state >> 1;
-                    bsp_drive_led(led_state);
-                    for(long i=1; i<50000; i++);
-                } 
-                for (int i = 0; i<4; i++){
-                    led_state = led_state << 1;
-                    bsp_drive_led(led_state);
-                    for(long i=1; i<50000; i++);
-                }
-            }
-            break;
         case EV_BTN4_PRESSED:
             fsm_transition(fsm, &state4);
-            break;
-        case EV_TIMEOUT:
-            fsm_transition(fsm, &dac_state4);
             break;
     }
 }
 
 void game_state5(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
+    char str[17];
     switch(event){
         case EV_ENTRY:
             printf("Enter state 5_GAME\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
+            LCD_ShowString(1, "Rychlost reakce");
+            srand(12345);
+            char cislo = (rand() % 4) + 1;
+            sprintf(str, "%d      NEFUNKCNI", cislo);
+            LCD_ShowString(2, str);
+            bsp_set_timeout(5000);
             break;
         case EV_EXIT:
             printf("Exit state 5_GAME\n");
             LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case EV_BTN2_PRESSED:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case EV_BTN4_PRESSED:
+            fsm_transition(fsm, &state5);
+            break;
+        case EV_TIMEOUT:
             fsm_transition(fsm, &state5);
             break;
     }
 }
 
 void hw_state6(fsm_t *fsm, uint8_t event){
-
-    static uint8_t leds = 0;
     switch(event){
         case EV_ENTRY:
             printf("Enter state 6_HW\n");
-            LCD_ShowString(1, "Rozsvecovani led");
-            LCD_ShowString(2, "mackej BTN2     ");
-            leds = 0b11000000;
+            LCD_ShowString(1, "Prehravani hudby");
+            LCD_ShowString(2, "    NEFUNKCNI   ");
             break;
         case EV_EXIT:
             printf("Exit state 6_HW\n");
             LCD_Clear();
-            bsp_drive_led(0);
-            break;
-        case EV_BTN2_PRESSED:
-            leds = (leds >> 1);
-            bsp_drive_led(leds);
-            leds += 0b10000000;
-            if (leds == 0b11111111) leds = 0b10000000;
             break;
         case EV_BTN4_PRESSED:
             fsm_transition(fsm, &state6);

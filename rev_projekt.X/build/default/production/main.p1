@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"46 main.c
-[; ;main.c: 46: typedef struct{
+"47 main.c
+[; ;main.c: 47: typedef struct{
 [s S860 `uc -> 32 `i `uc 1 `i 1 ]
 [n S860 . data idx last ]
 [p mainexit ]
@@ -36,8 +36,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42 ./bsp.h
 [; ;./bsp.h: 42: void bsp_reg_RC_cb(void (*cb)(void));
 [v _bsp_reg_RC_cb `(v ~T0 @X0 0 ef1`*F6347 ]
-"28 main.c
-[; ;main.c: 28: void rc_isr_handle(void);
+"29 main.c
+[; ;main.c: 29: void rc_isr_handle(void);
 [v _rc_isr_handle `(v ~T0 @X0 0 ef ]
 [v F6357 `(v ~T0 @X0 0 tf2`*S858`uc ]
 "20 ./fsm.h
@@ -48,8 +48,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./fsm.h: 24: void fsm_init(fsm_t *fsm, state_fp init_state);
 [v _fsm_init `(v ~T0 @X0 0 ef2`*S858`*F6370 ]
-"30 main.c
-[; ;main.c: 30: void init(fsm_t *fsm, uint8_t event);
+"31 main.c
+[; ;main.c: 31: void init(fsm_t *fsm, uint8_t event);
 [v _init `(v ~T0 @X0 0 ef2`*S858`uc ]
 "8737 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8737:     struct {
@@ -211,57 +211,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26 ./fsm.h
 [; ;./fsm.h: 26: void fsm_transition(fsm_t *fsm, state_fp new_state);
 [v _fsm_transition `(v ~T0 @X0 0 ef2`*S858`*F6382 ]
-"31 main.c
-[; ;main.c: 31: void state0(fsm_t *fsm, uint8_t event);
+"32 main.c
+[; ;main.c: 32: void state0(fsm_t *fsm, uint8_t event);
 [v _state0 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "8 ./lcd.h
 [; ;./lcd.h: 8: void LCD_Clear(void);
 [v _LCD_Clear `(v ~T0 @X0 0 ef ]
-"32 main.c
-[; ;main.c: 32: void state1(fsm_t *fsm, uint8_t event);
+"33 main.c
+[; ;main.c: 33: void state1(fsm_t *fsm, uint8_t event);
 [v _state1 `(v ~T0 @X0 0 ef2`*S858`uc ]
-"38
-[; ;main.c: 38: void gpio_state0(fsm_t *fsm, uint8_t event);
-[v _gpio_state0 `(v ~T0 @X0 0 ef2`*S858`uc ]
-"33
-[; ;main.c: 33: void state2(fsm_t *fsm, uint8_t event);
-[v _state2 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "39
-[; ;main.c: 39: void uart_state1(fsm_t *fsm, uint8_t event);
-[v _uart_state1 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 39: void gpio_state0(fsm_t *fsm, uint8_t event);
+[v _gpio_state0 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "34
-[; ;main.c: 34: void state3(fsm_t *fsm, uint8_t event);
-[v _state3 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 34: void state2(fsm_t *fsm, uint8_t event);
+[v _state2 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "40
-[; ;main.c: 40: void pwm_state2(fsm_t *fsm, uint8_t event);
-[v _pwm_state2 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 40: void uart_state1(fsm_t *fsm, uint8_t event);
+[v _uart_state1 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "35
-[; ;main.c: 35: void state4(fsm_t *fsm, uint8_t event);
-[v _state4 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 35: void state3(fsm_t *fsm, uint8_t event);
+[v _state3 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "41
-[; ;main.c: 41: void adc_state3(fsm_t *fsm, uint8_t event);
-[v _adc_state3 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 41: void pwm_state2(fsm_t *fsm, uint8_t event);
+[v _pwm_state2 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "36
-[; ;main.c: 36: void state5(fsm_t *fsm, uint8_t event);
-[v _state5 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 36: void state4(fsm_t *fsm, uint8_t event);
+[v _state4 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "42
-[; ;main.c: 42: void dac_state4(fsm_t *fsm, uint8_t event);
-[v _dac_state4 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 42: void adc_state3(fsm_t *fsm, uint8_t event);
+[v _adc_state3 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "37
-[; ;main.c: 37: void state6(fsm_t *fsm, uint8_t event);
-[v _state6 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 37: void state5(fsm_t *fsm, uint8_t event);
+[v _state5 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "43
-[; ;main.c: 43: void game_state5(fsm_t *fsm, uint8_t event);
-[v _game_state5 `(v ~T0 @X0 0 ef2`*S858`uc ]
+[; ;main.c: 43: void dac_state4(fsm_t *fsm, uint8_t event);
+[v _dac_state4 `(v ~T0 @X0 0 ef2`*S858`uc ]
+"38
+[; ;main.c: 38: void state6(fsm_t *fsm, uint8_t event);
+[v _state6 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "44
-[; ;main.c: 44: void hw_state6(fsm_t *fsm, uint8_t event);
+[; ;main.c: 44: void game_state5(fsm_t *fsm, uint8_t event);
+[v _game_state5 `(v ~T0 @X0 0 ef2`*S858`uc ]
+"45
+[; ;main.c: 45: void hw_state6(fsm_t *fsm, uint8_t event);
 [v _hw_state6 `(v ~T0 @X0 0 ef2`*S858`uc ]
 "36 ./bsp.h
 [; ;./bsp.h: 36: void bsp_drive_led(char input);
 [v _bsp_drive_led `(v ~T0 @X0 0 ef1`uc ]
-"111 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 111: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "13082 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 13082: extern volatile unsigned char PSTR1CON __attribute__((address(0xFB9)));
 [v _PSTR1CON `Vuc ~T0 @X0 0 e@4025 ]
@@ -274,66 +271,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./adc.h
 [; ;./adc.h: 11: uint16_t adc_read(uint8_t channel);
 [v _adc_read `(us ~T0 @X0 0 ef1`uc ]
-"6286 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6286:     struct {
-[s S332 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S332 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"6296
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6296:     struct {
-[s S333 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S333 . AN0 AN1 AN2 AN3 . AN4 ]
-"6304
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6304:     struct {
-[s S334 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S334 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
-"6312
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6312:     struct {
-[s S335 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S335 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
-"6320
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6320:     struct {
-[s S336 :5 `uc 1 :1 `uc 1 ]
-[n S336 . . NOT_SS ]
-"6324
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6324:     struct {
-[s S337 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S337 . . VREFN . SRQ nSS ]
-"6331
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6331:     struct {
-[s S338 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S338 . . CVREF . LVDIN ]
-"6337
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6337:     struct {
-[s S339 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S339 . . DACOUT . HLVDIN ]
-"6343
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6343:     struct {
-[s S340 :5 `uc 1 :1 `uc 1 ]
-[n S340 . . SS1 ]
-"6347
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6347:     struct {
-[s S341 :5 `uc 1 :1 `uc 1 ]
-[n S341 . . NOT_SS1 ]
-"6351
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6351:     struct {
-[s S342 :5 `uc 1 :1 `uc 1 ]
-[n S342 . . nSS1 ]
-"6355
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6355:     struct {
-[s S343 :5 `uc 1 :1 `uc 1 ]
-[n S343 . . SRNQ ]
-"6359
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6359:     struct {
-[s S344 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S344 . ULPWUIN . RJPU ]
-"6285
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6285: typedef union {
-[u S331 `S332 1 `S333 1 `S334 1 `S335 1 `S336 1 `S337 1 `S338 1 `S339 1 `S340 1 `S341 1 `S342 1 `S343 1 `S344 1 ]
-[n S331 . . . . . . . . . . . . . . ]
-"6365
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
-"11288
+"111 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 111: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"40 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 40: void srand (unsigned);
+[v _srand `(v ~T0 @X0 0 ef1`ui ]
+"39
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 39: int rand (void);
+[v _rand `(i ~T0 @X0 0 ef ]
+"11288 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 11288: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 "28 ./fsm.h
@@ -1104,89 +1051,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"54 main.c
-[; ;main.c: 54: volatile static uart_msg_t msg, msg_rev;
+"55 main.c
+[; ;main.c: 55: volatile static uart_msg_t msg, msg_rev;
 [v _msg `VS860 ~T0 @X0 1 s ]
 [v _msg_rev `VS860 ~T0 @X0 1 s ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"56
-[; ;main.c: 56: int main(void) {
+"57
+[; ;main.c: 57: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"57
-[; ;main.c: 57:     _delay((unsigned long)((100)*(32e6/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / .32e6 .4000.0 `ul ]
 "58
-[; ;main.c: 58:     bsp_init();
-[e ( _bsp_init ..  ]
+[; ;main.c: 58:     _delay((unsigned long)((100)*(32e6/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / .32e6 .4000.0 `ul ]
 "59
-[; ;main.c: 59:     uart_init();
-[e ( _uart_init ..  ]
+[; ;main.c: 59:     bsp_init();
+[e ( _bsp_init ..  ]
 "60
-[; ;main.c: 60:     adc_init();
-[e ( _adc_init ..  ]
+[; ;main.c: 60:     uart_init();
+[e ( _uart_init ..  ]
 "61
-[; ;main.c: 61:     LCD_Init();
+[; ;main.c: 61:     adc_init();
+[e ( _adc_init ..  ]
+"62
+[; ;main.c: 62:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"64
-[; ;main.c: 64:     GIEL = 1;
-[e = _GIEL -> -> 1 `i `b ]
 "65
-[; ;main.c: 65:     GIEH = 1;
+[; ;main.c: 65:     GIEL = 1;
+[e = _GIEL -> -> 1 `i `b ]
+"66
+[; ;main.c: 66:     GIEH = 1;
 [e = _GIEH -> -> 1 `i `b ]
-"67
-[; ;main.c: 67:     TMR2ON = 1;
-[e = _TMR2ON -> -> 1 `i `b ]
 "68
-[; ;main.c: 68:     TMR1ON = 1;
+[; ;main.c: 68:     TMR2ON = 1;
+[e = _TMR2ON -> -> 1 `i `b ]
+"69
+[; ;main.c: 69:     TMR1ON = 1;
 [e = _TMR1ON -> -> 1 `i `b ]
-"70
-[; ;main.c: 70:     bsp_reg_RC_cb(rc_isr_handle);
+"71
+[; ;main.c: 71:     bsp_reg_RC_cb(rc_isr_handle);
 [e ( _bsp_reg_RC_cb (1 &U _rc_isr_handle ]
-"72
-[; ;main.c: 72:  fsm_t fsm;
-[v _fsm `S858 ~T0 @X0 1 a ]
 "73
-[; ;main.c: 73:     uint8_t event = 0;
+[; ;main.c: 73:  fsm_t fsm;
+[v _fsm `S858 ~T0 @X0 1 a ]
+"74
+[; ;main.c: 74:     uint8_t event = 0;
 [v _event `uc ~T0 @X0 1 a ]
 [e = _event -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:     fsm_init(&fsm, &init);
+"76
+[; ;main.c: 76:     fsm_init(&fsm, &init);
 [e ( _fsm_init (2 , &U _fsm &U _init ]
-"80
-[; ;main.c: 80:     TRISDbits.RD5 = 1;
-[e = . . _TRISDbits 1 5 -> -> 1 `i `uc ]
 "81
-[; ;main.c: 81:     TRISCbits.RC2 = 1;
+[; ;main.c: 81:     TRISDbits.RD5 = 1;
+[e = . . _TRISDbits 1 5 -> -> 1 `i `uc ]
+"82
+[; ;main.c: 82:     TRISCbits.RC2 = 1;
 [e = . . _TRISCbits 1 2 -> -> 1 `i `uc ]
-"84
-[; ;main.c: 84:     CCPTMRS0bits.C1TSEL = 0b00;
-[e = . . _CCPTMRS0bits 0 0 -> -> 0 `i `uc ]
 "85
-[; ;main.c: 85:     PR2 = 199;
-[e = _PR2 -> -> 199 `i `uc ]
+[; ;main.c: 85:     CCPTMRS0bits.C1TSEL = 0b00;
+[e = . . _CCPTMRS0bits 0 0 -> -> 0 `i `uc ]
 "86
-[; ;main.c: 86:     CCP1CONbits.P1M = 0b00;
-[e = . . _CCP1CONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 86:     PR2 = 199;
+[e = _PR2 -> -> 199 `i `uc ]
 "87
-[; ;main.c: 87:     CCP1CONbits.CCP1M = 0b1100;
-[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 87:     CCP1CONbits.P1M = 0b00;
+[e = . . _CCP1CONbits 0 2 -> -> 0 `i `uc ]
 "88
-[; ;main.c: 88:     CCPR1L = 0;
-[e = _CCPR1L -> -> 0 `i `uc ]
+[; ;main.c: 88:     CCP1CONbits.CCP1M = 0b1100;
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
 "89
-[; ;main.c: 89:     T2CONbits.T2CKPS = 0b00;
-[e = . . _T2CONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 89:     CCPR1L = 0;
+[e = _CCPR1L -> -> 0 `i `uc ]
 "90
-[; ;main.c: 90:     TMR2IF = 0;
-[e = _TMR2IF -> -> 0 `i `b ]
+[; ;main.c: 90:     T2CONbits.T2CKPS = 0b00;
+[e = . . _T2CONbits 0 0 -> -> 0 `i `uc ]
 "91
-[; ;main.c: 91:     TMR2ON = 1;
-[e = _TMR2ON -> -> 1 `i `b ]
+[; ;main.c: 91:     TMR2IF = 0;
+[e = _TMR2IF -> -> 0 `i `b ]
 "92
-[; ;main.c: 92:     while(!TMR2IF){};
+[; ;main.c: 92:     TMR2ON = 1;
+[e = _TMR2ON -> -> 1 `i `b ]
+"93
+[; ;main.c: 93:     while(!TMR2IF){};
 [e $U 862  ]
 [e :U 863 ]
 {
@@ -1194,118 +1141,118 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 862 ]
 [e $ ! _TMR2IF 863  ]
 [e :U 864 ]
-"94
-[; ;main.c: 94:     TRISDbits.RD5 = 0;
-[e = . . _TRISDbits 1 5 -> -> 0 `i `uc ]
 "95
-[; ;main.c: 95:     TRISCbits.RC2 = 0;
+[; ;main.c: 95:     TRISDbits.RD5 = 0;
+[e = . . _TRISDbits 1 5 -> -> 0 `i `uc ]
+"96
+[; ;main.c: 96:     TRISCbits.RC2 = 0;
 [e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:     ANSELE = 0b1;
-[e = _ANSELE -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99:     ADCON2bits.ADFM = 0;
-[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 99:     ANSELE = 0b1;
+[e = _ANSELE -> -> 1 `i `uc ]
 "100
-[; ;main.c: 100:     ADCON2bits.ADCS = 0b110;
-[e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
+[; ;main.c: 100:     ADCON2bits.ADFM = 0;
+[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
 "101
-[; ;main.c: 101:     ADCON2bits.ACQT = 0b110;
-[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
+[; ;main.c: 101:     ADCON2bits.ADCS = 0b110;
+[e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
 "102
-[; ;main.c: 102:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 102:     ADCON2bits.ACQT = 0b110;
+[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
 "103
-[; ;main.c: 103:     ADCON0bits.CHS = 5;
+[; ;main.c: 103:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"104
+[; ;main.c: 104:     ADCON0bits.CHS = 5;
 [e = . . _ADCON0bits 1 2 -> -> 5 `i `uc ]
-"106
-[; ;main.c: 106:     while(1){
+"107
+[; ;main.c: 107:     while(1){
 [e :U 866 ]
 {
-"107
-[; ;main.c: 107:         if (fsm_get_event(&event)){
+"108
+[; ;main.c: 108:         if (fsm_get_event(&event)){
 [e $ ! != -> ( _fsm_get_event (1 &U _event `i -> 0 `i 868  ]
 {
-"109
-[; ;main.c: 109:             fsm_dispatch(&fsm, event);
+"110
+[; ;main.c: 110:             fsm_dispatch(&fsm, event);
 [e ( _fsm_dispatch (2 , &U _fsm _event ]
-"111
-[; ;main.c: 111:         }
+"112
+[; ;main.c: 112:         }
 }
 [e :U 868 ]
-"112
-[; ;main.c: 112:     }
+"113
+[; ;main.c: 113:     }
 }
 [e :U 865 ]
 [e $U 866  ]
 [e :U 867 ]
-"114
-[; ;main.c: 114:  return 0;
+"115
+[; ;main.c: 115:  return 0;
 [e ) -> 0 `i ]
 [e $UE 861  ]
-"115
-[; ;main.c: 115: }
+"116
+[; ;main.c: 116: }
 [e :UE 861 ]
 }
-"120
-[; ;main.c: 120: void init(fsm_t *fsm, uint8_t event){
+"121
+[; ;main.c: 121: void init(fsm_t *fsm, uint8_t event){
 [v _init `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _init ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"122
-[; ;main.c: 122:     switch(event){
+"123
+[; ;main.c: 123:     switch(event){
 [e $U 871  ]
 {
-"123
-[; ;main.c: 123:         case 1U:
-[e :U 872 ]
 "124
-[; ;main.c: 124:             LCD_ShowString(1, "Welcome         ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
+[; ;main.c: 124:         case 1U:
+[e :U 872 ]
 "125
-[; ;main.c: 125:             LCD_ShowString(2, "      ^  v  >  <");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
+[; ;main.c: 125:             LCD_ShowString(1, "Welcome         ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
 "126
-[; ;main.c: 126:             bsp_set_timeout(5000);
-[e ( _bsp_set_timeout (1 -> -> 5000 `i `l ]
+[; ;main.c: 126:             LCD_ShowString(2, "      ^  v  >  <");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
 "127
-[; ;main.c: 127:             break;
-[e $U 870  ]
+[; ;main.c: 127:             bsp_set_timeout(5000);
+[e ( _bsp_set_timeout (1 -> -> 5000 `i `l ]
 "128
-[; ;main.c: 128:         case 2U:
-[e :U 873 ]
+[; ;main.c: 128:             break;
+[e $U 870  ]
 "129
-[; ;main.c: 129:             printf("Init state exit\n");
-[e ( _printf :s 3C ]
+[; ;main.c: 129:         case 2U:
+[e :U 873 ]
 "130
-[; ;main.c: 130:             break;
-[e $U 870  ]
+[; ;main.c: 130:             printf("Init state exit\n");
+[e ( _printf :s 3C ]
 "131
-[; ;main.c: 131:         case 3U:
-[e :U 874 ]
-"132
-[; ;main.c: 132:         case 4U:
-[e :U 875 ]
-"133
-[; ;main.c: 133:         case 5U:
-[e :U 876 ]
-"134
-[; ;main.c: 134:         case 6U:
-[e :U 877 ]
-"135
-[; ;main.c: 135:         case 7U:
-[e :U 878 ]
-"136
-[; ;main.c: 136:             fsm_transition(fsm, &state0);
-[e ( _fsm_transition (2 , _fsm &U _state0 ]
-"137
-[; ;main.c: 137:             break;
+[; ;main.c: 131:             break;
 [e $U 870  ]
+"132
+[; ;main.c: 132:         case 3U:
+[e :U 874 ]
+"133
+[; ;main.c: 133:         case 4U:
+[e :U 875 ]
+"134
+[; ;main.c: 134:         case 5U:
+[e :U 876 ]
+"135
+[; ;main.c: 135:         case 6U:
+[e :U 877 ]
+"136
+[; ;main.c: 136:         case 7U:
+[e :U 878 ]
+"137
+[; ;main.c: 137:             fsm_transition(fsm, &state0);
+[e ( _fsm_transition (2 , _fsm &U _state0 ]
 "138
-[; ;main.c: 138:     }
+[; ;main.c: 138:             break;
+[e $U 870  ]
+"139
+[; ;main.c: 139:     }
 }
 [e $U 870  ]
 [e :U 871 ]
@@ -1318,69 +1265,69 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 7 `ui `i 878
  870 ]
 [e :U 870 ]
-"139
-[; ;main.c: 139: }
+"140
+[; ;main.c: 140: }
 [e :UE 869 ]
 }
-"141
-[; ;main.c: 141: void state0(fsm_t *fsm, uint8_t event){
+"142
+[; ;main.c: 142: void state0(fsm_t *fsm, uint8_t event){
 [v _state0 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state0 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"143
-[; ;main.c: 143:  switch(event){
+"144
+[; ;main.c: 144:  switch(event){
 [e $U 881  ]
 {
-"144
-[; ;main.c: 144:         case 1U:
-[e :U 882 ]
 "145
-[; ;main.c: 145:             printf("Enter state 0\n");
-[e ( _printf :s 4C ]
+[; ;main.c: 145:         case 1U:
+[e :U 882 ]
 "146
-[; ;main.c: 146:             LCD_ShowString(1, ">>> 0_GPIO          ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
+[; ;main.c: 146:             printf("Enter state 0\n");
+[e ( _printf :s 4C ]
 "147
-[; ;main.c: 147:             LCD_ShowString(2, "    1_UART          ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 6C ]
+[; ;main.c: 147:             LCD_ShowString(1, ">>> 0_GPIO          ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
 "148
-[; ;main.c: 148:             break;
-[e $U 880  ]
+[; ;main.c: 148:             LCD_ShowString(2, "    1_UART          ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 6C ]
 "149
-[; ;main.c: 149:         case 2U:
-[e :U 883 ]
+[; ;main.c: 149:             break;
+[e $U 880  ]
 "150
-[; ;main.c: 150:             printf("Exit state 0\n");
-[e ( _printf :s 7C ]
+[; ;main.c: 150:         case 2U:
+[e :U 883 ]
 "151
-[; ;main.c: 151:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 151:             printf("Exit state 0\n");
+[e ( _printf :s 7C ]
 "152
-[; ;main.c: 152:             break;
-[e $U 880  ]
+[; ;main.c: 152:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "153
-[; ;main.c: 153:         case 4U:
-[e :U 884 ]
+[; ;main.c: 153:             break;
+[e $U 880  ]
 "154
-[; ;main.c: 154:             fsm_transition(fsm, &state1);
-[e ( _fsm_transition (2 , _fsm &U _state1 ]
+[; ;main.c: 154:         case 4U:
+[e :U 884 ]
 "155
-[; ;main.c: 155:             break;
-[e $U 880  ]
+[; ;main.c: 155:             fsm_transition(fsm, &state1);
+[e ( _fsm_transition (2 , _fsm &U _state1 ]
 "156
-[; ;main.c: 156:         case 5U:
-[e :U 885 ]
-"157
-[; ;main.c: 157:             fsm_transition(fsm, &gpio_state0);
-[e ( _fsm_transition (2 , _fsm &U _gpio_state0 ]
-"158
-[; ;main.c: 158:             break;
+[; ;main.c: 156:             break;
 [e $U 880  ]
+"157
+[; ;main.c: 157:         case 5U:
+[e :U 885 ]
+"158
+[; ;main.c: 158:             fsm_transition(fsm, &gpio_state0);
+[e ( _fsm_transition (2 , _fsm &U _gpio_state0 ]
 "159
-[; ;main.c: 159:     }
+[; ;main.c: 159:             break;
+[e $U 880  ]
+"160
+[; ;main.c: 160:     }
 }
 [e $U 880  ]
 [e :U 881 ]
@@ -1390,78 +1337,78 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 885
  880 ]
 [e :U 880 ]
-"160
-[; ;main.c: 160: }
+"161
+[; ;main.c: 161: }
 [e :UE 879 ]
 }
-"162
-[; ;main.c: 162: void state1(fsm_t *fsm, uint8_t event){
+"163
+[; ;main.c: 163: void state1(fsm_t *fsm, uint8_t event){
 [v _state1 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state1 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"164
-[; ;main.c: 164:  switch(event){
+"165
+[; ;main.c: 165:  switch(event){
 [e $U 888  ]
 {
-"165
-[; ;main.c: 165:         case 1U:
-[e :U 889 ]
 "166
-[; ;main.c: 166:             printf("Enter state 1\n");
-[e ( _printf :s 8C ]
+[; ;main.c: 166:         case 1U:
+[e :U 889 ]
 "167
-[; ;main.c: 167:             LCD_ShowString(1, ">>> 1_UART           ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 9C ]
+[; ;main.c: 167:             printf("Enter state 1\n");
+[e ( _printf :s 8C ]
 "168
-[; ;main.c: 168:             LCD_ShowString(2, "    2_PWM            ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 10C ]
+[; ;main.c: 168:             LCD_ShowString(1, ">>> 1_UART           ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 9C ]
 "169
-[; ;main.c: 169:             break;
-[e $U 887  ]
+[; ;main.c: 169:             LCD_ShowString(2, "    2_PWM            ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 10C ]
 "170
-[; ;main.c: 170:         case 2U:
-[e :U 890 ]
+[; ;main.c: 170:             break;
+[e $U 887  ]
 "171
-[; ;main.c: 171:             printf("Exit state 1\n");
-[e ( _printf :s 11C ]
+[; ;main.c: 171:         case 2U:
+[e :U 890 ]
 "172
-[; ;main.c: 172:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 172:             printf("Exit state 1\n");
+[e ( _printf :s 11C ]
 "173
-[; ;main.c: 173:             break;
-[e $U 887  ]
+[; ;main.c: 173:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "174
-[; ;main.c: 174:         case 3U:
-[e :U 891 ]
+[; ;main.c: 174:             break;
+[e $U 887  ]
 "175
-[; ;main.c: 175:             fsm_transition(fsm, &state0);
-[e ( _fsm_transition (2 , _fsm &U _state0 ]
+[; ;main.c: 175:         case 3U:
+[e :U 891 ]
 "176
-[; ;main.c: 176:             break;
-[e $U 887  ]
+[; ;main.c: 176:             fsm_transition(fsm, &state0);
+[e ( _fsm_transition (2 , _fsm &U _state0 ]
 "177
-[; ;main.c: 177:         case 4U:
-[e :U 892 ]
+[; ;main.c: 177:             break;
+[e $U 887  ]
 "178
-[; ;main.c: 178:             fsm_transition(fsm, &state2);
-[e ( _fsm_transition (2 , _fsm &U _state2 ]
+[; ;main.c: 178:         case 4U:
+[e :U 892 ]
 "179
-[; ;main.c: 179:             break;
-[e $U 887  ]
+[; ;main.c: 179:             fsm_transition(fsm, &state2);
+[e ( _fsm_transition (2 , _fsm &U _state2 ]
 "180
-[; ;main.c: 180:         case 5U:
-[e :U 893 ]
-"181
-[; ;main.c: 181:             fsm_transition(fsm, &uart_state1);
-[e ( _fsm_transition (2 , _fsm &U _uart_state1 ]
-"182
-[; ;main.c: 182:             break;
+[; ;main.c: 180:             break;
 [e $U 887  ]
+"181
+[; ;main.c: 181:         case 5U:
+[e :U 893 ]
+"182
+[; ;main.c: 182:             fsm_transition(fsm, &uart_state1);
+[e ( _fsm_transition (2 , _fsm &U _uart_state1 ]
 "183
-[; ;main.c: 183:     }
+[; ;main.c: 183:             break;
+[e $U 887  ]
+"184
+[; ;main.c: 184:     }
 }
 [e $U 887  ]
 [e :U 888 ]
@@ -1472,78 +1419,78 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 893
  887 ]
 [e :U 887 ]
-"184
-[; ;main.c: 184: }
+"185
+[; ;main.c: 185: }
 [e :UE 886 ]
 }
-"186
-[; ;main.c: 186: void state2(fsm_t *fsm, uint8_t event){
+"187
+[; ;main.c: 187: void state2(fsm_t *fsm, uint8_t event){
 [v _state2 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state2 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"188
-[; ;main.c: 188:  switch(event){
+"189
+[; ;main.c: 189:  switch(event){
 [e $U 896  ]
 {
-"189
-[; ;main.c: 189:         case 1U:
-[e :U 897 ]
 "190
-[; ;main.c: 190:             printf("Enter state 2\n");
-[e ( _printf :s 12C ]
+[; ;main.c: 190:         case 1U:
+[e :U 897 ]
 "191
-[; ;main.c: 191:             LCD_ShowString(1, ">>> 2_PWM            ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 13C ]
+[; ;main.c: 191:             printf("Enter state 2\n");
+[e ( _printf :s 12C ]
 "192
-[; ;main.c: 192:             LCD_ShowString(2, "    3_ADC            ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 14C ]
+[; ;main.c: 192:             LCD_ShowString(1, ">>> 2_PWM            ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 13C ]
 "193
-[; ;main.c: 193:             break;
-[e $U 895  ]
+[; ;main.c: 193:             LCD_ShowString(2, "    3_ADC            ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 14C ]
 "194
-[; ;main.c: 194:         case 2U:
-[e :U 898 ]
+[; ;main.c: 194:             break;
+[e $U 895  ]
 "195
-[; ;main.c: 195:             printf("Exit state 2\n");
-[e ( _printf :s 15C ]
+[; ;main.c: 195:         case 2U:
+[e :U 898 ]
 "196
-[; ;main.c: 196:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 196:             printf("Exit state 2\n");
+[e ( _printf :s 15C ]
 "197
-[; ;main.c: 197:             break;
-[e $U 895  ]
+[; ;main.c: 197:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "198
-[; ;main.c: 198:         case 3U:
-[e :U 899 ]
+[; ;main.c: 198:             break;
+[e $U 895  ]
 "199
-[; ;main.c: 199:             fsm_transition(fsm, &state1);
-[e ( _fsm_transition (2 , _fsm &U _state1 ]
+[; ;main.c: 199:         case 3U:
+[e :U 899 ]
 "200
-[; ;main.c: 200:             break;
-[e $U 895  ]
+[; ;main.c: 200:             fsm_transition(fsm, &state1);
+[e ( _fsm_transition (2 , _fsm &U _state1 ]
 "201
-[; ;main.c: 201:         case 4U:
-[e :U 900 ]
+[; ;main.c: 201:             break;
+[e $U 895  ]
 "202
-[; ;main.c: 202:             fsm_transition(fsm, &state3);
-[e ( _fsm_transition (2 , _fsm &U _state3 ]
+[; ;main.c: 202:         case 4U:
+[e :U 900 ]
 "203
-[; ;main.c: 203:             break;
-[e $U 895  ]
+[; ;main.c: 203:             fsm_transition(fsm, &state3);
+[e ( _fsm_transition (2 , _fsm &U _state3 ]
 "204
-[; ;main.c: 204:         case 5U:
-[e :U 901 ]
-"205
-[; ;main.c: 205:             fsm_transition(fsm, &pwm_state2);
-[e ( _fsm_transition (2 , _fsm &U _pwm_state2 ]
-"206
-[; ;main.c: 206:             break;
+[; ;main.c: 204:             break;
 [e $U 895  ]
+"205
+[; ;main.c: 205:         case 5U:
+[e :U 901 ]
+"206
+[; ;main.c: 206:             fsm_transition(fsm, &pwm_state2);
+[e ( _fsm_transition (2 , _fsm &U _pwm_state2 ]
 "207
-[; ;main.c: 207:     }
+[; ;main.c: 207:             break;
+[e $U 895  ]
+"208
+[; ;main.c: 208:     }
 }
 [e $U 895  ]
 [e :U 896 ]
@@ -1554,78 +1501,78 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 901
  895 ]
 [e :U 895 ]
-"208
-[; ;main.c: 208: }
+"209
+[; ;main.c: 209: }
 [e :UE 894 ]
 }
-"210
-[; ;main.c: 210: void state3(fsm_t *fsm, uint8_t event){
+"211
+[; ;main.c: 211: void state3(fsm_t *fsm, uint8_t event){
 [v _state3 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state3 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"212
-[; ;main.c: 212:  switch(event){
+"213
+[; ;main.c: 213:  switch(event){
 [e $U 904  ]
 {
-"213
-[; ;main.c: 213:         case 1U:
-[e :U 905 ]
 "214
-[; ;main.c: 214:             printf("Enter state 3\n");
-[e ( _printf :s 16C ]
+[; ;main.c: 214:         case 1U:
+[e :U 905 ]
 "215
-[; ;main.c: 215:             LCD_ShowString(1, ">>> 3_ADC            ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 17C ]
+[; ;main.c: 215:             printf("Enter state 3\n");
+[e ( _printf :s 16C ]
 "216
-[; ;main.c: 216:             LCD_ShowString(2, "    4_DAC            ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 18C ]
+[; ;main.c: 216:             LCD_ShowString(1, ">>> 3_ADC            ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 17C ]
 "217
-[; ;main.c: 217:             break;
-[e $U 903  ]
+[; ;main.c: 217:             LCD_ShowString(2, "    4_DAC            ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 18C ]
 "218
-[; ;main.c: 218:         case 2U:
-[e :U 906 ]
+[; ;main.c: 218:             break;
+[e $U 903  ]
 "219
-[; ;main.c: 219:             printf("Exit state 3\n");
-[e ( _printf :s 19C ]
+[; ;main.c: 219:         case 2U:
+[e :U 906 ]
 "220
-[; ;main.c: 220:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 220:             printf("Exit state 3\n");
+[e ( _printf :s 19C ]
 "221
-[; ;main.c: 221:             break;
-[e $U 903  ]
+[; ;main.c: 221:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "222
-[; ;main.c: 222:         case 3U:
-[e :U 907 ]
+[; ;main.c: 222:             break;
+[e $U 903  ]
 "223
-[; ;main.c: 223:             fsm_transition(fsm, &state2);
-[e ( _fsm_transition (2 , _fsm &U _state2 ]
+[; ;main.c: 223:         case 3U:
+[e :U 907 ]
 "224
-[; ;main.c: 224:             break;
-[e $U 903  ]
+[; ;main.c: 224:             fsm_transition(fsm, &state2);
+[e ( _fsm_transition (2 , _fsm &U _state2 ]
 "225
-[; ;main.c: 225:         case 4U:
-[e :U 908 ]
+[; ;main.c: 225:             break;
+[e $U 903  ]
 "226
-[; ;main.c: 226:             fsm_transition(fsm, &state4);
-[e ( _fsm_transition (2 , _fsm &U _state4 ]
+[; ;main.c: 226:         case 4U:
+[e :U 908 ]
 "227
-[; ;main.c: 227:             break;
-[e $U 903  ]
+[; ;main.c: 227:             fsm_transition(fsm, &state4);
+[e ( _fsm_transition (2 , _fsm &U _state4 ]
 "228
-[; ;main.c: 228:         case 5U:
-[e :U 909 ]
-"229
-[; ;main.c: 229:             fsm_transition(fsm, &adc_state3);
-[e ( _fsm_transition (2 , _fsm &U _adc_state3 ]
-"230
-[; ;main.c: 230:             break;
+[; ;main.c: 228:             break;
 [e $U 903  ]
+"229
+[; ;main.c: 229:         case 5U:
+[e :U 909 ]
+"230
+[; ;main.c: 230:             fsm_transition(fsm, &adc_state3);
+[e ( _fsm_transition (2 , _fsm &U _adc_state3 ]
 "231
-[; ;main.c: 231:     }
+[; ;main.c: 231:             break;
+[e $U 903  ]
+"232
+[; ;main.c: 232:     }
 }
 [e $U 903  ]
 [e :U 904 ]
@@ -1636,78 +1583,78 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 909
  903 ]
 [e :U 903 ]
-"232
-[; ;main.c: 232: }
+"233
+[; ;main.c: 233: }
 [e :UE 902 ]
 }
-"234
-[; ;main.c: 234: void state4(fsm_t *fsm, uint8_t event){
+"235
+[; ;main.c: 235: void state4(fsm_t *fsm, uint8_t event){
 [v _state4 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state4 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"236
-[; ;main.c: 236:  switch(event){
+"237
+[; ;main.c: 237:  switch(event){
 [e $U 912  ]
 {
-"237
-[; ;main.c: 237:         case 1U:
-[e :U 913 ]
 "238
-[; ;main.c: 238:             printf("Enter state 4\n");
-[e ( _printf :s 20C ]
+[; ;main.c: 238:         case 1U:
+[e :U 913 ]
 "239
-[; ;main.c: 239:             LCD_ShowString(1, ">>> 4_DAC            ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 21C ]
+[; ;main.c: 239:             printf("Enter state 4\n");
+[e ( _printf :s 20C ]
 "240
-[; ;main.c: 240:             LCD_ShowString(2, "    5_GAME           ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 22C ]
+[; ;main.c: 240:             LCD_ShowString(1, ">>> 4_DAC            ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 21C ]
 "241
-[; ;main.c: 241:             break;
-[e $U 911  ]
+[; ;main.c: 241:             LCD_ShowString(2, "    5_GAME           ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 22C ]
 "242
-[; ;main.c: 242:         case 2U:
-[e :U 914 ]
+[; ;main.c: 242:             break;
+[e $U 911  ]
 "243
-[; ;main.c: 243:             printf("Exit state 4\n");
-[e ( _printf :s 23C ]
+[; ;main.c: 243:         case 2U:
+[e :U 914 ]
 "244
-[; ;main.c: 244:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 244:             printf("Exit state 4\n");
+[e ( _printf :s 23C ]
 "245
-[; ;main.c: 245:             break;
-[e $U 911  ]
+[; ;main.c: 245:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "246
-[; ;main.c: 246:         case 3U:
-[e :U 915 ]
+[; ;main.c: 246:             break;
+[e $U 911  ]
 "247
-[; ;main.c: 247:             fsm_transition(fsm, &state3);
-[e ( _fsm_transition (2 , _fsm &U _state3 ]
+[; ;main.c: 247:         case 3U:
+[e :U 915 ]
 "248
-[; ;main.c: 248:             break;
-[e $U 911  ]
+[; ;main.c: 248:             fsm_transition(fsm, &state3);
+[e ( _fsm_transition (2 , _fsm &U _state3 ]
 "249
-[; ;main.c: 249:         case 4U:
-[e :U 916 ]
+[; ;main.c: 249:             break;
+[e $U 911  ]
 "250
-[; ;main.c: 250:             fsm_transition(fsm, &state5);
-[e ( _fsm_transition (2 , _fsm &U _state5 ]
+[; ;main.c: 250:         case 4U:
+[e :U 916 ]
 "251
-[; ;main.c: 251:             break;
-[e $U 911  ]
+[; ;main.c: 251:             fsm_transition(fsm, &state5);
+[e ( _fsm_transition (2 , _fsm &U _state5 ]
 "252
-[; ;main.c: 252:         case 5U:
-[e :U 917 ]
-"253
-[; ;main.c: 253:             fsm_transition(fsm, &dac_state4);
-[e ( _fsm_transition (2 , _fsm &U _dac_state4 ]
-"254
-[; ;main.c: 254:             break;
+[; ;main.c: 252:             break;
 [e $U 911  ]
+"253
+[; ;main.c: 253:         case 5U:
+[e :U 917 ]
+"254
+[; ;main.c: 254:             fsm_transition(fsm, &dac_state4);
+[e ( _fsm_transition (2 , _fsm &U _dac_state4 ]
 "255
-[; ;main.c: 255:     }
+[; ;main.c: 255:             break;
+[e $U 911  ]
+"256
+[; ;main.c: 256:     }
 }
 [e $U 911  ]
 [e :U 912 ]
@@ -1718,78 +1665,78 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 917
  911 ]
 [e :U 911 ]
-"256
-[; ;main.c: 256: }
+"257
+[; ;main.c: 257: }
 [e :UE 910 ]
 }
-"258
-[; ;main.c: 258: void state5(fsm_t *fsm, uint8_t event){
+"259
+[; ;main.c: 259: void state5(fsm_t *fsm, uint8_t event){
 [v _state5 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state5 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"260
-[; ;main.c: 260:  switch(event){
+"261
+[; ;main.c: 261:  switch(event){
 [e $U 920  ]
 {
-"261
-[; ;main.c: 261:         case 1U:
-[e :U 921 ]
 "262
-[; ;main.c: 262:             printf("Enter state 5\n");
-[e ( _printf :s 24C ]
+[; ;main.c: 262:         case 1U:
+[e :U 921 ]
 "263
-[; ;main.c: 263:             LCD_ShowString(1, ">>> 5_GAME           ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 25C ]
+[; ;main.c: 263:             printf("Enter state 5\n");
+[e ( _printf :s 24C ]
 "264
-[; ;main.c: 264:             LCD_ShowString(2, "    6_HW             ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 26C ]
+[; ;main.c: 264:             LCD_ShowString(1, ">>> 5_GAME           ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 25C ]
 "265
-[; ;main.c: 265:             break;
-[e $U 919  ]
+[; ;main.c: 265:             LCD_ShowString(2, "    6_HW             ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 26C ]
 "266
-[; ;main.c: 266:         case 2U:
-[e :U 922 ]
+[; ;main.c: 266:             break;
+[e $U 919  ]
 "267
-[; ;main.c: 267:             printf("Exit state 5\n");
-[e ( _printf :s 27C ]
+[; ;main.c: 267:         case 2U:
+[e :U 922 ]
 "268
-[; ;main.c: 268:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 268:             printf("Exit state 5\n");
+[e ( _printf :s 27C ]
 "269
-[; ;main.c: 269:             break;
-[e $U 919  ]
+[; ;main.c: 269:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "270
-[; ;main.c: 270:         case 3U:
-[e :U 923 ]
+[; ;main.c: 270:             break;
+[e $U 919  ]
 "271
-[; ;main.c: 271:             fsm_transition(fsm, &state4);
-[e ( _fsm_transition (2 , _fsm &U _state4 ]
+[; ;main.c: 271:         case 3U:
+[e :U 923 ]
 "272
-[; ;main.c: 272:             break;
-[e $U 919  ]
+[; ;main.c: 272:             fsm_transition(fsm, &state4);
+[e ( _fsm_transition (2 , _fsm &U _state4 ]
 "273
-[; ;main.c: 273:         case 4U:
-[e :U 924 ]
+[; ;main.c: 273:             break;
+[e $U 919  ]
 "274
-[; ;main.c: 274:             fsm_transition(fsm, &state6);
-[e ( _fsm_transition (2 , _fsm &U _state6 ]
+[; ;main.c: 274:         case 4U:
+[e :U 924 ]
 "275
-[; ;main.c: 275:             break;
-[e $U 919  ]
+[; ;main.c: 275:             fsm_transition(fsm, &state6);
+[e ( _fsm_transition (2 , _fsm &U _state6 ]
 "276
-[; ;main.c: 276:         case 5U:
-[e :U 925 ]
-"277
-[; ;main.c: 277:             fsm_transition(fsm, &game_state5);
-[e ( _fsm_transition (2 , _fsm &U _game_state5 ]
-"278
-[; ;main.c: 278:             break;
+[; ;main.c: 276:             break;
 [e $U 919  ]
+"277
+[; ;main.c: 277:         case 5U:
+[e :U 925 ]
+"278
+[; ;main.c: 278:             fsm_transition(fsm, &game_state5);
+[e ( _fsm_transition (2 , _fsm &U _game_state5 ]
 "279
-[; ;main.c: 279:     }
+[; ;main.c: 279:             break;
+[e $U 919  ]
+"280
+[; ;main.c: 280:     }
 }
 [e $U 919  ]
 [e :U 920 ]
@@ -1800,69 +1747,69 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 925
  919 ]
 [e :U 919 ]
-"280
-[; ;main.c: 280: }
+"281
+[; ;main.c: 281: }
 [e :UE 918 ]
 }
-"282
-[; ;main.c: 282: void state6(fsm_t *fsm, uint8_t event){
+"283
+[; ;main.c: 283: void state6(fsm_t *fsm, uint8_t event){
 [v _state6 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _state6 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"284
-[; ;main.c: 284:  switch(event){
+"285
+[; ;main.c: 285:  switch(event){
 [e $U 928  ]
 {
-"285
-[; ;main.c: 285:         case 1U:
-[e :U 929 ]
 "286
-[; ;main.c: 286:             printf("Enter state 6\n");
-[e ( _printf :s 28C ]
+[; ;main.c: 286:         case 1U:
+[e :U 929 ]
 "287
-[; ;main.c: 287:             LCD_ShowString(1, "    5_GAME           ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 29C ]
+[; ;main.c: 287:             printf("Enter state 6\n");
+[e ( _printf :s 28C ]
 "288
-[; ;main.c: 288:             LCD_ShowString(2, ">>> 6_HW             ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 30C ]
+[; ;main.c: 288:             LCD_ShowString(1, "    5_GAME           ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 29C ]
 "289
-[; ;main.c: 289:             break;
-[e $U 927  ]
+[; ;main.c: 289:             LCD_ShowString(2, ">>> 6_HW             ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 30C ]
 "290
-[; ;main.c: 290:         case 2U:
-[e :U 930 ]
+[; ;main.c: 290:             break;
+[e $U 927  ]
 "291
-[; ;main.c: 291:             printf("Exit state 6\n");
-[e ( _printf :s 31C ]
+[; ;main.c: 291:         case 2U:
+[e :U 930 ]
 "292
-[; ;main.c: 292:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 292:             printf("Exit state 6\n");
+[e ( _printf :s 31C ]
 "293
-[; ;main.c: 293:             break;
-[e $U 927  ]
+[; ;main.c: 293:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "294
-[; ;main.c: 294:         case 3U:
-[e :U 931 ]
+[; ;main.c: 294:             break;
+[e $U 927  ]
 "295
-[; ;main.c: 295:             fsm_transition(fsm, &state5);
-[e ( _fsm_transition (2 , _fsm &U _state5 ]
+[; ;main.c: 295:         case 3U:
+[e :U 931 ]
 "296
-[; ;main.c: 296:             break;
-[e $U 927  ]
+[; ;main.c: 296:             fsm_transition(fsm, &state5);
+[e ( _fsm_transition (2 , _fsm &U _state5 ]
 "297
-[; ;main.c: 297:         case 5U:
-[e :U 932 ]
-"298
-[; ;main.c: 298:             fsm_transition(fsm, &hw_state6);
-[e ( _fsm_transition (2 , _fsm &U _hw_state6 ]
-"299
-[; ;main.c: 299:             break;
+[; ;main.c: 297:             break;
 [e $U 927  ]
+"298
+[; ;main.c: 298:         case 5U:
+[e :U 932 ]
+"299
+[; ;main.c: 299:             fsm_transition(fsm, &hw_state6);
+[e ( _fsm_transition (2 , _fsm &U _hw_state6 ]
 "300
-[; ;main.c: 300:     }
+[; ;main.c: 300:             break;
+[e $U 927  ]
+"301
+[; ;main.c: 301:     }
 }
 [e $U 927  ]
 [e :U 928 ]
@@ -1872,92 +1819,92 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 5 `ui `i 932
  927 ]
 [e :U 927 ]
-"301
-[; ;main.c: 301: }
+"302
+[; ;main.c: 302: }
 [e :UE 926 ]
 }
-"303
-[; ;main.c: 303: void gpio_state0(fsm_t *fsm, uint8_t event){
+"304
+[; ;main.c: 304: void gpio_state0(fsm_t *fsm, uint8_t event){
 [v _gpio_state0 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _gpio_state0 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"305
-[; ;main.c: 305:     static uint8_t leds = 0;
+"306
+[; ;main.c: 306:     static uint8_t leds = 0;
 [v F6552 `uc ~T0 @X0 1 s leds ]
 [i F6552
 -> -> 0 `i `uc
 ]
-"306
-[; ;main.c: 306:     switch(event){
+"307
+[; ;main.c: 307:     switch(event){
 [e $U 935  ]
 {
-"307
-[; ;main.c: 307:         case 1U:
-[e :U 936 ]
 "308
-[; ;main.c: 308:             printf("Enter state 0_GPIO\n");
-[e ( _printf :s 32C ]
+[; ;main.c: 308:         case 1U:
+[e :U 936 ]
 "309
-[; ;main.c: 309:             LCD_ShowString(1, "Rozsvecovani led");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 33C ]
+[; ;main.c: 309:             printf("Enter state 0_GPIO\n");
+[e ( _printf :s 32C ]
 "310
-[; ;main.c: 310:             LCD_ShowString(2, "mackej BTN2     ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 34C ]
+[; ;main.c: 310:             LCD_ShowString(1, "Rozsvecovani led");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 33C ]
 "311
-[; ;main.c: 311:             leds = 0b11000000;
-[e = F6552 -> -> 192 `i `uc ]
+[; ;main.c: 311:             LCD_ShowString(2, "mackej BTN2     ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 34C ]
 "312
-[; ;main.c: 312:             break;
-[e $U 934  ]
+[; ;main.c: 312:             leds = 0b11000000;
+[e = F6552 -> -> 192 `i `uc ]
 "313
-[; ;main.c: 313:         case 2U:
-[e :U 937 ]
-"314
-[; ;main.c: 314:             printf("Exit state 0_GPIO\n");
-[e ( _printf :s 35C ]
-"315
-[; ;main.c: 315:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"316
-[; ;main.c: 316:             bsp_drive_led(0);
-[e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
-"317
-[; ;main.c: 317:             break;
+[; ;main.c: 313:             break;
 [e $U 934  ]
+"314
+[; ;main.c: 314:         case 2U:
+[e :U 937 ]
+"315
+[; ;main.c: 315:             printf("Exit state 0_GPIO\n");
+[e ( _printf :s 35C ]
+"316
+[; ;main.c: 316:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"317
+[; ;main.c: 317:             bsp_drive_led(0);
+[e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
 "318
-[; ;main.c: 318:         case 4U:
-[e :U 938 ]
+[; ;main.c: 318:             break;
+[e $U 934  ]
 "319
-[; ;main.c: 319:             leds = (leds >> 1);
-[e = F6552 -> >> -> F6552 `i -> 1 `i `uc ]
+[; ;main.c: 319:         case 4U:
+[e :U 938 ]
 "320
-[; ;main.c: 320:             bsp_drive_led(leds);
-[e ( _bsp_drive_led (1 -> F6552 `uc ]
+[; ;main.c: 320:             leds = (leds >> 1);
+[e = F6552 -> >> -> F6552 `i -> 1 `i `uc ]
 "321
-[; ;main.c: 321:             leds += 0b10000000;
-[e =+ F6552 -> -> 128 `i `uc ]
+[; ;main.c: 321:             bsp_drive_led(leds);
+[e ( _bsp_drive_led (1 -> F6552 `uc ]
 "322
-[; ;main.c: 322:             if (leds == 0b11111111) leds = 0b10000000;
+[; ;main.c: 322:             leds += 0b10000000;
+[e =+ F6552 -> -> 128 `i `uc ]
+"323
+[; ;main.c: 323:             if (leds == 0b11111111) leds = 0b10000000;
 [e $ ! == -> F6552 `i -> 255 `i 939  ]
 [e = F6552 -> -> 128 `i `uc ]
 [e :U 939 ]
-"323
-[; ;main.c: 323:             break;
-[e $U 934  ]
 "324
-[; ;main.c: 324:         case 6U:
-[e :U 940 ]
-"325
-[; ;main.c: 325:             fsm_transition(fsm, &state0);
-[e ( _fsm_transition (2 , _fsm &U _state0 ]
-"326
-[; ;main.c: 326:             break;
+[; ;main.c: 324:             break;
 [e $U 934  ]
+"325
+[; ;main.c: 325:         case 6U:
+[e :U 940 ]
+"326
+[; ;main.c: 326:             fsm_transition(fsm, &state0);
+[e ( _fsm_transition (2 , _fsm &U _state0 ]
 "327
-[; ;main.c: 327:     }
+[; ;main.c: 327:             break;
+[e $U 934  ]
+"328
+[; ;main.c: 328:     }
 }
 [e $U 934  ]
 [e :U 935 ]
@@ -1967,21 +1914,18 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 6 `ui `i 940
  934 ]
 [e :U 934 ]
-"328
-[; ;main.c: 328: }
+"329
+[; ;main.c: 329: }
 [e :UE 933 ]
 }
-"330
-[; ;main.c: 330: void uart_state1(fsm_t *fsm, uint8_t event){
+"331
+[; ;main.c: 331: void uart_state1(fsm_t *fsm, uint8_t event){
 [v _uart_state1 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _uart_state1 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"332
-[; ;main.c: 332:     char str[17];
-[v _str `uc ~T0 @X0 -> 17 `i a ]
 "333
 [; ;main.c: 333:     switch(event){
 [e $U 943  ]
@@ -2051,16 +1995,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 352:             printf("Zprava: %s\n", msg_rev.data);
 [e ( _printf , (. :s 40C &U . _msg_rev 0 ]
 "353
-[; ;main.c: 353:             sprintf(str, "%s                                                                                          ", msg_rev.data);
-[e ( _sprintf (1 , (. , &U _str :s 41C &U . _msg_rev 0 ]
-"354
-[; ;main.c: 354:             LCD_ShowString(2, str);
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _str ]
-"355
-[; ;main.c: 355:             break;
-[e $U 942  ]
-"356
-[; ;main.c: 356:     }
+[; ;main.c: 353:     }
 }
 [e $U 942  ]
 [e :U 943 ]
@@ -2070,84 +2005,84 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 9 `ui `i 947
  942 ]
 [e :U 942 ]
-"357
-[; ;main.c: 357: }
+"354
+[; ;main.c: 354: }
 [e :UE 941 ]
 }
-"359
-[; ;main.c: 359: void pwm_state2(fsm_t *fsm, uint8_t event){
+"356
+[; ;main.c: 356: void pwm_state2(fsm_t *fsm, uint8_t event){
 [v _pwm_state2 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _pwm_state2 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"361
-[; ;main.c: 361:     static uint8_t leds = 0;
-[v F6566 `uc ~T0 @X0 1 s leds ]
-[i F6566
+"358
+[; ;main.c: 358:     static uint8_t leds = 0;
+[v F6565 `uc ~T0 @X0 1 s leds ]
+[i F6565
 -> -> 0 `i `uc
 ]
-"362
-[; ;main.c: 362:     switch(event){
+"359
+[; ;main.c: 359:     switch(event){
 [e $U 953  ]
 {
-"363
-[; ;main.c: 363:         case 1U:
+"360
+[; ;main.c: 360:         case 1U:
 [e :U 954 ]
+"361
+[; ;main.c: 361:             printf("Enter state 2_PWM\n");
+[e ( _printf :s 41C ]
+"362
+[; ;main.c: 362:             LCD_ShowString(1, "Toceni motoru         ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 42C ]
+"363
+[; ;main.c: 363:             LCD_ShowString(2, "toc potenciometrem      ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 43C ]
 "364
-[; ;main.c: 364:             printf("Enter state 2_PWM\n");
-[e ( _printf :s 42C ]
+[; ;main.c: 364:             leds = 0b11000000;
+[e = F6565 -> -> 192 `i `uc ]
 "365
-[; ;main.c: 365:             LCD_ShowString(1, "Toceni motoru         ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 43C ]
-"366
-[; ;main.c: 366:             LCD_ShowString(2, "toc potenciometrem      ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 44C ]
-"367
-[; ;main.c: 367:             leds = 0b11000000;
-[e = F6566 -> -> 192 `i `uc ]
-"368
-[; ;main.c: 368:             PSTR1CON |= 0b0011;
+[; ;main.c: 365:             PSTR1CON |= 0b0011;
 [e =| _PSTR1CON -> -> 3 `i `Vuc ]
-"369
-[; ;main.c: 369:             break;
+"366
+[; ;main.c: 366:             break;
 [e $U 952  ]
-"370
-[; ;main.c: 370:         case 2U:
+"367
+[; ;main.c: 367:         case 2U:
 [e :U 955 ]
-"371
-[; ;main.c: 371:             printf("Exit state 2_PWM\n");
-[e ( _printf :s 45C ]
-"372
-[; ;main.c: 372:             LCD_Clear();
+"368
+[; ;main.c: 368:             printf("Exit state 2_PWM\n");
+[e ( _printf :s 44C ]
+"369
+[; ;main.c: 369:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"373
-[; ;main.c: 373:             PSTR1CON &= 0b1100;
+"370
+[; ;main.c: 370:             PSTR1CON &= 0b1100;
 [e =& _PSTR1CON -> -> 12 `i `Vuc ]
-"374
-[; ;main.c: 374:             bsp_drive_led(0);
+"371
+[; ;main.c: 371:             bsp_drive_led(0);
 [e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
+"372
+[; ;main.c: 372:             break;
+[e $U 952  ]
+"373
+[; ;main.c: 373:         case 6U:
+[e :U 956 ]
+"374
+[; ;main.c: 374:             fsm_transition(fsm, &state2);
+[e ( _fsm_transition (2 , _fsm &U _state2 ]
 "375
 [; ;main.c: 375:             break;
 [e $U 952  ]
 "376
-[; ;main.c: 376:         case 6U:
-[e :U 956 ]
-"377
-[; ;main.c: 377:             fsm_transition(fsm, &state2);
-[e ( _fsm_transition (2 , _fsm &U _state2 ]
-"378
-[; ;main.c: 378:             break;
-[e $U 952  ]
-"379
-[; ;main.c: 379:         case 8U:
+[; ;main.c: 376:         case 8U:
 [e :U 957 ]
-"380
-[; ;main.c: 380:             GODONE = 1;
+"377
+[; ;main.c: 377:             GODONE = 1;
 [e = _GODONE -> -> 1 `i `b ]
-"381
-[; ;main.c: 381:             while(GODONE){};
+"378
+[; ;main.c: 378:             while(GODONE){};
 [e $U 958  ]
 [e :U 959 ]
 {
@@ -2155,11 +2090,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 958 ]
 [e $ _GODONE 959  ]
 [e :U 960 ]
-"382
-[; ;main.c: 382:             CCPR1L = ADRESH;
+"379
+[; ;main.c: 379:             CCPR1L = ADRESH;
 [e = _CCPR1L _ADRESH ]
-"383
-[; ;main.c: 383:     }
+"380
+[; ;main.c: 380:     }
 }
 [e $U 952  ]
 [e :U 953 ]
@@ -2169,67 +2104,77 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 8 `ui `i 957
  952 ]
 [e :U 952 ]
-"384
-[; ;main.c: 384: }
+"381
+[; ;main.c: 381: }
 [e :UE 951 ]
 }
-"386
-[; ;main.c: 386: void adc_state3(fsm_t *fsm, uint8_t event){
+"383
+[; ;main.c: 383: void adc_state3(fsm_t *fsm, uint8_t event){
 [v _adc_state3 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _adc_state3 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"388
-[; ;main.c: 388:  switch(event){
+"385
+[; ;main.c: 385:  switch(event){
 [e $U 963  ]
 {
-"389
-[; ;main.c: 389:         case 1U:
+"386
+[; ;main.c: 386:         case 1U:
 [e :U 964 ]
+"387
+[; ;main.c: 387:             LCD_ShowString(1, "Potenciometr:           ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 45C ]
+"388
+[; ;main.c: 388:             printf("Enter state 3_ADC\n");
+[e ( _printf :s 46C ]
+"389
+[; ;main.c: 389:             break;
+[e $U 962  ]
 "390
-[; ;main.c: 390:             LCD_ShowString(1, "Potenciometr:           ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 46C ]
+[; ;main.c: 390:         case 2U:
+[e :U 965 ]
 "391
-[; ;main.c: 391:             printf("Enter state 3_ADC\n");
+[; ;main.c: 391:             printf("Exit state 3_ADC\n");
 [e ( _printf :s 47C ]
 "392
-[; ;main.c: 392:             break;
-[e $U 962  ]
-"393
-[; ;main.c: 393:         case 2U:
-[e :U 965 ]
-"394
-[; ;main.c: 394:             printf("Exit state 3_ADC\n");
-[e ( _printf :s 48C ]
-"395
-[; ;main.c: 395:             LCD_Clear();
+[; ;main.c: 392:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
+"393
+[; ;main.c: 393:             break;
+[e $U 962  ]
+"394
+[; ;main.c: 394:         case 6U:
+[e :U 966 ]
+"395
+[; ;main.c: 395:             fsm_transition(fsm, &state3);
+[e ( _fsm_transition (2 , _fsm &U _state3 ]
 "396
 [; ;main.c: 396:             break;
 [e $U 962  ]
 "397
-[; ;main.c: 397:         case 6U:
-[e :U 966 ]
-"398
-[; ;main.c: 398:             fsm_transition(fsm, &state3);
-[e ( _fsm_transition (2 , _fsm &U _state3 ]
-"399
-[; ;main.c: 399:             break;
-[e $U 962  ]
-"400
-[; ;main.c: 400:         case 8U:
+[; ;main.c: 397:         case 8U:
 [e :U 967 ]
-"401
-[; ;main.c: 401:         {
+"398
+[; ;main.c: 398:         {
 {
-"402
-[; ;main.c: 402:             char str[17];
+"399
+[; ;main.c: 399:             float potak1, potak2;
+[v _potak1 `f ~T0 @X0 1 a ]
+[v _potak2 `f ~T0 @X0 1 a ]
+"400
+[; ;main.c: 400:             char str[17];
 [v _str `uc ~T0 @X0 -> 17 `i a ]
+"401
+[; ;main.c: 401:             potak1 = (float)(adc_read(5)-128)*0.00005050196;
+[e = _potak1 -> * -> -> - -> ( _adc_read (1 -> -> 5 `i `uc `ui -> -> 128 `i `ui `f `d .0.00005050196 `f ]
+"402
+[; ;main.c: 402:             potak2 = (float)(adc_read(4)-128)*0.00005050196;
+[e = _potak2 -> * -> -> - -> ( _adc_read (1 -> -> 4 `i `uc `ui -> -> 128 `i `ui `f `d .0.00005050196 `f ]
 "403
-[; ;main.c: 403:             sprintf(str, "POT1:%.1fPOT2:%.1f", (float)adc_read(5)*3.22265625*0.001, (float)adc_read(4)*3.22265625*0.001);
-[e ( _sprintf (1 , , (. , &U _str :s 49C * * -> -> ( _adc_read (1 -> -> 5 `i `uc `f `d .3.22265625 .0.001 * * -> -> ( _adc_read (1 -> -> 4 `i `uc `f `d .3.22265625 .0.001 ]
+[; ;main.c: 403:             sprintf(str, "POT1:%.1fPOT2:%.1f", potak1, potak2);
+[e ( _sprintf (1 , , (. , &U _str :s 48C -> _potak1 `d -> _potak2 `d ]
 "404
 [; ;main.c: 404:             LCD_ShowString(2, str);
 [e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _str ]
@@ -2262,425 +2207,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"412
-[; ;main.c: 412:     unsigned char led_state = 0b110000;
-[v _led_state `uc ~T0 @X0 1 a ]
-[e = _led_state -> -> 48 `i `uc ]
-"413
-[; ;main.c: 413:     switch(event){
+"411
+[; ;main.c: 411:     switch(event){
 [e $U 970  ]
 {
-"414
-[; ;main.c: 414:         case 1U:
+"412
+[; ;main.c: 412:         case 1U:
 [e :U 971 ]
+"413
+[; ;main.c: 413:             printf("Enter state 4_DAC\n");
+[e ( _printf :s 49C ]
+"414
+[; ;main.c: 414:             LCD_ShowString(1, "Orezana sinusvka");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 50C ]
 "415
-[; ;main.c: 415:             printf("Enter state 4_DAC\n");
-[e ( _printf :s 50C ]
+[; ;main.c: 415:             LCD_ShowString(2, "    NEFUNKCNI   ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 51C ]
 "416
-[; ;main.c: 416:             LCD_ShowString(1, "Rozsvecovani led");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 51C ]
+[; ;main.c: 416:             break;
+[e $U 969  ]
 "417
-[; ;main.c: 417:             LCD_ShowString(2, "mackej BTN2     ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 52C ]
-"418
-[; ;main.c: 418:             break;
-[e $U 969  ]
-"419
-[; ;main.c: 419:         case 2U:
+[; ;main.c: 417:         case 2U:
 [e :U 972 ]
-"420
-[; ;main.c: 420:             printf("Exit state 4_DAC\n");
-[e ( _printf :s 53C ]
-"421
-[; ;main.c: 421:             LCD_Clear();
+"418
+[; ;main.c: 418:             printf("Exit state 4_DAC\n");
+[e ( _printf :s 52C ]
+"419
+[; ;main.c: 419:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"422
-[; ;main.c: 422:             bsp_drive_led(0);
+"420
+[; ;main.c: 420:             bsp_drive_led(0);
 [e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
-"423
-[; ;main.c: 423:             break;
+"421
+[; ;main.c: 421:             break;
 [e $U 969  ]
-"424
-[; ;main.c: 424:         case 4U:
+"422
+[; ;main.c: 422:         case 6U:
 [e :U 973 ]
-"425
-[; ;main.c: 425:             while (!PORTAbits.RA2) {
-[e $U 974  ]
-[e :U 975 ]
-{
-"426
-[; ;main.c: 426:                 for (int i = 0; i<4; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 977  ]
-[e $U 978  ]
-[e :U 977 ]
-{
-"427
-[; ;main.c: 427:                     led_state = led_state >> 1;
-[e = _led_state -> >> -> _led_state `i -> 1 `i `uc ]
-"428
-[; ;main.c: 428:                     bsp_drive_led(led_state);
-[e ( _bsp_drive_led (1 -> _led_state `uc ]
-"429
-[; ;main.c: 429:                     for(long i=1; i<50000; i++);
-{
-[v _i `l ~T0 @X0 1 a ]
-[e = _i -> -> 1 `i `l ]
-[e $ < _i -> 50000 `l 980  ]
-[e $U 981  ]
-[e :U 980 ]
-[e ++ _i -> -> 1 `i `l ]
-[e $ < _i -> 50000 `l 980  ]
-[e :U 981 ]
-}
-"430
-[; ;main.c: 430:                 }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 977  ]
-[e :U 978 ]
-}
-"431
-[; ;main.c: 431:                 for (int i = 0; i<4; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 983  ]
-[e $U 984  ]
-[e :U 983 ]
-{
-"432
-[; ;main.c: 432:                     led_state = led_state << 1;
-[e = _led_state -> << -> _led_state `i -> 1 `i `uc ]
-"433
-[; ;main.c: 433:                     bsp_drive_led(led_state);
-[e ( _bsp_drive_led (1 -> _led_state `uc ]
-"434
-[; ;main.c: 434:                     for(long i=1; i<50000; i++);
-{
-[v _i `l ~T0 @X0 1 a ]
-[e = _i -> -> 1 `i `l ]
-[e $ < _i -> 50000 `l 986  ]
-[e $U 987  ]
-[e :U 986 ]
-[e ++ _i -> -> 1 `i `l ]
-[e $ < _i -> 50000 `l 986  ]
-[e :U 987 ]
-}
-"435
-[; ;main.c: 435:                 }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 983  ]
-[e :U 984 ]
-}
-"436
-[; ;main.c: 436:             }
-}
-[e :U 974 ]
-"425
-[; ;main.c: 425:             while (!PORTAbits.RA2) {
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 975  ]
-[e :U 976 ]
-"437
-[; ;main.c: 437:             break;
-[e $U 969  ]
-"438
-[; ;main.c: 438:         case 6U:
-[e :U 989 ]
-"439
-[; ;main.c: 439:             fsm_transition(fsm, &state4);
+"423
+[; ;main.c: 423:             fsm_transition(fsm, &state4);
 [e ( _fsm_transition (2 , _fsm &U _state4 ]
-"440
-[; ;main.c: 440:             break;
+"424
+[; ;main.c: 424:             break;
 [e $U 969  ]
-"441
-[; ;main.c: 441:         case 7U:
-[e :U 990 ]
-"442
-[; ;main.c: 442:             fsm_transition(fsm, &dac_state4);
-[e ( _fsm_transition (2 , _fsm &U _dac_state4 ]
-"443
-[; ;main.c: 443:             break;
-[e $U 969  ]
-"444
-[; ;main.c: 444:     }
+"425
+[; ;main.c: 425:     }
 }
 [e $U 969  ]
 [e :U 970 ]
 [e [\ -> _event `i , $ -> -> 1 `ui `i 971
  , $ -> -> 2 `ui `i 972
- , $ -> -> 4 `ui `i 973
- , $ -> -> 6 `ui `i 989
- , $ -> -> 7 `ui `i 990
+ , $ -> -> 6 `ui `i 973
  969 ]
 [e :U 969 ]
-"445
-[; ;main.c: 445: }
+"426
+[; ;main.c: 426: }
 [e :UE 968 ]
 }
-"447
-[; ;main.c: 447: void game_state5(fsm_t *fsm, uint8_t event){
+"428
+[; ;main.c: 428: void game_state5(fsm_t *fsm, uint8_t event){
 [v _game_state5 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _game_state5 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"449
-[; ;main.c: 449:     static uint8_t leds = 0;
-[v F6594 `uc ~T0 @X0 1 s leds ]
-[i F6594
--> -> 0 `i `uc
-]
-"450
-[; ;main.c: 450:     switch(event){
-[e $U 993  ]
+"429
+[; ;main.c: 429:     char str[17];
+[v _str `uc ~T0 @X0 -> 17 `i a ]
+"430
+[; ;main.c: 430:     switch(event){
+[e $U 976  ]
 {
-"451
-[; ;main.c: 451:         case 1U:
-[e :U 994 ]
-"452
-[; ;main.c: 452:             printf("Enter state 5_GAME\n");
-[e ( _printf :s 54C ]
-"453
-[; ;main.c: 453:             LCD_ShowString(1, "Rozsvecovani led");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 55C ]
-"454
-[; ;main.c: 454:             LCD_ShowString(2, "mackej BTN2     ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 56C ]
-"455
-[; ;main.c: 455:             leds = 0b11000000;
-[e = F6594 -> -> 192 `i `uc ]
-"456
-[; ;main.c: 456:             break;
-[e $U 992  ]
-"457
-[; ;main.c: 457:         case 2U:
-[e :U 995 ]
-"458
-[; ;main.c: 458:             printf("Exit state 5_GAME\n");
-[e ( _printf :s 57C ]
-"459
-[; ;main.c: 459:             LCD_Clear();
+"431
+[; ;main.c: 431:         case 1U:
+[e :U 977 ]
+"432
+[; ;main.c: 432:             printf("Enter state 5_GAME\n");
+[e ( _printf :s 53C ]
+"433
+[; ;main.c: 433:             LCD_ShowString(1, "Rychlost reakce");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 54C ]
+"434
+[; ;main.c: 434:             srand(12345);
+[e ( _srand (1 -> -> 12345 `i `ui ]
+"435
+[; ;main.c: 435:             char cislo = (rand() % 4) + 1;
+[v _cislo `uc ~T0 @X0 1 a ]
+[e = _cislo -> + % ( _rand ..  -> 4 `i -> 1 `i `uc ]
+"436
+[; ;main.c: 436:             sprintf(str, "%d      NEFUNKCNI", cislo);
+[e ( _sprintf (1 , (. , &U _str :s 55C -> _cislo `i ]
+"437
+[; ;main.c: 437:             LCD_ShowString(2, str);
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _str ]
+"438
+[; ;main.c: 438:             bsp_set_timeout(5000);
+[e ( _bsp_set_timeout (1 -> -> 5000 `i `l ]
+"439
+[; ;main.c: 439:             break;
+[e $U 975  ]
+"440
+[; ;main.c: 440:         case 2U:
+[e :U 978 ]
+"441
+[; ;main.c: 441:             printf("Exit state 5_GAME\n");
+[e ( _printf :s 56C ]
+"442
+[; ;main.c: 442:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"460
-[; ;main.c: 460:             bsp_drive_led(0);
-[e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
-"461
-[; ;main.c: 461:             break;
-[e $U 992  ]
-"462
-[; ;main.c: 462:         case 4U:
-[e :U 996 ]
-"463
-[; ;main.c: 463:             leds = (leds >> 1);
-[e = F6594 -> >> -> F6594 `i -> 1 `i `uc ]
-"464
-[; ;main.c: 464:             bsp_drive_led(leds);
-[e ( _bsp_drive_led (1 -> F6594 `uc ]
-"465
-[; ;main.c: 465:             leds += 0b10000000;
-[e =+ F6594 -> -> 128 `i `uc ]
-"466
-[; ;main.c: 466:             if (leds == 0b11111111) leds = 0b10000000;
-[e $ ! == -> F6594 `i -> 255 `i 997  ]
-[e = F6594 -> -> 128 `i `uc ]
-[e :U 997 ]
-"467
-[; ;main.c: 467:             break;
-[e $U 992  ]
-"468
-[; ;main.c: 468:         case 6U:
-[e :U 998 ]
-"469
-[; ;main.c: 469:             fsm_transition(fsm, &state5);
+"443
+[; ;main.c: 443:             break;
+[e $U 975  ]
+"444
+[; ;main.c: 444:         case 6U:
+[e :U 979 ]
+"445
+[; ;main.c: 445:             fsm_transition(fsm, &state5);
 [e ( _fsm_transition (2 , _fsm &U _state5 ]
-"470
-[; ;main.c: 470:             break;
-[e $U 992  ]
-"471
-[; ;main.c: 471:     }
+"446
+[; ;main.c: 446:             break;
+[e $U 975  ]
+"447
+[; ;main.c: 447:         case 7U:
+[e :U 980 ]
+"448
+[; ;main.c: 448:             fsm_transition(fsm, &state5);
+[e ( _fsm_transition (2 , _fsm &U _state5 ]
+"449
+[; ;main.c: 449:             break;
+[e $U 975  ]
+"450
+[; ;main.c: 450:     }
 }
-[e $U 992  ]
-[e :U 993 ]
-[e [\ -> _event `i , $ -> -> 1 `ui `i 994
- , $ -> -> 2 `ui `i 995
- , $ -> -> 4 `ui `i 996
- , $ -> -> 6 `ui `i 998
- 992 ]
-[e :U 992 ]
-"472
-[; ;main.c: 472: }
-[e :UE 991 ]
+[e $U 975  ]
+[e :U 976 ]
+[e [\ -> _event `i , $ -> -> 1 `ui `i 977
+ , $ -> -> 2 `ui `i 978
+ , $ -> -> 6 `ui `i 979
+ , $ -> -> 7 `ui `i 980
+ 975 ]
+[e :U 975 ]
+"451
+[; ;main.c: 451: }
+[e :UE 974 ]
 }
-"474
-[; ;main.c: 474: void hw_state6(fsm_t *fsm, uint8_t event){
+"453
+[; ;main.c: 453: void hw_state6(fsm_t *fsm, uint8_t event){
 [v _hw_state6 `(v ~T0 @X0 1 ef2`*S858`uc ]
 {
 [e :U _hw_state6 ]
 [v _fsm `*S858 ~T0 @X0 1 r1 ]
 [v _event `uc ~T0 @X0 1 r2 ]
 [f ]
-"476
-[; ;main.c: 476:     static uint8_t leds = 0;
-[v F6601 `uc ~T0 @X0 1 s leds ]
-[i F6601
--> -> 0 `i `uc
-]
-"477
-[; ;main.c: 477:     switch(event){
-[e $U 1001  ]
+"454
+[; ;main.c: 454:     switch(event){
+[e $U 983  ]
 {
-"478
-[; ;main.c: 478:         case 1U:
-[e :U 1002 ]
-"479
-[; ;main.c: 479:             printf("Enter state 6_HW\n");
-[e ( _printf :s 58C ]
-"480
-[; ;main.c: 480:             LCD_ShowString(1, "Rozsvecovani led");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 59C ]
-"481
-[; ;main.c: 481:             LCD_ShowString(2, "mackej BTN2     ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 60C ]
-"482
-[; ;main.c: 482:             leds = 0b11000000;
-[e = F6601 -> -> 192 `i `uc ]
-"483
-[; ;main.c: 483:             break;
-[e $U 1000  ]
-"484
-[; ;main.c: 484:         case 2U:
-[e :U 1003 ]
-"485
-[; ;main.c: 485:             printf("Exit state 6_HW\n");
-[e ( _printf :s 61C ]
-"486
-[; ;main.c: 486:             LCD_Clear();
+"455
+[; ;main.c: 455:         case 1U:
+[e :U 984 ]
+"456
+[; ;main.c: 456:             printf("Enter state 6_HW\n");
+[e ( _printf :s 57C ]
+"457
+[; ;main.c: 457:             LCD_ShowString(1, "Prehravani hudby");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 58C ]
+"458
+[; ;main.c: 458:             LCD_ShowString(2, "    NEFUNKCNI   ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 59C ]
+"459
+[; ;main.c: 459:             break;
+[e $U 982  ]
+"460
+[; ;main.c: 460:         case 2U:
+[e :U 985 ]
+"461
+[; ;main.c: 461:             printf("Exit state 6_HW\n");
+[e ( _printf :s 60C ]
+"462
+[; ;main.c: 462:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"487
-[; ;main.c: 487:             bsp_drive_led(0);
-[e ( _bsp_drive_led (1 -> -> 0 `i `uc ]
-"488
-[; ;main.c: 488:             break;
-[e $U 1000  ]
-"489
-[; ;main.c: 489:         case 4U:
-[e :U 1004 ]
-"490
-[; ;main.c: 490:             leds = (leds >> 1);
-[e = F6601 -> >> -> F6601 `i -> 1 `i `uc ]
-"491
-[; ;main.c: 491:             bsp_drive_led(leds);
-[e ( _bsp_drive_led (1 -> F6601 `uc ]
-"492
-[; ;main.c: 492:             leds += 0b10000000;
-[e =+ F6601 -> -> 128 `i `uc ]
-"493
-[; ;main.c: 493:             if (leds == 0b11111111) leds = 0b10000000;
-[e $ ! == -> F6601 `i -> 255 `i 1005  ]
-[e = F6601 -> -> 128 `i `uc ]
-[e :U 1005 ]
-"494
-[; ;main.c: 494:             break;
-[e $U 1000  ]
-"495
-[; ;main.c: 495:         case 6U:
-[e :U 1006 ]
-"496
-[; ;main.c: 496:             fsm_transition(fsm, &state6);
+"463
+[; ;main.c: 463:             break;
+[e $U 982  ]
+"464
+[; ;main.c: 464:         case 6U:
+[e :U 986 ]
+"465
+[; ;main.c: 465:             fsm_transition(fsm, &state6);
 [e ( _fsm_transition (2 , _fsm &U _state6 ]
-"497
-[; ;main.c: 497:             break;
-[e $U 1000  ]
-"498
-[; ;main.c: 498:     }
+"466
+[; ;main.c: 466:             break;
+[e $U 982  ]
+"467
+[; ;main.c: 467:     }
 }
-[e $U 1000  ]
-[e :U 1001 ]
-[e [\ -> _event `i , $ -> -> 1 `ui `i 1002
- , $ -> -> 2 `ui `i 1003
- , $ -> -> 4 `ui `i 1004
- , $ -> -> 6 `ui `i 1006
- 1000 ]
-[e :U 1000 ]
-"499
-[; ;main.c: 499: }
-[e :UE 999 ]
+[e $U 982  ]
+[e :U 983 ]
+[e [\ -> _event `i , $ -> -> 1 `ui `i 984
+ , $ -> -> 2 `ui `i 985
+ , $ -> -> 6 `ui `i 986
+ 982 ]
+[e :U 982 ]
+"468
+[; ;main.c: 468: }
+[e :UE 981 ]
 }
-"501
-[; ;main.c: 501: void rc_isr_handle(void){
+"470
+[; ;main.c: 470: void rc_isr_handle(void){
 [v _rc_isr_handle `(v ~T0 @X0 1 ef ]
 {
 [e :U _rc_isr_handle ]
 [f ]
-"503
-[; ;main.c: 503:     char rchar = RCREG1;
+"472
+[; ;main.c: 472:     char rchar = RCREG1;
 [v _rchar `uc ~T0 @X0 1 a ]
 [e = _rchar -> _RCREG1 `uc ]
-"505
-[; ;main.c: 505:     if(rchar != '\n'){
-[e $ ! != -> _rchar `ui -> 10 `ui 1008  ]
+"474
+[; ;main.c: 474:     if(rchar != '\n'){
+[e $ ! != -> _rchar `ui -> 10 `ui 988  ]
 {
-"506
-[; ;main.c: 506:         msg.data[msg.idx++] = rchar;
+"475
+[; ;main.c: 475:         msg.data[msg.idx++] = rchar;
 [e = *U + &U . _msg 0 * -> ++ . _msg 1 -> -> 1 `i `Vuc `ux -> -> # *U &U . _msg 0 `ui `ux _rchar ]
-"507
-[; ;main.c: 507:         if(msg.idx > 31){
-[e $ ! > -> . _msg 1 `i -> 31 `i 1009  ]
+"476
+[; ;main.c: 476:         if(msg.idx > 31){
+[e $ ! > -> . _msg 1 `i -> 31 `i 989  ]
 {
-"508
-[; ;main.c: 508:             msg.idx = 0;
+"477
+[; ;main.c: 477:             msg.idx = 0;
 [e = . _msg 1 -> -> 0 `i `uc ]
-"509
-[; ;main.c: 509:         }
+"478
+[; ;main.c: 478:         }
 }
-[e :U 1009 ]
-"510
-[; ;main.c: 510:     }
+[e :U 989 ]
+"479
+[; ;main.c: 479:     }
 }
-[e $U 1010  ]
-"511
-[; ;main.c: 511:     else{
-[e :U 1008 ]
+[e $U 990  ]
+"480
+[; ;main.c: 480:     else{
+[e :U 988 ]
 {
-"512
-[; ;main.c: 512:         msg.data[msg.idx] = '\0';
+"481
+[; ;main.c: 481:         msg.data[msg.idx] = '\0';
 [e = *U + &U . _msg 0 * -> . _msg 1 `ux -> -> # *U &U . _msg 0 `ui `ux -> -> 0 `ui `uc ]
-"513
-[; ;main.c: 513:         msg.last = msg.idx - 1;
+"482
+[; ;main.c: 482:         msg.last = msg.idx - 1;
 [e = . _msg 2 - -> . _msg 1 `i -> 1 `i ]
-"514
-[; ;main.c: 514:         msg.idx = 0;
+"483
+[; ;main.c: 483:         msg.idx = 0;
 [e = . _msg 1 -> -> 0 `i `uc ]
-"515
-[; ;main.c: 515:         fsm_add_event(9U);
+"484
+[; ;main.c: 484:         fsm_add_event(9U);
 [e ( _fsm_add_event (1 -> -> 9 `ui `uc ]
-"516
-[; ;main.c: 516:     }
+"485
+[; ;main.c: 485:     }
 }
-[e :U 1010 ]
-"517
-[; ;main.c: 517: }
-[e :UE 1007 ]
+[e :U 990 ]
+"486
+[; ;main.c: 486: }
+[e :UE 987 ]
 }
-[p f _sprintf 8724480 ]
 [p f _printf 8650752 ]
-[a 49C 80 79 84 49 58 37 46 49 102 80 79 84 50 58 37 46 49 102 0 ]
+[p f _sprintf 8462464 ]
+[a 58C 80 114 101 104 114 97 118 97 110 105 32 104 117 100 98 121 0 ]
+[a 48C 80 79 84 49 58 37 46 49 102 80 79 84 50 58 37 46 49 102 0 ]
+[a 54C 82 121 99 104 108 111 115 116 32 114 101 97 107 99 101 0 ]
 [a 33C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
-[a 51C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
-[a 55C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
-[a 59C 82 111 122 115 118 101 99 111 118 97 110 105 32 108 101 100 0 ]
+[a 50C 79 114 101 122 97 110 97 32 115 105 110 117 115 118 107 97 0 ]
+[a 55C 37 100 32 32 32 32 32 32 78 69 70 85 78 75 67 78 73 0 ]
 [a 2C 32 32 32 32 32 32 94 32 32 118 32 32 62 32 32 60 0 ]
+[a 51C 32 32 32 32 78 69 70 85 78 75 67 78 73 32 32 32 0 ]
+[a 59C 32 32 32 32 78 69 70 85 78 75 67 78 73 32 32 32 0 ]
 [a 34C 109 97 99 107 101 106 32 66 84 78 50 32 32 32 32 32 0 ]
-[a 52C 109 97 99 107 101 106 32 66 84 78 50 32 32 32 32 32 0 ]
-[a 56C 109 97 99 107 101 106 32 66 84 78 50 32 32 32 32 32 0 ]
-[a 60C 109 97 99 107 101 106 32 66 84 78 50 32 32 32 32 32 0 ]
-[a 44C 116 111 99 32 112 111 116 101 110 99 105 111 109 101 116 114 101 109 32 32 32 32 32 32 0 ]
-[a 43C 84 111 99 101 110 105 32 109 111 116 111 114 117 32 32 32 32 32 32 32 32 32 0 ]
+[a 43C 116 111 99 32 112 111 116 101 110 99 105 111 109 101 116 114 101 109 32 32 32 32 32 32 0 ]
+[a 42C 84 111 99 101 110 105 32 109 111 116 111 114 117 32 32 32 32 32 32 32 32 32 0 ]
 [a 1C 87 101 108 99 111 109 101 32 32 32 32 32 32 32 32 32 0 ]
 [a 37C 90 97 100 101 106 32 122 112 114 97 118 117 58 32 32 32 32 32 32 32 32 32 0 ]
 [a 6C 32 32 32 32 49 95 85 65 82 84 32 32 32 32 32 32 32 32 32 32 0 ]
@@ -2689,7 +2492,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 25C 62 62 62 32 53 95 71 65 77 69 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 22C 32 32 32 32 53 95 71 65 77 69 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 29C 32 32 32 32 53 95 71 65 77 69 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 46C 80 111 116 101 110 99 105 111 109 101 116 114 58 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 45C 80 111 116 101 110 99 105 111 109 101 116 114 58 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 13C 62 62 62 32 50 95 80 87 77 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 10C 32 32 32 32 50 95 80 87 77 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 17C 62 62 62 32 51 95 65 68 67 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
@@ -2698,23 +2501,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 18C 32 32 32 32 52 95 68 65 67 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 30C 62 62 62 32 54 95 72 87 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 26C 32 32 32 32 54 95 72 87 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 41C 37 115 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 3C 73 110 105 116 32 115 116 97 116 101 32 101 120 105 116 10 0 ]
 [a 40C 90 112 114 97 118 97 58 32 37 115 10 0 ]
-[a 61C 69 120 105 116 32 115 116 97 116 101 32 54 95 72 87 10 0 ]
-[a 58C 69 110 116 101 114 32 115 116 97 116 101 32 54 95 72 87 10 0 ]
+[a 60C 69 120 105 116 32 115 116 97 116 101 32 54 95 72 87 10 0 ]
+[a 57C 69 110 116 101 114 32 115 116 97 116 101 32 54 95 72 87 10 0 ]
 [a 39C 69 120 105 116 32 115 116 97 116 101 32 49 95 85 65 82 84 10 0 ]
 [a 36C 69 110 116 101 114 32 115 116 97 116 101 32 49 95 85 65 82 84 10 0 ]
 [a 35C 69 120 105 116 32 115 116 97 116 101 32 48 95 71 80 73 79 10 0 ]
 [a 32C 69 110 116 101 114 32 115 116 97 116 101 32 48 95 71 80 73 79 10 0 ]
-[a 45C 69 120 105 116 32 115 116 97 116 101 32 50 95 80 87 77 10 0 ]
-[a 42C 69 110 116 101 114 32 115 116 97 116 101 32 50 95 80 87 77 10 0 ]
-[a 57C 69 120 105 116 32 115 116 97 116 101 32 53 95 71 65 77 69 10 0 ]
-[a 54C 69 110 116 101 114 32 115 116 97 116 101 32 53 95 71 65 77 69 10 0 ]
-[a 48C 69 120 105 116 32 115 116 97 116 101 32 51 95 65 68 67 10 0 ]
-[a 47C 69 110 116 101 114 32 115 116 97 116 101 32 51 95 65 68 67 10 0 ]
-[a 53C 69 120 105 116 32 115 116 97 116 101 32 52 95 68 65 67 10 0 ]
-[a 50C 69 110 116 101 114 32 115 116 97 116 101 32 52 95 68 65 67 10 0 ]
+[a 44C 69 120 105 116 32 115 116 97 116 101 32 50 95 80 87 77 10 0 ]
+[a 41C 69 110 116 101 114 32 115 116 97 116 101 32 50 95 80 87 77 10 0 ]
+[a 56C 69 120 105 116 32 115 116 97 116 101 32 53 95 71 65 77 69 10 0 ]
+[a 53C 69 110 116 101 114 32 115 116 97 116 101 32 53 95 71 65 77 69 10 0 ]
+[a 47C 69 120 105 116 32 115 116 97 116 101 32 51 95 65 68 67 10 0 ]
+[a 46C 69 110 116 101 114 32 115 116 97 116 101 32 51 95 65 68 67 10 0 ]
+[a 52C 69 120 105 116 32 115 116 97 116 101 32 52 95 68 65 67 10 0 ]
+[a 49C 69 110 116 101 114 32 115 116 97 116 101 32 52 95 68 65 67 10 0 ]
 [a 38C 90 97 100 101 106 32 122 112 114 97 118 117 58 10 0 ]
 [a 31C 69 120 105 116 32 115 116 97 116 101 32 54 10 0 ]
 [a 28C 69 110 116 101 114 32 115 116 97 116 101 32 54 10 0 ]
